@@ -45,7 +45,7 @@ function Questao() {
                 />
                 <input
                     type="text"
-                    placeholder="Rsposta"
+                    placeholder="Resposta"
                     value={resposta}
                     onChange={e => setResposta(e.target.value)}
                 />

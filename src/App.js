@@ -3,6 +3,7 @@ import Routes from "./routes";
 import "./styles/global";
 
 const App = () => <Routes />;
-export default App;
 
+
+export default App;
 

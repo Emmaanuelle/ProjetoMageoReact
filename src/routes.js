@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import Cadastro from "./pages/Cadastro";
 import Login from "./pages/Login";
 import Questao from "./pages/Questoes";
+import Quiz from "./pages/Quiz";
 
 
 import { isAuthenticated} from "./services/auth";
@@ -27,6 +28,7 @@ const Routes = () => (
       
       <Route exact path="/" component={Login} />
       <Route path="/cadastro" component={Cadastro} />
+      <Route path="/quiz" component={Quiz}/>
       <PrivateRoute path="/questao" component={Questao} />
       <PrivateRoute path="/questoes" component={() => <h1>Questoes</h1>} />
       <PrivateRoute path="/ranking" component={() => <h1>Ranking</h1>} />
