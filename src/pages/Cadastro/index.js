@@ -1,11 +1,41 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { Form, Container } from "./styles";
 import api from "../../services/api"
+import Avatar from '@material-ui/core/Avatar';
+import Button from '@material-ui/core/Button';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import TextField from '@material-ui/core/TextField';
+import Grid from '@material-ui/core/Grid';
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
 
 
-function Cadastro() {
+const useStyles = makeStyles((theme) => ({
+  paper: {
+    marginTop: theme.spacing(8),
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  avatar: {
+    margin: theme.spacing(1),
+    backgroundColor: theme.palette.secondary.main,
+  },
+  form: {
+    width: '100%', // Fix IE 11 issue.
+    marginTop: theme.spacing(3),
+  },
+  submit: {
+    margin: theme.spacing(3, 0, 2),
+  },
+}));
+
+export default function Cadastro() {
+  const classes = useStyles();
   const [nome, setNome] = useState("");
+  const [sobrenome, setSobrenome] = useState("");
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [idade, setIdade] = useState("");
@@ -17,58 +47,118 @@ function Cadastro() {
 
     e.preventDefault();
 
-    const data = { nome, email, senha, idade };
+    const data = { nome, sobrenome,email, senha, idade };
     try {
-      const resposta = await api.post("/user", data)
+      await api.post("/user", data)
       alert("Cadastro Realizado com Sucesso")
       history.push("/");
     } catch (error) {
-
-      setError("Conta Cadastrada")
+      console.log(error.response);
+      setError("Houve Problema ao realizar o cadastro")
     }
 
   }
-
   return (
-    <Container>
-      <Form onSubmit={cadastrar}>
-
-        {error && <p>{error}</p>}
-        <input
-          type="text"
-          placeholder="Nome de usuário"
-          value={nome}
-          onChange={e => setNome(e.target.value)}
-        />
-        <input
-          type="email"
-          placeholder="Endereço de e-mail"
-          value={email}
-          onChange={e => setEmail(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Senha"
-          value={senha}
-          onChange={e => setSenha(e.target.value)}
-        />
-        <input
-          type="number"
-          placeholder="idade"
-          value={idade}
-          onChange={e => setIdade(e.target.value)}
-        />
-        <button type="submit">Cadastrar</button>
-        <hr />
-        <Link to="/">Fazer login</Link>
-      </Form>
+    <Container component="main" maxWidth="xs">
+      <CssBaseline />
+      <div className={classes.paper}>
+        <Avatar className={classes.avatar}>
+          <LockOutlinedIcon />
+        </Avatar>
+        <Typography component="h1" variant="h5">
+          Cadastro
+        </Typography>
+        <form className={classes.form} onSubmit={cadastrar}>
+          
+        {error && <p className='error'>{error}</p>}
+        
+          <Grid container spacing={2}>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                autoComplete="fname"
+                name="firstName"
+                variant="outlined"
+                required
+                fullWidth
+                id="firstName"
+                label="Nome"
+                autoFocus
+                value={nome}
+                onChange={e => setNome(e.target.value)}
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                id="sobrenome"
+                label="Sobrenome"
+                name="sobrenome"
+                autoComplete="lname"
+                value={sobrenome}
+                onChange={e => setSobrenome(e.target.value)}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                id="email"
+                label="Email"
+                name="email"
+                autoComplete="email"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                id="idade"
+                label="Idade"
+                type="number"
+                autoComplete="idade"
+                value={idade}
+                onChange={e => setIdade(e.target.value)}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                name="senha"
+                label="senha"
+                type="password"
+                id="senha"
+                autoComplete="current-password"
+                value={senha}
+                onChange={e => setSenha(e.target.value)}
+              />
+            </Grid>
+          </Grid>
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            color="primary"
+            className={classes.submit}
+          >
+            Cadastrar
+          </Button>
+          <Grid container justify="flex-end">
+            <Grid item>
+              <Link to='/'>
+                Ir para o login
+              </Link>
+            </Grid>
+          </Grid>
+        </form>
+      </div>
     </Container>
-
-  )
-
+  );
 }
-
-
-
-
-export default Cadastro;

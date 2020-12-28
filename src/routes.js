@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import Cadastro from "./pages/Cadastro";
+import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Questao from "./pages/Questoes";
 import Quiz from "./pages/Quiz";
@@ -33,7 +34,7 @@ const Routes = () => (
       <PrivateRoute path="/questoes" component={() => <h1>Questoes</h1>} />
       <PrivateRoute path="/ranking" component={() => <h1>Ranking</h1>} />
       <PrivateRoute path="/user" component={() => <h1>User</h1>} />
-      <PrivateRoute path="/app" component={() => <h1>App</h1>} />
+      <PrivateRoute path="/home" component={Home} />
       <Route path="*" component={() => <h1>Página não encontrada!</h1>} />
     </Switch>
   </BrowserRouter>
