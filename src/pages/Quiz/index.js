@@ -25,7 +25,10 @@ export default function Quiz() {
         {questions.length > 0 ? (
 
           <Grid container spacing={10}>
-            <Grid item xs={12}>
+            <Grid item xs={12} sm={6}>
+            <iframe title='video' width="70%" height="100%" src={questions[0].video} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </Grid>
+            <Grid item xs={12} sm={6}>
               <Box display='flex' justifyContent="center">
                 <Typography component="h1" variant="h5">
                   {questions[0].pergunta}

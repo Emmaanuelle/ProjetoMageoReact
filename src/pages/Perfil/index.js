@@ -19,13 +19,6 @@ function Perfil(props) {
         }
         getItems()
     }, []);
-    const updateState = (item) => {
-        const itemIndex = items.findIndex(data => data.id === item.id)
-        const newArray = [...items.slice(0, itemIndex), item, ...items.slice(itemIndex + 1)]
-        setItems(newArray)
-    }
-
-    localStorage.setItem('nome', items.nome);
 
     return (
         <>

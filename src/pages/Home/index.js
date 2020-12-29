@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Container, Grid, Typography,ThemeProvider } from '@material-ui/core'
+import { Button, Container, Grid, ThemeProvider } from '@material-ui/core'
 import Navbar from '../Navbar';
 import { makeStyles } from '@material-ui/core/styles';
 import {theme} from '../../theme';
