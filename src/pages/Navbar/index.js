@@ -14,6 +14,7 @@ import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import { mainListItems } from './listItems';
 import { logout } from "../../services/auth";
+import { Link } from 'react-router-dom';
 
 const drawerWidth = 240;
 
@@ -124,15 +125,13 @@ export default function Navbar() {
             <MenuIcon />
           </IconButton>
           <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
-          36BD8C
+          <Link to='/home'>Logo</Link>
           </Typography>
-
           <Badge color="secondary">
             <Button color='inherit' onClick={handleLogout}>
               Sair <ExitToAppIcon />
             </Button>
           </Badge>
-
         </Toolbar>
       </AppBar>
       <Drawer
@@ -142,9 +141,9 @@ export default function Navbar() {
         }}
         open={open}
       >
-<ExitToAppIcon />
         <div className={classes.toolbarIcon}>
           <IconButton onClick={handleDrawerClose}>
+          Mageo Quiz
             <ChevronLeftIcon />
           </IconButton>
         </div>

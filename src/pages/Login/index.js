@@ -11,6 +11,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import ReactLoading from 'react-loading';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -22,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: "#349029",
   },
   form: {
     width: '100%', // Fix IE 11 issue.
@@ -38,19 +39,21 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [error, setError] = useState("");
+  const [carregar,setCarregando] = useState(false);
   const history = useHistory();
-
-
+  
   async function fazerLogin(e) {
-
-      e.preventDefault();
-
-      const data = { email, senha };
-      try {
+    
+    e.preventDefault();
+    
+    const data = { email, senha };
+    try {
+          localStorage.setItem('email',email)
+          setCarregando(true);
           const resposta = await api.post("/login", data);
-        login(resposta.data.token)
+          login(resposta.data.token)
           alert("Login Realizado com Sucesso");
-          history.push("/questao");
+          history.push("/home");
       } catch (error) {
           console.log(error)
           setError("Seus dados não estão cadastrados!")
@@ -67,10 +70,10 @@ export default function Login() {
         <Typography component="h1" variant="h5">
           Mageo
         </Typography>                   
-        <form className={classes.form} onSubmit={fazerLogin} noValidate>
-            
+        {carregar && !error?<ReactLoading className='loading' type={"bubbles"} color={'#36BD8C'} height={'20%'} width={'20%'} />:<></>}
+
+        <form className={classes.form} onSubmit={fazerLogin} noValidate>            
             {error && <p className='error'>{error}</p>}
-            
           <TextField
             variant="outlined"
             margin="normal"
@@ -106,12 +109,10 @@ export default function Login() {
           >
             Entrar
           </Button>
-          <Grid container>
-            <Grid item>
+          <Grid container justify="center" alignItems="center">
               <Link to='/cadastro'>
                 Fazer Cadastro
             </Link>
-            </Grid>
           </Grid>
         </form>
       </div>

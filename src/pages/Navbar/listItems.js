@@ -9,20 +9,24 @@ export const mainListItems = (
       <Button href='/perfil'>
         <ListItemText primary="Meu Perfil" /></Button>
     </ListItem>
-        <ListItem button>
-          <Button href='/questao'>
-            <ListItemText primary="Categorias" /></Button>
-        </ListItem>
-        <ListItem button>
-          <Button href='/questao'>
-            <ListItemText primary="Explore +" /></Button>
-        </ListItem>
     <ListItem button>
-      <Button href='/about'>
+      <Button href='/categorias'>
+        <ListItemText primary="Categorias" /></Button>
+    </ListItem>
+    <ListItem button>
+      <Button href='/explore'>
+        <ListItemText primary="Explore +" /></Button>
+    </ListItem>
+    <ListItem button>
+      <Button href='/questao'>
+        <ListItemText primary="Criar Questões" /></Button>
+    </ListItem>
+    <ListItem button>
+      <Button href='/sobre'>
         <ListItemText primary="Sobre" /></Button>
     </ListItem>
     <ListItem button>
-      <Button href='/help'>
+      <Button href='/ajuda'>
         <ListItemText primary="Ajuda" /></Button>
     </ListItem>
   </div>

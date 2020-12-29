@@ -6,10 +6,11 @@ import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import CreateOutlinedIcon from '@material-ui/icons/CreateOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import ReactLoading from 'react-loading';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -21,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: "#509312",
   },
   form: {
     width: '100%', // Fix IE 11 issue.
@@ -40,6 +41,8 @@ export default function Cadastro() {
   const [senha, setSenha] = useState("");
   const [idade, setIdade] = useState("");
   const [error, setError] = useState("");
+  const [carregar,setCarregando] = useState(false);
+
   const history = useHistory();
 
 
@@ -49,12 +52,17 @@ export default function Cadastro() {
 
     const data = { nome, sobrenome,email, senha, idade };
     try {
+      setCarregando(true);
       await api.post("/user", data)
       alert("Cadastro Realizado com Sucesso")
       history.push("/");
     } catch (error) {
-      console.log(error.response);
-      setError("Houve Problema ao realizar o cadastro")
+      console.log(error.response.status);
+      if(error.response.status === 400){
+        setError("Email Já cadastrado")
+      }else{
+        setError("Houve Problema ao realizar o cadastro")
+      }
     }
 
   }
@@ -63,13 +71,13 @@ export default function Cadastro() {
       <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
+          <CreateOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
           Cadastro
         </Typography>
+        {carregar && !error?<ReactLoading className='loading' type={"bubbles"} color={'orange'} height={'20%'} width={'40%'} />:<></>}
         <form className={classes.form} onSubmit={cadastrar}>
-          
         {error && <p className='error'>{error}</p>}
         
           <Grid container spacing={2}>
@@ -150,12 +158,10 @@ export default function Cadastro() {
           >
             Cadastrar
           </Button>
-          <Grid container justify="flex-end">
-            <Grid item>
+          <Grid container justify="center" alignItems="center">
               <Link to='/'>
                 Ir para o login
               </Link>
-            </Grid>
           </Grid>
         </form>
       </div>

@@ -1,26 +1,8 @@
 import React from 'react';
-import { Button, Container, Grid, Typography } from '@material-ui/core'
+import { Button, Container, Grid, Typography,ThemeProvider } from '@material-ui/core'
 import Navbar from '../Navbar';
 import { makeStyles } from '@material-ui/core/styles';
-import { createMuiTheme } from '@material-ui/core/styles';
-
-const theme = createMuiTheme({
-  palette: {
-    primary: {
-      light: '#757ce8',
-      main: '#3f50b5',
-      dark: '#002884',
-      contrastText: '#fff',
-    },
-    secondary: {
-      light: '#ff7961',
-      main: '#f44336',
-      dark: '#ba000d',
-      contrastText: '#000',
-    },
-  },
-});
-
+import {theme} from '../../theme';
 const useStyles = makeStyles((theme) => ({
     
   
@@ -34,18 +16,20 @@ const Home = (props) => {
     return (
         <>
             <Navbar />
+            <ThemeProvider theme={theme}>
             <Container>
           
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
                 <Grid item>
-                  <Button variant="contained" color="secondary">
+                  <Button variant="contained" color="secondary" href='/quiz'>
                     Começar o quiz
                   </Button>
                 </Grid>
                 </Grid>
                 </div>
             </Container>
+            </ThemeProvider>
         </>
     );
 };
