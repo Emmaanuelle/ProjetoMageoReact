@@ -26,6 +26,7 @@ export default function Quiz() {
 
           <Grid container spacing={10}>
             <Grid item xs={12} sm={6}>
+              {question[0].video}
             <iframe title='video' width="70%" height="100%" src={questions[0].video} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </Grid>
             <Grid item xs={12} sm={6}>
