@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import api from "../../services/api"
-import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
-import CreateOutlinedIcon from '@material-ui/icons/CreateOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
@@ -39,7 +37,7 @@ export default function Questao() {
   const [carregar,setCarregando] = useState(false);
   const [pergunta, setPergunta] = useState("");
     const [resposta, setResposta] = useState("");
-    const [alternativas, setAlternativa] = useState([]);
+    const [alternativa, setAlternativa] = useState('');
     const [dica, setDica] = useState("");
     const [video, setVideo] = useState("");
     const [imagem, setImagem] = useState("");
@@ -49,7 +47,7 @@ export default function Questao() {
 
         e.preventDefault();
 
-        const data = { pergunta, resposta, dica,alternativas,imagem,video };
+        const data = { pergunta, resposta, dica,alternativa,imagem,video };
         try {
           setCarregando(true)
              await api.post("/questao", data)
@@ -124,7 +122,7 @@ export default function Questao() {
                 label="alternativas"
                 placeholder="alternativas incorretas, separada por virgula"
                 autoComplete="alternativas"
-                value={alternativas}
+                value={alternativa}
                 onChange={e => setAlternativa(e.target.value)}
               />
          
