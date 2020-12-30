@@ -70,9 +70,9 @@ export default function Login() {
         <Typography component="h1" variant="h5">
           Mageo
         </Typography>                   
-        {carregar && !error?<ReactLoading className='loading' type={"bubbles"} color={'#36BD8C'} height={'20%'} width={'20%'} />:<></>}
 
         <form className={classes.form} onSubmit={fazerLogin} noValidate>            
+        {carregar && !error?<ReactLoading className='loading' type={"bubbles"} color={'#36BD8C'} height={'20%'} width={'20%'} />:<></>}
             {error && <p className='error'>{error}</p>}
           <TextField
             variant="outlined"
