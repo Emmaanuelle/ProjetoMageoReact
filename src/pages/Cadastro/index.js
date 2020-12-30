@@ -115,6 +115,7 @@ export default function Cadastro() {
                 fullWidth
                 id="email"
                 label="Email"
+                type="email"
                 name="email"
                 autoComplete="email"
                 value={email}

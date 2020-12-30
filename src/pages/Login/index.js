@@ -81,6 +81,7 @@ export default function Login() {
             fullWidth
             id="email"
             label="Digite o seu Email"
+            type="email"
             name="email"
             value={email}
             onChange={e => setEmail(e.target.value)}
