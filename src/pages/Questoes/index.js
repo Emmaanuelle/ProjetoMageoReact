@@ -137,7 +137,6 @@ export default function Questao() {
               <Grid item xs={12} sm={11} >
                 <TextField
                   variant="outlined"
-                  required
                   fullWidth
                   id="video"
                   label="Link para o youtube"
@@ -210,7 +209,6 @@ export default function Questao() {
               <Grid item xs={12} sm={11} >
                 <TextField
                   variant="outlined"
-                  required
                   fullWidth
                   id="imagem"
                   label="imagem"

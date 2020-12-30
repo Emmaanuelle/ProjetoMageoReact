@@ -3,21 +3,51 @@ import { Box, Container, Grid, Button, Typography } from '@material-ui/core';
 import Navbar from '../Navbar';
 import api from '../../services/api';
 import ReactLoading from 'react-loading';
+import { makeStyles } from '@material-ui/core/styles';
 
+const useStyles = makeStyles({
+  button: {
+    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+    border: 0,
+    borderRadius: 3,
+    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+    color: 'white',
+    height: 48,
+    padding: '0 30px',
+  },
+  alternativas: {
+    background: 'linear-gradient(45deg, #784DF1 20%, #36BD8C 70%)',
+    border: 0,
+    borderRadius: 3,
+    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+    color: 'white',
+    height: '10vh',
+    width: '100%',
+    padding: '0 30px',
+  },
+});
 export default function Quiz() {
+  const classes = useStyles();
+
   const [questions, setQuestion] = useState([]);
   useEffect(() => {
     async function getQuestions() {
       try {
         const resposta = await api.get('/questao');
         setQuestion(resposta.data)
-        console.log(resposta.data);
+        console.log(resposta.data)
       } catch (error) {
         console.log(error.response);
       }
     }
     getQuestions();
   }, [])
+  // if(questions.length>0){
+  //   for (const i in questions) {
+     
+  //   }
+  // }
+  const alternativa = questions.length > 0 ?questions[0].alternativa.split(","):['Quiz','Em','Construção'];
   return (
     <>
       <Navbar />
@@ -25,11 +55,10 @@ export default function Quiz() {
         {questions.length > 0 ? (
 
           <Grid container spacing={10}>
-            <Grid item xs={12} sm={6}>
-              {questions[0].video}
-            <iframe title='video' width="70%" height="100%" src={questions[0].video} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <Grid item xs={12}>
+            <div dangerouslySetInnerHTML={{ __html: questions.length > 0 ?questions[0].video :'<h4>Divirta-se</h4>' }} />
           </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12}>
               <Box display='flex' justifyContent="center">
                 <Typography component="h1" variant="h5">
                   {questions[0].pergunta}
@@ -37,33 +66,30 @@ export default function Quiz() {
               </Box>
             </Grid>
             <Grid item xs={12} sm={6}>
-              <Box alignItems="flex-start" justifyContent="flex-start">
-                <Button color='secondary'>
-                  {questions[0].pergunta}
+                <Button className={classes.alternativas}>
+                  {questions[0].resposta}
                 </Button>
-              </Box>
             </Grid>
             <Grid item xs={12} sm={6}>
-              <Box alignItems="flex-end" justifyContent="flex-end">
-                <Button color='secondary'>
-                  {questions[0].alternativa}
-
+            <Button className={classes.alternativas}>
+                  {alternativa[0]}
                 </Button>
-              </Box>
             </Grid>
             <Grid item xs={12} sm={6}>
-              <Box alignItems="flex-start" justifyContent="flex-start">
-                <Button color='secondary'>
-                  {questions[0].alternativa}
+            <Button className={classes.alternativas}>
+                  {alternativa[1]}
                 </Button>
-              </Box>
             </Grid>
             <Grid item xs={12} sm={6}>
-              <Box alignItems="flex-end" justifyContent="flex-end">
-                <Button color='secondary'>
-                  {questions[0].alternativa}
+              <Button className={classes.alternativas}>
+                  {alternativa[2]}
                 </Button>
-              </Box>
+            </Grid>
+            <Grid container justify='center'>
+              
+              <Button className={classes.button}> 
+                    Próximo
+                </Button>
             </Grid>
           </Grid>
         ) : (
