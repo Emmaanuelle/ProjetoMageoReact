@@ -55,8 +55,14 @@ export default function Login() {
           alert("Login Realizado com Sucesso");
           history.push("/home");
       } catch (error) {
-          console.log(error)
-          setError("Seus dados não estão cadastrados!")
+          //console.log(error.response.data.message.error)
+          console.log(error.response.data)
+          //setError(error.response.data.message.error)
+          if(error.response.status===400){
+          setError(error.response.data.message.error);
+          }else{
+          setError("Senha Incorreta");
+          }
       }
   }
 

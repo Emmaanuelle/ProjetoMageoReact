@@ -58,8 +58,9 @@ export default function Cadastro() {
       history.push("/");
     } catch (error) {
       console.log(error.response.status);
+      console.log(error.response.data)
       if(error.response.status === 400){
-        setError("Email Já cadastrado")
+        setError(error.response.data.message.error)
       }else{
         setError("Houve Problema ao realizar o cadastro")
       }
