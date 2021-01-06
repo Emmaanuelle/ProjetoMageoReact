@@ -6,27 +6,27 @@ import { Button } from '@material-ui/core';
 export const mainListItems = (
   <div>
     <ListItem button>
-      <Button href='/perfil'>
+      <Button fullWidth href='/perfil'>
         <ListItemText primary="Meu Perfil" /></Button>
     </ListItem>
     <ListItem button>
-      <Button href='/categorias'>
+      <Button fullWidth href='/categorias'>
         <ListItemText primary="Categorias" /></Button>
     </ListItem>
     <ListItem button>
-      <Button href='/explore'>
+      <Button fullWidth href='/explore'>
         <ListItemText primary="Explore +" /></Button>
     </ListItem>
     <ListItem button>
-      <Button href='/questao'>
+      <Button fullWidth href='/questao'>
         <ListItemText primary="Criar Questões" /></Button>
     </ListItem>
     <ListItem button>
-      <Button href='/sobre'>
+      <Button fullWidth href='/sobre'>
         <ListItemText primary="Sobre" /></Button>
     </ListItem>
     <ListItem button>
-      <Button href='/ajuda'>
+      <Button fullWidth href='/ajuda'>
         <ListItemText primary="Ajuda" /></Button>
     </ListItem>
   </div>
