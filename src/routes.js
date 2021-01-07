@@ -15,7 +15,7 @@ import ErrorPage from "./pages/Error";
 
 import { isAuthenticated} from "./services/auth";
 import Categorias from "./pages/Categorias";
-import Principal from "./pages/Quiz/resultado";
+import QuizReserva from "./pages/Quiz/QuizReserva";
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
@@ -37,8 +37,8 @@ const Routes = () => (
       
       <Route exact path="/" component={Login} />
       <Route path="/cadastro" component={Cadastro} />
-      <Route path="/teste" component={Principal} />
-      <PrivateRoute path="/quiz" component={Quiz}/>
+      <PrivateRoute path="/quiz" component={QuizReserva} />
+      <PrivateRoute path="/quiz2" component={Quiz}/>
       <PrivateRoute path="/ajuda" component={Ajuda} />
       <PrivateRoute path="/sobre" component={Sobre} />
       <PrivateRoute path="/explore" component={ExploreMais} />
