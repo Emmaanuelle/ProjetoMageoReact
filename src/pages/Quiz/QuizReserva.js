@@ -4,7 +4,7 @@ import { Box, Typography } from '@material-ui/core';
 import ReactLoading from 'react-loading';
 
 import Questao2 from './Questao2';
-const API_URL = 'https://opentdb.com/api.php?amount=10&category=19&type=multiple'
+const API_URL = 'https://opentdb.com/api.php?amount=10&category=19&difficulty=medium&type=multiple'
 //const API_URL = 'https://opentdb.com/api.php?amount=10&type=multiple'
 // Referencia https://youtu.be/HWk-3DkcxKM?t=5125
 function QuizReserva() {
@@ -51,7 +51,7 @@ function QuizReserva() {
      justify-center items-center h-screen">
        {  questions.length > 0 ? 
          indexAtual>=questions.length?(
-         <h1 className="text-3l text-white font-bold">Fim de Jogo!! Seu placar foi {pontuacao}!</h1>
+         <h1 className="text-3l text-black font-bold">Fim de Jogo!! Seu placar foi {pontuacao}!</h1>
         ): (
         <Questao2 data={questions[indexAtual]} 
         irParaProximaQuestao={irParaProximaQuestao}
