@@ -39,7 +39,7 @@ export default function Cadastro() {
   const [sobrenome, setSobrenome] = useState("");
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
-  const [idade, setIdade] = useState("");
+  const [dataNascimento, setdataNascimento] = useState("");
   const [error, setError] = useState("");
   const [carregar,setCarregando] = useState(false);
 
@@ -50,7 +50,7 @@ export default function Cadastro() {
 
     e.preventDefault();
 
-    const data = { nome, sobrenome,email, senha, idade };
+    const data = { nome, sobrenome,email, senha, dataNascimento };
     try {
       setCarregando(true);
       await api.post("/user", data)
@@ -128,12 +128,12 @@ export default function Cadastro() {
                 variant="outlined"
                 required
                 fullWidth
-                id="idade"
-                label="Idade"
-                type="number"
-                autoComplete="idade"
-                value={idade}
-                onChange={e => setIdade(e.target.value)}
+                id="dataNascimento"
+                label="dataNascimento"
+                type="date"
+                autoComplete="dataNascimento"
+                value={dataNascimento}
+                onChange={e => setdataNascimento(e.target.value)}
               />
             </Grid>
             <Grid item xs={12}>
