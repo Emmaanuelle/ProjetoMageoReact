@@ -12,6 +12,8 @@ import Navbar from "../Navbar";
 import Tooltip from '@material-ui/core/Tooltip';
 import HelpOutlineOutlinedIcon from '@material-ui/icons/HelpOutlineOutlined';
 import { useHistory } from "react-router-dom";
+import { MenuItem, Select } from "@material-ui/core";
+
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -54,13 +56,14 @@ export default function Questao() {
   const [dica, setDica] = useState("");
   const [video, setVideo] = useState("");
   const [imagem, setImagem] = useState("");
+  const[fase,setFase] = useState("");
   const [error, setError] = useState("");
   const history = useHistory();
   async function cadastrarQuestoes(e) {
 
     e.preventDefault();
 
-    const data = { pergunta, resposta, dica, alternativa, imagem, video };
+    const data = { pergunta, resposta, dica, alternativa, imagem, video, fase };
     try {
       setCarregando(true)
       await api.post("/questao", data)
@@ -229,6 +232,17 @@ export default function Questao() {
                   <HelpOutlineOutlinedIcon />
                 </DicaParaInput>
               </Grid>
+
+              <Grid>
+                <Select id="fase" value={fase} onChange={e => setFase(e.target.value)}>
+                  <MenuItem value={"Triângulo"}> Triângulo</MenuItem>
+                  <MenuItem value={"Quadrado"}> Quadrado</MenuItem>
+                  <MenuItem value={"Retângulo"}> Retângulo</MenuItem>
+                  <MenuItem value={"Círculo"}> Círculo</MenuItem>
+                </Select>
+
+              </Grid>
+
             </Grid>
 
             <Button
