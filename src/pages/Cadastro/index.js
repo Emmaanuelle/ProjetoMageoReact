@@ -11,6 +11,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import ReactLoading from 'react-loading';
+import logo from '../../images/icons/logo.svg'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -22,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: "#509312",
+    backgroundColor: "#FFFFFF",
   },
   form: {
     width: '100%', // Fix IE 11 issue.
@@ -74,7 +75,7 @@ export default function Cadastro() {
       <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
-          <CreateOutlinedIcon />
+          <img src={logo}/>
         </Avatar>
         <Typography component="h1" variant="h5">
           Cadastro
