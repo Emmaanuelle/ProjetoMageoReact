@@ -18,7 +18,7 @@ export const theme = createMuiTheme({
     }
   },
   shape: {
-    borderRadius: 30
+    borderRadius: 10
   },
   spacing: 8,
   overrides: {

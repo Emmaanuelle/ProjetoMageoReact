@@ -101,7 +101,7 @@ export default function Navbar() {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar position="relative" color='primary' className={clsx(classes.appBar, open && classes.appBarShift)}>
+      <AppBar position="relative" color='inhert' className={clsx(classes.appBar, open && classes.appBarShift)}>
         <Toolbar className={classes.toolbar}>
           <IconButton
             edge="start"
