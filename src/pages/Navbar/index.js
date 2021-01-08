@@ -15,6 +15,7 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import { mainListItems } from './listItems';
 import { logout } from "../../services/auth";
 import { Link } from 'react-router-dom';
+import logo from '../../images/icons/logo.svg'
 
 const drawerWidth = 220;
 
@@ -82,6 +83,11 @@ const useStyles = makeStyles((theme) => ({
     overflow: 'auto',
     flexDirection: 'column',
   },
+img:{
+  width:"40px",
+  height:"40px",
+
+}
 
 }));
 
@@ -113,7 +119,7 @@ export default function Navbar() {
             <MenuIcon />
           </IconButton>
           <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
-          <Link to='/home'>Logo</Link>
+          <Link to='/home'> <img src={logo} className={classes.img}/></Link>
           </Typography>
           <Badge color="secondary">
             <Button color='inherit' onClick={handleLogout}>
