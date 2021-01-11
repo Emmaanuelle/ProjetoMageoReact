@@ -87,7 +87,14 @@ img:{
   width:"40px",
   height:"40px",
 
+},
+
+botaosair:{
+  margin: theme.spacing(3, 0, 2),
+    color:"white",
+    background:"#3B82F6",
 }
+
 
 }));
 
@@ -122,7 +129,7 @@ export default function Navbar() {
           <Link to='/home'> <img src={logo} className={classes.img}/></Link>
           </Typography>
           <Badge color="secondary">
-            <Button color='inherit' onClick={handleLogout}>
+            <Button className={classes.botaosair} onClick={handleLogout}>
               Sair <ExitToAppIcon />
             </Button>
           </Badge>
