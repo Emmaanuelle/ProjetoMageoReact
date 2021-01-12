@@ -34,6 +34,10 @@ const useStyles = makeStyles((theme) => ({
     color:"white",
     background:"#3B82F6",
   },
+ /*  tamanhoselectano:{
+    minWidth:394,
+
+  } */
 }));
 
 export default function Cadastro() {
@@ -141,8 +145,8 @@ export default function Cadastro() {
                 onChange={e => setdataNascimento(e.target.value)}
               />
             </Grid>
-            <Grid item xs={12}>
-            <Select id="Serie" value={ano_escolar} onChange={e => setAno_escolar(e.target.value)} autoWidth>
+           {/*  <Grid item xs={12}>
+            <Select id="Serie" value={ano_escolar} onChange={e => setAno_escolar(e.target.value)} variant="outlined" className={classes.tamanhoselectano}>
             <InputLabel id="demo-simple-select-helper-label">Selecione o Ano</InputLabel>
                   <MenuItem value={"6º Ano"}> 6º Ano</MenuItem>
                   <MenuItem value={"7º Ano"}> 7º Ano</MenuItem>
@@ -152,6 +156,18 @@ export default function Cadastro() {
                   <MenuItem value={"2º Ano"}> 2º Ano</MenuItem>
                   <MenuItem value={"3º Ano"}> 3º Ano</MenuItem>
                 </Select>
+            </Grid> */}
+            <Grid item xs={12}>
+            <TextField id="Serie" value={ano_escolar} onChange={e => setAno_escolar(e.target.value)} variant="outlined" select fullWidth label="selecione o Ano" >
+            <InputLabel id="demo-simple-select-helper-label">Selecione o Ano</InputLabel>
+                  <MenuItem value={"6º Ano"}> 6º Ano</MenuItem>
+                  <MenuItem value={"7º Ano"}> 7º Ano</MenuItem>
+                  <MenuItem value={"8º Ano"}> 8º Ano</MenuItem>
+                  <MenuItem value={"9º Ano"}> 9º Ano</MenuItem>
+                  <MenuItem value={"1º Ano"}> 1º Ano</MenuItem>
+                  <MenuItem value={"2º Ano"}> 2º Ano</MenuItem>
+                  <MenuItem value={"3º Ano"}> 3º Ano</MenuItem>
+                </TextField>
             </Grid>
             <Grid item xs={12}>
               <TextField
