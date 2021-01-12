@@ -22,7 +22,7 @@ const Home = (props) => {
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
                 <Grid item>
-                  <Button variant="contained" color="secondary" href='/quiz'>
+                  <Button variant="contained" color="primary" href='/quiz'>
                     Começar o quiz
                   </Button>
                 </Grid>

@@ -6,12 +6,12 @@ import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
-import CreateOutlinedIcon from '@material-ui/icons/CreateOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import ReactLoading from 'react-loading';
 import logo from '../../images/icons/logo.svg'
+import { MenuItem, Select, InputLabel,} from "@material-ui/core";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -43,6 +43,8 @@ export default function Cadastro() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [dataNascimento, setdataNascimento] = useState("");
+  const[ano_escolar,setAno_escolar]= useState("")
+  const[escola, setEscola] = useState("")
   const [error, setError] = useState("");
   const [carregar,setCarregando] = useState(false);
 
@@ -53,7 +55,7 @@ export default function Cadastro() {
 
     e.preventDefault();
 
-    const data = { nome, sobrenome,email, senha, dataNascimento };
+    const data = { nome, sobrenome,email, senha, dataNascimento, ano_escolar, escola };
     try {
       setCarregando(true);
       await api.post("/user", data)
@@ -61,7 +63,7 @@ export default function Cadastro() {
       history.push("/");
     } catch (error) {
       console.log(error.response.status);
-      console.log(error.response.data)
+      console.log(error.response)
       if(error.response.status === 400){
         setError(error.response.data.message.error)
       }else{
@@ -137,6 +139,30 @@ export default function Cadastro() {
                 autoComplete="dataNascimento"
                 value={dataNascimento}
                 onChange={e => setdataNascimento(e.target.value)}
+              />
+            </Grid>
+            <Grid item xs={12}>
+            <Select id="Serie" value={ano_escolar} onChange={e => setAno_escolar(e.target.value)} autoWidth>
+            <InputLabel id="demo-simple-select-helper-label">Selecione o Ano</InputLabel>
+                  <MenuItem value={"6º Ano"}> 6º Ano</MenuItem>
+                  <MenuItem value={"7º Ano"}> 7º Ano</MenuItem>
+                  <MenuItem value={"8º Ano"}> 8º Ano</MenuItem>
+                  <MenuItem value={"9º Ano"}> 9º Ano</MenuItem>
+                  <MenuItem value={"1º Ano"}> 1º Ano</MenuItem>
+                  <MenuItem value={"2º Ano"}> 2º Ano</MenuItem>
+                  <MenuItem value={"3º Ano"}> 3º Ano</MenuItem>
+                </Select>
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                id="escola"
+                label="Escola"
+                name="escola"
+                value={escola}
+                onChange={e => setEscola(e.target.value)}
               />
             </Grid>
             <Grid item xs={12}>

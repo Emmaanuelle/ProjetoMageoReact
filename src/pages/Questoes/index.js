@@ -12,7 +12,7 @@ import Navbar from "../Navbar";
 import Tooltip from '@material-ui/core/Tooltip';
 import HelpOutlineOutlinedIcon from '@material-ui/icons/HelpOutlineOutlined';
 import { useHistory } from "react-router-dom";
-import { MenuItem, Select } from "@material-ui/core";
+import { MenuItem, Select, InputLabel } from "@material-ui/core";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -33,6 +33,9 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
+  tamanhoselect:{
+    minWidth:320
+  }
 }));
 
 const DicaParaInput = withStyles((theme) => ({
@@ -233,8 +236,9 @@ export default function Questao() {
                 </DicaParaInput>
               </Grid>
 
-              <Grid>
-                <Select id="fase" value={fase} onChange={e => setFase(e.target.value)}>
+              <Grid item xs={12}>
+                <Select id="fase" value={fase} onChange={e => setFase(e.target.value)} variant="outlined" className={classes.tamanhoselect}>
+                <InputLabel id="demo-simple-select-helper-label">Selecione o  Tipo da Questão</InputLabel>
                   <MenuItem value={"Triângulo"}> Triângulo</MenuItem>
                   <MenuItem value={"Quadrado"}> Quadrado</MenuItem>
                   <MenuItem value={"Retângulo"}> Retângulo</MenuItem>

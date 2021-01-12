@@ -75,7 +75,7 @@ export default function Login() {
           <img src={logo}/>
         </Avatar>
         <Typography component="h1" variant="h5">
-          Mageo
+          MaGeo
         </Typography>                   
 
         <form className={classes.form} onSubmit={fazerLogin} noValidate>            
