@@ -23,7 +23,7 @@ const Home = (props) => {
               <Grid container spacing={2} justify="center">
                 <Grid item>
                   <Button variant="contained" color="primary" href='/quiz'>
-                    Começar o quiz
+                    Start Quiz
                   </Button>
                 </Grid>
                 </Grid>

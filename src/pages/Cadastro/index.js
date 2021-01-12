@@ -34,10 +34,10 @@ const useStyles = makeStyles((theme) => ({
     color:"white",
     background:"#3B82F6",
   },
- /*  tamanhoselectano:{
+  tamanhoselectano:{
     minWidth:394,
 
-  } */
+  }
 }));
 
 export default function Cadastro() {
@@ -158,7 +158,7 @@ export default function Cadastro() {
                 </Select>
             </Grid> */}
             <Grid item xs={12}>
-            <TextField id="Serie" value={ano_escolar} onChange={e => setAno_escolar(e.target.value)} variant="outlined" select fullWidth label="selecione o Ano" >
+            <TextField id="Serie" value={ano_escolar} onChange={e => setAno_escolar(e.target.value)} variant="outlined" select fullWidth label="selecione o ano" >
             <InputLabel id="demo-simple-select-helper-label">Selecione o Ano</InputLabel>
                   <MenuItem value={"6º Ano"}> 6º Ano</MenuItem>
                   <MenuItem value={"7º Ano"}> 7º Ano</MenuItem>
