@@ -11,7 +11,7 @@ import ReactLoading from 'react-loading';
 import Navbar from "../Navbar";
 import Tooltip from '@material-ui/core/Tooltip';
 import HelpOutlineOutlinedIcon from '@material-ui/icons/HelpOutlineOutlined';
-import { useHistory } from "react-router-dom";
+//import { useHistory } from "react-router-dom";
 import { MenuItem} from "@material-ui/core";
 
 
@@ -57,13 +57,13 @@ export default function Questao() {
   const [carregar, setCarregando] = useState(false);
   const [pergunta, setPergunta] = useState("");
   const [resposta, setResposta] = useState("");
-  const [alternativa, setAlternativa] = useState('');
+  const [alternativa, setAlternativa] = useState([]);
   const [dica, setDica] = useState("");
   const [video, setVideo] = useState("");
   const [imagem, setImagem] = useState("");
   const[fase,setFase] = useState("");
   const [error, setError] = useState("");
-  const history = useHistory();
+  // const history = useHistory();
   async function cadastrarQuestoes(e) {
 
     e.preventDefault();
@@ -73,7 +73,7 @@ export default function Questao() {
       setCarregando(true)
       await api.post("/questao", data)
       alert("Questão cadastrada com Sucesso")
-      history.push('/perfil')
+      // history.push('/quiz')
     } catch (error) {
       console.log(error.response.data)
       setError("Houve um erro ao cadastrar a questão, tente novamente")
