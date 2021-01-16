@@ -20,12 +20,11 @@ export default function Quiz() {
           ...question,
           answers:[
             question.resposta,
-          question.alternativa.split(',')
-           // ...question.alternativa
+            //Pega as alternativas e separa onde tem virgula
+          ...question.alternativa.split(',',3)
           ].sort(()=>Math.random()-0.5)
         }))
         setQuestions(questions)
-        console.log(resposta.data)
       } catch (error) {
         console.log(error.response);
       }
