@@ -28,16 +28,41 @@ const useStyles = makeStyles((theme) => ({
     width: '100%', // Fix IE 11 issue.
     marginTop: theme.spacing(1),
   },
-  submit: {
+  submit1: {
     margin: theme.spacing(3, 0, 2),
     color:"white",
     background:"#3B82F6",
     height:"60px",
-    width:"100%",
+    width:"250px",
+  },
+  submit2: {
+    margin: theme.spacing(3, 0, 2),
+    color:"white",
+    background:"#3B82F6",
+    height:"60px",
+    width:"250px",
   },
   contain:{
-      marginTop:"50px",
-      marginBottom:"60px"
+      marginTop:"10%",
+      marginBottom:"10%"
+  },
+  tipografia:{
+    fontSize:"50px",
+    fontFamily:"'Bodoni Moda', serifa;",
+    fontWeight:"Bold",
+    color:"#4550B9",
+  },
+  tipografia1:{
+    fontSize:"30px",
+    fontFamily:"Playfair Display', serif",
+    fontWeight:"Bold",
+    color:"#0033AB",
+  },
+  tipografia2:{
+    fontSize:"30px",
+    fontFamily:"Playfair Display', serif",
+    fontWeight:"Bold",
+    color:"#939499",
   }
 }));
 
@@ -55,16 +80,24 @@ export default function PaginaInicial() {
         <Avatar className={classes.avatar}>
           <img src={logo}/>
         </Avatar>
-        <Typography component="h1" variant="h5">
+        <Typography component="h1" variant="h5" className={classes.tipografia}>
           MaGeo
-        </Typography>                   
+        </Typography> 
+        <Typography component="h1" variant="h5" className={classes.tipografia1}>
+         Bem vindo ao MaGeo Quiz
+        
+        </Typography> 
+        <Typography component="h1" variant="h5" className={classes.tipografia2}>
+         Seu Jogo de Geometria Plana
+        </Typography>    
+      
         <Link to='/loginUsuario'>
           <Button
             type="submit"
             fullWidth
             variant="contained"
             color="primary"
-            className={classes.submit}
+            className={classes.submit1}
              >
                  Estudante
           </Button>
@@ -76,7 +109,7 @@ export default function PaginaInicial() {
             fullWidth
             variant="contained"
             color="primary"
-            className={classes.submit}
+            className={classes.submit2}
              >
               Administrador   
           </Button>
