@@ -4,7 +4,6 @@ import Navbar from '../Navbar';
 import api from '../../services/api';
 import ReactLoading from 'react-loading';
 import Questao from './Questao';
-
 export default function Quiz() {
 
   const [questions, setQuestions] = useState([]);
@@ -51,9 +50,9 @@ export default function Quiz() {
   return (
     <>
       <Navbar />
-      <div className="bg-purple-500 text-white flex 
+      <div className="bg-gray-900 text-white flex 
      justify-center items-center h-screen">
-         
+        
        {  questions.length > 0 ? 
          indexAtual>=questions.length?(
          <h1 className="text-3l text-white font-bold">Fim de Jogo!! Seu placar foi {pontuacao}!</h1>

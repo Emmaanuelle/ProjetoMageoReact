@@ -40,6 +40,8 @@ const useStyles = makeStyles((theme) => ({
   
 }));
 
+
+
 const DicaParaInput = withStyles((theme) => ({
   tooltip: {
     backgroundColor: '#f5f5f9',
@@ -73,6 +75,7 @@ export default function Questao() {
       setCarregando(true)
       await api.post("/questao", data)
       alert("Questão cadastrada com Sucesso")
+      setTimeout(()=>{window.location.reload()},300)  //recarregar a pagina
       // history.push('/quiz')
     } catch (error) {
       console.log(error.response.data)

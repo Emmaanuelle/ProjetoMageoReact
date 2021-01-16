@@ -43,8 +43,8 @@ const Routes = () => (
       <Route path="/loginUsuario" component={LoginUsuario}/>
       <Route path="/cadastro" component={Cadastro} />
       <Route path="/cadastroAdmin" component={CadastroAdmin}/>
-      <PrivateRoute path="/quiz" component={QuizReserva} />
-      <PrivateRoute path="/quiz2" component={Quiz}/>
+      <PrivateRoute path="/quiz2" component={QuizReserva} />
+      <PrivateRoute path="/quiz" component={Quiz}/>
       <PrivateRoute path="/ajuda" component={Ajuda} />
       <PrivateRoute path="/sobre" component={Sobre} />
       <PrivateRoute path="/explore" component={ExploreMais} />

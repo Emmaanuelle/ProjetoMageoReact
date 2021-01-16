@@ -1,4 +1,6 @@
 import React from "react";
+import CustomizedDialogs from "./dialog";
+import LinearWithValueLabel from "./Progresso";
 
 const Questao = ({ mostrarResposta, irParaProximaQuestao,handleAnswer, data: { pergunta, resposta, answers,video } }) => {
 
@@ -12,6 +14,8 @@ const Questao = ({ mostrarResposta, irParaProximaQuestao,handleAnswer, data: { p
                 </div>:
                 <></>
                  }
+                <CustomizedDialogs/>
+                <LinearWithValueLabel/>
                 <div className="bg-white text-purple-800 p-10 rounded-lg shadow">
                     <h3 className="text-2xl"
                         dangerouslySetInnerHTML={{ __html: pergunta }} />
