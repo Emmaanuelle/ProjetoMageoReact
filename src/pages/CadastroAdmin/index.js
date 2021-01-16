@@ -172,8 +172,8 @@ export default function CadastroAdmin() {
             Cadastrar
           </Button>
           <Grid container justify="center" alignItems="center">
-              <Link to='/'>
-                Ir para o login
+              <Link to='/loginAdmin'>
+                Ir para o Login
               </Link>
           </Grid>
         </form>

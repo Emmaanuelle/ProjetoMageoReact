@@ -3,10 +3,10 @@ import { BrowserRouter, Route, Switch, Redirect, Router } from "react-router-dom
 import Ajuda from "./pages/Ajuda";
 import Sobre from "./pages/Sobre";
 import ExploreMais from "./pages/ExploreMais";
-import Cadastro from "./pages/Cadastro";
+import CadastroUsuario from "./pages/CadastroUsuario";
 import Home from "./pages/Home";
 import Ranking from "./pages/Ranking";
-import Login from "./pages/Login";
+import LoginAdmin from "./pages/LoginAdmin";
 import Perfil from "./pages/Perfil";
 import Questao from "./pages/Questoes";
 import Quiz from "./pages/Quiz";
@@ -38,10 +38,11 @@ const Routes = () => (
     <Switch>
       
       
-      <Route path="/login" component={Login} />
+      
       <Route exact path="/" component={PaginaInicial} />
       <Route path="/loginUsuario" component={LoginUsuario}/>
-      <Route path="/cadastro" component={Cadastro} />
+      <Route path="/cadastroUsuario" component={CadastroUsuario} />
+      <Route path="/loginAdmin" component={LoginAdmin} />
       <Route path="/cadastroAdmin" component={CadastroAdmin}/>
       <PrivateRoute path="/quiz2" component={QuizReserva} />
       <PrivateRoute path="/quiz" component={Quiz}/>

@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Login() {
+export default function LoginAdmin() {
   const classes = useStyles();
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
@@ -118,7 +118,7 @@ export default function Login() {
             Entrar
           </Button>
           <Grid container justify="center" alignItems="center">
-              <Link to='/cadastro'>
+              <Link to='/cadastroAdmin'>
                 Fazer Cadastro
             </Link>
           </Grid>

@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function Cadastro() {
+export default function CadastroUsuario() {
   const classes = useStyles();
   const [nome, setNome] = useState("");
   const [sobrenome, setSobrenome] = useState("");
@@ -206,8 +206,8 @@ export default function Cadastro() {
             Cadastrar
           </Button>
           <Grid container justify="center" alignItems="center">
-              <Link to='/'>
-                Ir para o login
+              <Link to='/loginUsuario'>
+                Ir para o Login
               </Link>
           </Grid>
         </form>

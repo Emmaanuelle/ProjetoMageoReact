@@ -118,7 +118,7 @@ export default function LoginUsuario() {
             Entrar
           </Button>
           <Grid container justify="center" alignItems="center">
-              <Link to='/cadastro'>
+              <Link to='/cadastroUsuario'>
                 Fazer Cadastro
             </Link>
           </Grid>

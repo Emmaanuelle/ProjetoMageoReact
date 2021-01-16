@@ -69,7 +69,7 @@ export default function PaginaInicial() {
                  Estudante
           </Button>
           </Link>
-          <Link to='/login'>
+          <Link to='/loginAdmin'>
                  
           <Button
             type="submit"
