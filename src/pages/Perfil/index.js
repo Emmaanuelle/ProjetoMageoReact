@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Card, Grid, CardActionArea, CardContent, Typography } from '@material-ui/core'
+import { Container, Card, Grid, CardActionArea, CardContent, Typography, CardActions,Button } from '@material-ui/core';
 import Navbar from '../Navbar';
-import api from '../../services/api'
+import api from '../../services/api';
+import CustomizedDialogs from "./Dialog";
 import { makeStyles } from '@material-ui/core/styles';
+import { MenuItem, Select, InputLabel,} from "@material-ui/core";
 
 /* const useStyles = makeStyles((theme) => ({
     tamanhocard: {
@@ -41,7 +43,7 @@ function Perfil(props) {
             <Navbar />
             <Container>
                 <h2 style={{ margin: 20, color: '#098348' }}>Olá, {items.nome}</h2>
-            </Container>
+            
             <Grid container spacing={3}>
                 <Grid item xs={12}>
                     <Card>
@@ -49,7 +51,7 @@ function Perfil(props) {
                             <CardContent>
                                 <Typography gutterBottom variant="h5" component="h2">
                                     Dados do usuario
-                           </Typography>
+                                </Typography>
                                 <Typography gutterBottom variant="h5" component="h2">{items.nome} {items.sobrenome}
                                 </Typography>
                                 <Typography gutterBottom variant="h5" component="h2">{items.email}
@@ -60,9 +62,14 @@ function Perfil(props) {
                                 </Typography>
                                 <Typography gutterBottom variant="h5" component="h2">{items.escola}
                                 </Typography>
+                                
 
                             </CardContent>
+                            
                         </CardActionArea>
+                        <CardActions>
+                        <CustomizedDialogs/>    
+                        </CardActions>
 
                     </Card>
                 </Grid>
@@ -94,7 +101,7 @@ function Perfil(props) {
                     </Card>
                 </Grid>
             </Grid>
-
+            </Container>
         </>
 
     )

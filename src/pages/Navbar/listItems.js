@@ -10,8 +10,8 @@ export const mainListItems = (
         <ListItemText primary="Meu Perfil" /></Button>
     </ListItem>
     <ListItem button>
-      <Button fullWidth href='/categorias'>
-        <ListItemText primary="Categorias" /></Button>
+      <Button fullWidth href='/ranking'>
+        <ListItemText primary="Ranking" /></Button>
     </ListItem>
     <ListItem button>
       <Button fullWidth href='/explore'>

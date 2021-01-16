@@ -16,7 +16,7 @@ import CadastroAdmin from "./pages/CadastroAdmin";
 
 
 import { isAuthenticated} from "./services/auth";
-import Categorias from "./pages/Categorias";
+
 import QuizReserva from "./pages/Quiz/QuizReserva";
 import LoginUsuario from "./pages/LoginUsuario";
 
@@ -49,7 +49,6 @@ const Routes = () => (
       <PrivateRoute path="/ajuda" component={Ajuda} />
       <PrivateRoute path="/sobre" component={Sobre} />
       <PrivateRoute path="/explore" component={ExploreMais} />
-      <PrivateRoute path="/categorias" component={Categorias} />
       <PrivateRoute path="/questao" component={Questao} />
       <PrivateRoute path="/ranking" component={Ranking} />
       <PrivateRoute path="/perfil" component={Perfil} />

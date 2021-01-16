@@ -4,23 +4,28 @@ import Navbar from '../Navbar';
 import { makeStyles } from '@material-ui/core/styles';
 import { theme } from '../../theme';
 import Box from '@material-ui/core/Box';
-import logo from '../../images/imagen2.jpg'
+import logo from '../../images/imagen2.jpg';
+import SportsEsportsRoundedIcon from '@material-ui/icons/SportsEsportsRounded';
 const useStyles = makeStyles((theme) => ({
 
 
   heroButtons: {
     marginTop: theme.spacing(4),
+    marginBottom:60,
+  },
+  btn:{
+    
   },
   titulo: {
     textAlign: "center",
-    marginTop: 60,
+    marginTop: 0,
     fontSize: 30,
     color: "#769DE9",
     fontWeight: "bold"
   },
   tituloregra:{ 
   textAlign: "center",
-  marginTop: 60,
+  marginTop: 0,
   fontSize: 30,
   color: "#769DE9",
   fontWeight: "bold",
@@ -55,21 +60,7 @@ const Home = (props) => {
     <>
       <Navbar />
       <ThemeProvider theme={theme}>
-        <Container>
-
-         
-
-          <div className={classes.heroButtons}>
-            <Grid container spacing={2} justify="center">
-              <Grid item>
-                <Button variant="contained" color="primary" href='/quiz'>
-                  Start Quiz
-                  </Button>
-              </Grid>
-            </Grid>
-          </div>
-          <div>
-            
+        <Container>      
             <h1 className={classes.tituloregra}> Regras do Jogo</h1>
             <Box display="flex">
           <Box p={10} justifyContent="flex-start" >
@@ -82,12 +73,11 @@ const Home = (props) => {
                 <li> III-Se jogador acertar as 5 primeiras perguntas, recebe 50 pontos + o dobro de pontos ganho e vence o 1º desafio da fase. </li>
                 <li> IV- Se jogador vencer as 5 próximas perguntas, recebe 50 pontos + o dobro de pontos ganho e vence o 2º desafio da fase. </li>
                 <li> V-  Ao vencer os 2 desafios o jogador conquista  o emblema da fase. </li>
-            
               </ul>
           </Box>
           
         </Box>
-        <Grid container spacing={5} className={classes.gridmargen}>
+       {/*  <Grid container spacing={5} className={classes.gridmargen}>
               <Grid item xs={12} sm={4}>
                      <Card style={cardStyle}>
                        <CardActionArea>
@@ -123,8 +113,16 @@ const Home = (props) => {
                         </CardActionArea>
                     </Card> 
                 </Grid>
+            </Grid> */}
+            <div className={classes.heroButtons}>
+            <Grid container spacing={2} justify="center">
+              <Grid item>
+                <Button variant="contained" color="primary" href='/quiz' size="large" className={classes.btn} startIcon={<SportsEsportsRoundedIcon/>}>
+                  Start Quiz
+                  </Button>
+              </Grid>
             </Grid>
-            
+          </div>
       
             <h1 className={classes.titulo}> Fases do Quiz</h1>
             <Box display="flex">
@@ -173,13 +171,6 @@ const Home = (props) => {
               </Box>
 
             </Box>
-
-
-
-
-
-
-          </div>
         </Container>
       </ThemeProvider>
     </>
