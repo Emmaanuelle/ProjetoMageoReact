@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect, Router } from "react-router-dom";
 import Ajuda from "./pages/Ajuda";
 import Sobre from "./pages/Sobre";
 import ExploreMais from "./pages/ExploreMais";
@@ -11,6 +11,8 @@ import Perfil from "./pages/Perfil";
 import Questao from "./pages/Questoes";
 import Quiz from "./pages/Quiz";
 import ErrorPage from "./pages/Error";
+import PaginaInicial from "./pages/PaginaInicial";
+import CadastroAdmin from "./pages/CadastroAdmin";
 
 
 import { isAuthenticated} from "./services/auth";
@@ -36,9 +38,11 @@ const Routes = () => (
     <Switch>
       
       
-      <Route exact path="/" component={Login} />
+      <Route path="/login" component={Login} />
+      <Route exact path="/" component={PaginaInicial} />
       <Route path="/loginUsuario" component={LoginUsuario}/>
       <Route path="/cadastro" component={Cadastro} />
+      <Route path="/cadastroAdmin" component={CadastroAdmin}/>
       <PrivateRoute path="/quiz" component={QuizReserva} />
       <PrivateRoute path="/quiz2" component={Quiz}/>
       <PrivateRoute path="/ajuda" component={Ajuda} />
