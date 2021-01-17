@@ -1,16 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import MuiDialogTitle from '@material-ui/core/DialogTitle';
 import MuiDialogContent from '@material-ui/core/DialogContent';
-import MuiDialogActions from '@material-ui/core/DialogActions';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
 import { MenuItem,  InputLabel} from "@material-ui/core";
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
+import api from '../../services/api';
 
 const styles = (theme) => ({
   root: {
@@ -45,15 +45,41 @@ const DialogContent = withStyles((theme) => ({
   },
 }))(MuiDialogContent);
 
-const DialogActions = withStyles((theme) => ({
-  root: {
-    margin: 0,
-    padding: theme.spacing(1),
-  },
-}))(MuiDialogActions);
 
-export default function CustomizedDialogs() {
+export default function EditarDialog(props) {
+  const user = props.user
+  console.log(user);
+  const [nome, setNome] = useState(user.nome);
+  const [sobrenome, setSobrenome] = useState(user.sobrenome);
+  const [email, setEmail] = useState(user.email);
+  const [senha, setSenha] = useState('');
+  const [dataNascimento, setdataNascimento] = useState(user.dataNascimento);
+  const[ano_escolar,setAno_escolar]= useState(user.ano_escolar)
+  const[escola, setEscola] = useState(user.escola)
+  const [error, setError] = useState('');
+  const [carregar,setCarregando] = useState(false);
   const [open, setOpen] = React.useState(false);
+
+  async function editar(e) {
+
+    e.preventDefault();
+
+    const data = { nome, sobrenome,email, senha, dataNascimento, ano_escolar, escola };
+    try {
+      setCarregando(true);
+      await api.put(`/user/${user.id}`, data)
+      alert("Realizado com Sucesso")
+    } catch (error) {
+      console.log(error.response.status);
+      console.log(error.response)
+      if(error.response.status === 400){
+        setError(error.response.data.message.error)
+      }else{
+        setError("Houve Problema ao realizar o cadastro")
+      }
+    }
+  }
+
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -73,9 +99,7 @@ export default function CustomizedDialogs() {
         </DialogTitle>
         <DialogContent dividers>
 
-        <form /* className={classes.form} */ /* onSubmit={cadastrar} */>
-        {/* /{error && <p className='error'>{error}</p>} */}
-        
+        <form  onSubmit={editar} >        
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
@@ -87,8 +111,8 @@ export default function CustomizedDialogs() {
                 id="firstName"
                 label="Nome"
                 autoFocus
-               /*  value={nome}
-                onChange={e => setNome(e.target.value)} */
+                value={nome}
+                onChange={e => setNome(e.target.value)} 
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -100,8 +124,8 @@ export default function CustomizedDialogs() {
                 label="Sobrenome"
                 name="sobrenome"
                 autoComplete="lname"
-               /*  value={sobrenome}
-                onChange={e => setSobrenome(e.target.value)} */
+              value={sobrenome}
+                onChange={e => setSobrenome(e.target.value)} 
               />
             </Grid>
             <Grid item xs={12}>
@@ -114,8 +138,8 @@ export default function CustomizedDialogs() {
                 type="email"
                 name="email"
                 autoComplete="email"
-               /*  value={email}
-                onChange={e => setEmail(e.target.value)} */
+                 value={email}
+                onChange={e => setEmail(e.target.value)} 
               />
             </Grid>
             <Grid item xs={12}>
@@ -127,13 +151,13 @@ export default function CustomizedDialogs() {
                 label="dataNascimento"
                 type="date"
                 autoComplete="dataNascimento"
-               /*  value={dataNascimento}
-                onChange={e => setdataNascimento(e.target.value)} */
+                 value={dataNascimento}
+                onChange={e => setdataNascimento(e.target.value)} 
               />
             </Grid>
           
             <Grid item xs={12}>
-            <TextField id="Serie" /* value={ano_escolar} onChange={e => setAno_escolar(e.target.value)} */ variant="outlined" select fullWidth label="selecione o ano" >
+            <TextField id="Serie"  value={ano_escolar} onChange={e => setAno_escolar(e.target.value)}  variant="outlined" select fullWidth label="selecione o ano" >
             <InputLabel id="demo-simple-select-helper-label">Selecione o Ano</InputLabel>
                   <MenuItem value={"6º Ano"}> 6º Ano</MenuItem>
                   <MenuItem value={"7º Ano"}> 7º Ano</MenuItem>
@@ -152,8 +176,8 @@ export default function CustomizedDialogs() {
                 id="escola"
                 label="Escola"
                 name="escola"
-                /* value={escola}
-                onChange={e => setEscola(e.target.value)} */
+                 value={escola}
+                onChange={e => setEscola(e.target.value)} 
               />
             </Grid>
             <Grid item xs={12}>
@@ -166,8 +190,8 @@ export default function CustomizedDialogs() {
                 type="password"
                 id="senha"
                 autoComplete="current-password"
-               /*  value={senha}
-                onChange={e => setSenha(e.target.value)} */
+                 value={senha}
+                onChange={e => setSenha(e.target.value)} 
               />
             </Grid>
           </Grid>
@@ -185,9 +209,7 @@ export default function CustomizedDialogs() {
          
          
         </DialogContent>
-        <DialogActions>
-        
-        </DialogActions>
+
       </Dialog>
     </div>
   );

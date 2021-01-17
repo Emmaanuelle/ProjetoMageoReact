@@ -2,45 +2,31 @@ import React, { useState, useEffect } from 'react';
 import { Container, Card, Grid, CardActionArea, CardContent, Typography, CardActions } from '@material-ui/core';
 import Navbar from '../Navbar';
 import api from '../../services/api';
-import CustomizedDialogs from "./Dialog";
+import EditarDialog from "./EditarDialog";
 
-/* const useStyles = makeStyles((theme) => ({
-    tamanhocard: {
-        width: '100%'
-    }
-}))
- */
-
-
-
-
-
-function Perfil(props) {
-    const [items, setItems] = useState([])
+function Perfil() {
+    const [perfilUsuario, setPerfilUsuario] = useState([])
     useEffect(() => {
         const email = localStorage.getItem('email')
-        const getItems = async () => {
+        const getPerfilUsuario = async () => {
             try {
                 const response = await api.get('/perfil', { headers: { email: email } });
-                setItems(response.data)
+                setPerfilUsuario(response.data)
             } catch (error) {
                 console.log(error);
                 alert("Erro em carregar os dados")
             }
         }
-        getItems()
+        getPerfilUsuario()
     }, []);
-
-
-
-    const datanascimento = new Date(items.dataNascimento);
-    console.log(datanascimento)
-
+    
+    const diaNascimento = new Date(perfilUsuario.dataNascimento);
+   
     return (
         <>
             <Navbar />
             <Container>
-                <h2 style={{ margin: 20, color: '#098348' }}>Olá, {items.nome}</h2>
+                <h2 style={{ margin: 20, color: '#098348' }}>Olá, {perfilUsuario.nome}</h2>
             
             <Grid container spacing={3}>
                 <Grid item xs={12}>
@@ -50,15 +36,15 @@ function Perfil(props) {
                                 <Typography gutterBottom variant="h5" component="h2">
                                     Dados do usuario
                                 </Typography>
-                                <Typography gutterBottom variant="h5" component="h2">{items.nome} {items.sobrenome}
+                                <Typography gutterBottom variant="h5" component="h2">{perfilUsuario.nome} {perfilUsuario.sobrenome}
                                 </Typography>
-                                <Typography gutterBottom variant="h5" component="h2">{items.email}
+                                <Typography gutterBottom variant="h5" component="h2">{perfilUsuario.email}
                                 </Typography>
-                                <Typography gutterBottom variant="h5" component="h2">{datanascimento.toDateString()}
+                                <Typography gutterBottom variant="h5" component="h2">{diaNascimento.toUTCString().substring(0,17)}
                                 </Typography>
-                                <Typography gutterBottom variant="h5" component="h2">{items.ano_escolar}
+                                <Typography gutterBottom variant="h5" component="h2">{perfilUsuario.ano_escolar}
                                 </Typography>
-                                <Typography gutterBottom variant="h5" component="h2">{items.escola}
+                                <Typography gutterBottom variant="h5" component="h2">{perfilUsuario.escola}
                                 </Typography>
                                 
 
@@ -66,7 +52,7 @@ function Perfil(props) {
                             
                         </CardActionArea>
                         <CardActions>
-                        <CustomizedDialogs/>    
+                        <EditarDialog user={perfilUsuario}/>    
                         </CardActions>
 
                     </Card>
