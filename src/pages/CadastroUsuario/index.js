@@ -11,7 +11,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import ReactLoading from 'react-loading';
 import logo from '../../images/icons/logo.svg'
-import { MenuItem, Select, InputLabel,} from "@material-ui/core";
+import { MenuItem, InputLabel,} from "@material-ui/core";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -81,7 +81,7 @@ export default function CadastroUsuario() {
       <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
-          <img src={logo}/>
+        <img src={logo} alt='Logo do Projeto Mageo' />
         </Avatar>
         <Typography component="h1" variant="h5">
           Cadastro

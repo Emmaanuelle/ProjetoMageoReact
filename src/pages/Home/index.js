@@ -1,14 +1,13 @@
 import React from 'react';
-import { Button, Container, Grid, ThemeProvider, Card, CardMedia, CardActionArea, CardContent, Typography, CardActions } from '@material-ui/core'
+import { Button, Container, Grid, ThemeProvider } from '@material-ui/core'
 import Navbar from '../Navbar';
 import { makeStyles } from '@material-ui/core/styles';
 import { theme } from '../../theme';
 import Box from '@material-ui/core/Box';
 import logo from '../../images/imagen2.jpg';
 import SportsEsportsRoundedIcon from '@material-ui/icons/SportsEsportsRounded';
+
 const useStyles = makeStyles((theme) => ({
-
-
   heroButtons: {
     marginTop: theme.spacing(4),
     marginBottom:60,
@@ -46,15 +45,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 const Home = (props) => {
   const classes = useStyles();
-  var cardStyle = {
-    display: 'block',
-    width: '300px',
-    // transitionDuration: '0.3s',
-    height: '300px',
-     marginLeft: 50,
-    
-   
-}
 
   return (
     <>
@@ -128,7 +118,7 @@ const Home = (props) => {
             <Box display="flex">
 
               <Box p={10} justifyContent="flex-start" >
-                <img src={logo} width="300px" />
+                <img src={logo} width="300px"  alt='Descrição da Imagem' />
               </Box>
               <Box p={10} justifyContent="flex-end" >
                 <h1> Triângulo</h1>
@@ -144,14 +134,14 @@ const Home = (props) => {
                 <p> pré-elaborados. O formulário possui em sua estrutura opções de perguntas os em cada pergunta desenvolvida.</p>
               </Box>
               <Box p={6} justifyContent="flex-end" >
-                <img src={logo} width="300px" />
+                <img src={logo} width="300px"  alt='Descrição da Imagem' />
               </Box>
 
             </Box>
             <Box display="flex">
 
               <Box p={10} justifyContent="flex-start" >
-                <img src={logo} width="300px" />
+                <img src={logo} width="300px" alt='Descrição da Imagem' />
               </Box>
               <Box p={10} justifyContent="flex-end" >
                 <h1> Quadrado</h1>
@@ -167,7 +157,7 @@ const Home = (props) => {
                 <p> pré-elaborados. O formulário possui em sua estrutura opções de perguntas os em cada pergunta desenvolvida.</p>
               </Box>
               <Box p={6} justifyContent="flex-end" >
-                <img src={logo} width="300px" />
+                <img src={logo} width="300px"   alt='Descrição da Imagem'/>
               </Box>
 
             </Box>

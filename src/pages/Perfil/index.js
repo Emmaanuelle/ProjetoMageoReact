@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Card, Grid, CardActionArea, CardContent, Typography, CardActions,Button } from '@material-ui/core';
+import { Container, Card, Grid, CardActionArea, CardContent, Typography, CardActions } from '@material-ui/core';
 import Navbar from '../Navbar';
 import api from '../../services/api';
 import CustomizedDialogs from "./Dialog";
-import { makeStyles } from '@material-ui/core/styles';
-import { MenuItem, Select, InputLabel,} from "@material-ui/core";
 
 /* const useStyles = makeStyles((theme) => ({
     tamanhocard: {

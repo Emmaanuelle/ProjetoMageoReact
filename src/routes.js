@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Switch, Redirect, Router } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import Ajuda from "./pages/Ajuda";
 import Sobre from "./pages/Sobre";
 import ExploreMais from "./pages/ExploreMais";

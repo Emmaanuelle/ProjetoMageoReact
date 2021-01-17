@@ -126,7 +126,7 @@ export default function Navbar() {
             <MenuIcon />
           </IconButton>
           <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
-          <Link to='/home'> <img src={logo} className={classes.img}/></Link>
+          <Link to='/home'> <img src={logo} className={classes.img} alt='Logo do Projeto Mageo' /></Link>
           </Typography>
           <Badge color="secondary">
             <Button className={classes.botaosair} onClick={handleLogout}>

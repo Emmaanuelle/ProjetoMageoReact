@@ -11,7 +11,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import ReactLoading from 'react-loading';
 import logo from '../../images/icons/logo.svg'
-import { MenuItem, Select, InputLabel,} from "@material-ui/core";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -46,9 +45,6 @@ export default function CadastroAdmin() {
   const [sobrenome, setSobrenome] = useState("");
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
-  const [dataNascimento, setdataNascimento] = useState("");
-  const[ano_escolar,setAno_escolar]= useState("")
-  const[escola, setEscola] = useState("")
   const [error, setError] = useState("");
   const [carregar,setCarregando] = useState(false);
 
@@ -59,7 +55,7 @@ export default function CadastroAdmin() {
 
     e.preventDefault();
 
-    const data = { nome, sobrenome,email, senha, dataNascimento, ano_escolar, escola };
+    const data = { nome, sobrenome,email, senha };
     try {
       setCarregando(true);
       await api.post("/user", data)
@@ -81,7 +77,7 @@ export default function CadastroAdmin() {
       <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
-          <img src={logo}/>
+          <img src={logo} alt='Logo do Projeto Mageo' />
         </Avatar>
         <Typography component="h1" variant="h5">
           Cadastro

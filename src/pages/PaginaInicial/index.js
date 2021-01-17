@@ -1,18 +1,14 @@
-import React , { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
-import api from "../../services/api";
-import {login} from "../../services/auth";
+import React  from "react";
+import { Link } from "react-router-dom";
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import ReactLoading from 'react-loading';
 import logo from '../../images/icons/logo.svg'
+
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(8),
@@ -68,9 +64,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function PaginaInicial() {
   const classes = useStyles();
-  const history = useHistory();
-  
-  
+
   
 
   return (
@@ -78,7 +72,7 @@ export default function PaginaInicial() {
       <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
-          <img src={logo}/>
+          <img src={logo} alt='Logo do Projeto Mageo' />
         </Avatar>
         <Typography component="h1" variant="h5" className={classes.tipografia}>
           MaGeo
