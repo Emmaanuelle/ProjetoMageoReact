@@ -79,7 +79,13 @@ export default function Questao() {
       // history.push('/quiz')
     } catch (error) {
       console.log(error.response.data)
-      setError("Houve um erro ao cadastrar a questão, tente novamente")
+      if(error.response.data.error.message === 'E_INVALID_JWT_TOKEN: invalid signature'){
+        setError("Você não tem permissão para cadastrar uma questão")
+
+      }else{
+        setError("Houve um erro ao cadastrar a questão, tente novamente")
+
+      }
     }
 
   }

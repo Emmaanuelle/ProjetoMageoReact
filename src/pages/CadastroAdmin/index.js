@@ -41,8 +41,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function CadastroAdmin() {
   const classes = useStyles();
-  const [nome, setNome] = useState("");
-  const [sobrenome, setSobrenome] = useState("");
+  const [nome_administrador, setNome] = useState("");
+  const [sobrenome_administrador, setSobrenome] = useState("");
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [error, setError] = useState("");
@@ -55,10 +55,10 @@ export default function CadastroAdmin() {
 
     e.preventDefault();
 
-    const data = { nome, sobrenome,email, senha };
+    const data = { nome_administrador, sobrenome_administrador,email, senha };
     try {
       setCarregando(true);
-      await api.post("/user", data)
+      await api.post("/admin", data)
       alert("Cadastro Realizado com Sucesso")
       history.push("/");
     } catch (error) {
@@ -97,7 +97,7 @@ export default function CadastroAdmin() {
                 id="firstName"
                 label="Nome"
                 autoFocus
-                value={nome}
+                value={nome_administrador}
                 onChange={e => setNome(e.target.value)}
               />
             </Grid>
@@ -110,7 +110,7 @@ export default function CadastroAdmin() {
                 label="Sobrenome"
                 name="sobrenome"
                 autoComplete="lname"
-                value={sobrenome}
+                value={sobrenome_administrador}
                 onChange={e => setSobrenome(e.target.value)}
               />
             </Grid>

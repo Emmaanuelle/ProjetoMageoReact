@@ -50,7 +50,7 @@ export default function LoginAdmin() {
     try {
           localStorage.setItem('email',email)
           setCarregando(true);
-          const resposta = await api.post("/login", data);
+          const resposta = await api.post("/loginAdmin", data);
           login(resposta.data.token)
           alert("Login Realizado com Sucesso");
           history.push("/home");
