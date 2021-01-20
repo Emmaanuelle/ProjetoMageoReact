@@ -60,7 +60,7 @@ export default function CadastroAdmin() {
       setCarregando(true);
       await api.post("/admin", data)
       alert("Cadastro Realizado com Sucesso")
-      history.push("/");
+      history.push("/loginAdmin");
     } catch (error) {
       console.log(error.response.status);
       console.log(error.response)

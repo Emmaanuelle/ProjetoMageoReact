@@ -12,6 +12,7 @@ function Perfil() {
             try {
                 const response = await api.get('/perfil', { headers: { email: email } });
                 setPerfilUsuario(response.data)
+                console.log(response.data)
             } catch (error) {
                 console.log(error);
                 alert("Erro em carregar os dados")
@@ -19,72 +20,84 @@ function Perfil() {
         }
         getPerfilUsuario()
     }, []);
-    
-    const diaNascimento = new Date(perfilUsuario.dataNascimento);
-   
+    const dados = perfilUsuario.map(data => {
+        const diaNascimento = new Date(data.dataNascimento);
+        localStorage.setItem('user_id', data.id)
+        return (
+            <>
+                <Typography gutterBottom variant="h5" component="h2">{data.nome} {data.sobrenome}
+                </Typography>
+                <Typography gutterBottom variant="h5" component="h2">{data.email}
+                </Typography>
+                <Typography gutterBottom variant="h5" component="h2">{diaNascimento.toUTCString().substring(0, 17)}
+                </Typography>
+                <Typography gutterBottom variant="h5" component="h2">{data.ano_escolar}
+                </Typography>
+                <Typography gutterBottom variant="h5" component="h2">{data.escola}
+                </Typography>
+            </>
+        )
+    })
     return (
         <>
             <Navbar />
             <Container>
                 <h2 style={{ margin: 20, color: '#098348' }}>Olá, {perfilUsuario.nome}</h2>
-            
-            <Grid container spacing={3}>
-                <Grid item xs={12}>
-                    <Card>
-                        <CardActionArea>
-                            <CardContent>
-                                <Typography gutterBottom variant="h5" component="h2">
-                                    Dados do usuario
-                                </Typography>
-                                <Typography gutterBottom variant="h5" component="h2">{perfilUsuario.nome} {perfilUsuario.sobrenome}
-                                </Typography>
-                                <Typography gutterBottom variant="h5" component="h2">{perfilUsuario.email}
-                                </Typography>
-                                <Typography gutterBottom variant="h5" component="h2">{diaNascimento.toUTCString().substring(0,17)}
-                                </Typography>
-                                <Typography gutterBottom variant="h5" component="h2">{perfilUsuario.ano_escolar}
-                                </Typography>
-                                <Typography gutterBottom variant="h5" component="h2">{perfilUsuario.escola}
-                                </Typography>
-                                
 
-                            </CardContent>
-                            
-                        </CardActionArea>
-                        <CardActions>
-                        <EditarDialog user={perfilUsuario}/>    
-                        </CardActions>
+                <Grid container spacing={3}>
+                    <Grid item xs={12}>
+                        <Card>
+                            <CardActionArea>
+                                <CardContent>
+                                    <Typography gutterBottom variant="h5" component="h2">
+                                        Dados do usuario
+                                </Typography>
+                                    {dados}
 
-                    </Card>
-                </Grid>
+                                </CardContent>
 
-                <Grid item xs={12} sm={6}>
-                    <Card>
-                        <CardActionArea>
-                            <CardContent>
-                                <Typography gutterBottom variant="h5" component="h2">
-                                    Ranking
+                            </CardActionArea>
+                            <CardActions>
+                                <EditarDialog user={perfilUsuario} />
+                            </CardActions>
+
+                        </Card>
+                    </Grid>
+
+                    <Grid item xs={12} sm={6}>
+                        <Card>
+                            <CardActionArea>
+                                <CardContent>
+                                    <Typography gutterBottom variant="h5" component="h2">
+                                        Ranking
                            </Typography>
-                            </CardContent>
-                        </CardActionArea>
 
-                    </Card>
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                    <Card >
-                        <CardActionArea>
-                            <CardContent>
-                                <Typography gutterBottom variant="h5" component="h2" >
-                                    Pontuação
+                                    <Typography gutterBottom variant="h5" component="h2">
+                                        {perfilUsuario.map(data => {
+                                            return (<p>Pontos: {data.pontos}</p>)
+                                        })}
+                                    </Typography>
+
+                                </CardContent>
+                            </CardActionArea>
+
+                        </Card>
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+                        <Card >
+                            <CardActionArea>
+                                <CardContent>
+                                    <Typography gutterBottom variant="h5" component="h2" >
+                                        Pontuação
                            </Typography>
-                                <Typography gutterBottom variant="h5" component="h2">
-                                    Conquistas
+                                    <Typography gutterBottom variant="h5" component="h2">
+                                        Conquistas
                            </Typography>
-                            </CardContent>
-                        </CardActionArea>
-                    </Card>
+                                </CardContent>
+                            </CardActionArea>
+                        </Card>
+                    </Grid>
                 </Grid>
-            </Grid>
             </Container>
         </>
 

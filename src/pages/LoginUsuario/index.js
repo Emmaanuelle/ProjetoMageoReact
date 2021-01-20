@@ -53,7 +53,8 @@ export default function LoginUsuario() {
           const resposta = await api.post("/login", data);
           login(resposta.data.token)
           alert("Login Realizado com Sucesso");
-          history.push("/home");
+          //history.push("/home");
+          history.push("/perfil");
       } catch (error) {
           //console.log(error.response.data.message.error)
           console.log(error.response.data)

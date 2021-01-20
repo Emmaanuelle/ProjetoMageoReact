@@ -49,7 +49,8 @@ const DialogActions = withStyles((theme) => ({
   },
 }))(MuiDialogActions);
 
-export default function CustomizedDialogs() {
+export default function CustomizedDialogs(props) {
+  const dica = props.dica
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -71,9 +72,7 @@ export default function CustomizedDialogs() {
         <DialogContent dividers>
          
           <Typography gutterBottom>
-            Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel
-            scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus
-            auctor fringilla.
+           {dica}
           </Typography>
         </DialogContent>
         <DialogActions>

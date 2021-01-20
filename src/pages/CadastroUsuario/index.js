@@ -64,7 +64,7 @@ export default function CadastroUsuario() {
       setCarregando(true);
       await api.post("/user", data)
       alert("Cadastro Realizado com Sucesso")
-      history.push("/");
+      history.push("/loginUsuario");
     } catch (error) {
       console.log(error.response.status);
       console.log(error.response)

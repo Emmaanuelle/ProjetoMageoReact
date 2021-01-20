@@ -46,6 +46,7 @@ function Ranking() {
             try {
                 const response = await api.get('/ranking');
                 setPontuacao(response.data)
+                console.log(response.data)
             } catch (error) {
                 console.log(error);
                 alert("Erro em carregar os dados")
@@ -72,7 +73,7 @@ function Ranking() {
           {pontuacao.map((infopontuacao) => (
             <StyledTableRow key={infopontuacao.id}>
               <StyledTableCell component="th" scope="row">
-                {infopontuacao.user_id}
+                {infopontuacao.nome}
               </StyledTableCell>
               <StyledTableCell align="right">{infopontuacao.pontos}</StyledTableCell>
               
