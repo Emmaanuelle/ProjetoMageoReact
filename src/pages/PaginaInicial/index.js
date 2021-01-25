@@ -10,6 +10,9 @@ import Container from '@material-ui/core/Container';
 import logo from '../../images/icons/logo.svg'
 
 const useStyles = makeStyles((theme) => ({
+  contain:{
+    background:"#769DE9",
+  },
   paper: {
     marginTop: theme.spacing(8),
     display: 'flex',
@@ -46,19 +49,22 @@ const useStyles = makeStyles((theme) => ({
     fontSize:"50px",
     fontFamily:"'Bodoni Moda', serifa;",
     fontWeight:"Bold",
-    color:"#4550B9",
+    color:"#15D08C",
+   
   },
   tipografia1:{
-    fontSize:"30px",
-    fontFamily:"Playfair Display', serif",
-    fontWeight:"Bold",
-    color:"#0033AB",
+    fontSize:"35px",
+    fontFamily:"'Imbue', serif",
+    //fontWeight:"Bold",
+    color:"#061B68",
+    
   },
   tipografia2:{
-    fontSize:"30px",
-    fontFamily:"Playfair Display', serif",
-    fontWeight:"Bold",
-    color:"#939499",
+    fontSize:"25px",
+    fontFamily:"'Playfair Display', serif",
+    //fontWeight:"Bold",
+    color:"#061B68",
+    marginBottom:"20px"
   }
 }));
 

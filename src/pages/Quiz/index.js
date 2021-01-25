@@ -21,6 +21,7 @@ export default function Quiz() {
 
   const [questions, setQuestions] = useState([]);
   const [pontos, setPontuacao] = useState(0);
+  const[acerto, setAcerto] = useState(0);
   const [indexAtual, setIndexAtual] = useState(0);
   const [mostrarResposta,setMostrarResposta]= useState(false)
   const [user_id,setUserId] = useState(localStorage.getItem('user_id'));
@@ -48,7 +49,8 @@ export default function Quiz() {
       //verifica se a resposta está correta
       if (answer === questions[indexAtual].resposta) {
         //Aumenta a pontuação
-        setPontuacao(pontos + 1)
+        setAcerto(acerto + 1)
+        setPontuacao(pontos + 10)
       }
     }
     setMostrarResposta(true)
@@ -70,6 +72,14 @@ export default function Quiz() {
     }
   }
   //const alternativa = questions.length > 0 ?questions[0].alternativa.split(","):['Quiz','Em','Construção'];
+ 
+
+function desafiofases (){
+  if(indexAtual == 4  &&  acerto === 5 ){
+    setPontuacao(pontos*2);
+  }
+}
+
   return (
     <>
       <Navbar />
@@ -77,7 +87,9 @@ export default function Quiz() {
      justify-center items-center h-screen">
         
        {  questions.length > 0 ? 
-         indexAtual>=questions.length?(
+          indexAtual>=questions.length?(
+          //desafiofases?(
+          
           <Card>
           <CardMedia
           className={classes.media}
