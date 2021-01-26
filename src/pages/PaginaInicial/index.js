@@ -12,6 +12,9 @@ import logo from '../../images/icons/logo.svg'
 const useStyles = makeStyles((theme) => ({
   contain:{
     background:"#769DE9",
+
+    marginTop:"10%",
+    marginBottom:"10%"
   },
   paper: {
     marginTop: theme.spacing(8),
@@ -40,10 +43,6 @@ const useStyles = makeStyles((theme) => ({
     background:"#3B82F6",
     height:"60px",
     width:"250px",
-  },
-  contain:{
-      marginTop:"10%",
-      marginBottom:"10%"
   },
   tipografia:{
     fontSize:"50px",

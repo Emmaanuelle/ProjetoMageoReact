@@ -75,7 +75,7 @@ export default function Quiz() {
  
 
 function desafiofases (){
-  if(indexAtual == 4  &&  acerto === 5 ){
+  if(indexAtual === 4  &&  acerto === 5 ){
     setPontuacao(pontos*2);
   }
 }

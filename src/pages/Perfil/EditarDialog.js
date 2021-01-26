@@ -69,6 +69,7 @@ export default function EditarDialog(props) {
       setCarregando(true);
       await api.put(`/user/${user.id}`, data)
       alert("Realizado com Sucesso")
+      setTimeout(()=>{window.location.reload()},200)
     } catch (error) {
       console.log(error.response.status);
       console.log(error.response)
@@ -98,7 +99,7 @@ export default function EditarDialog(props) {
          Editar Dados
         </DialogTitle>
         <DialogContent dividers>
-
+      {error&&<p>{error}</p>}
         <form  onSubmit={editar} >        
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>

@@ -20,33 +20,18 @@ function Perfil() {
         }
         getPerfilUsuario()
     }, []);
-   /*  const dados = perfilUsuario.map(data => {
-        const diaNascimento = new Date(data.dataNascimento);
-        localStorage.setItem('user_id', data.id)
-        return (
-            <>
-                <Typography gutterBottom variant="h5" component="h2">{data.nome} {data.sobrenome}
-                </Typography>
-                <Typography gutterBottom variant="h5" component="h2">{data.email}
-                </Typography>
-                <Typography gutterBottom variant="h5" component="h2">{diaNascimento.toUTCString().substring(0, 17)}
-                </Typography>
-                <Typography gutterBottom variant="h5" component="h2">{data.ano_escolar}
-                </Typography>
-                <Typography gutterBottom variant="h5" component="h2">{data.escola}
-                </Typography>
-            </>
-        )
-    }) */
+    localStorage.setItem('user_id', perfilUsuario.id)
+    const diaNascimento = new Date(perfilUsuario.dataNascimento);  
     return (
         <>
             <Navbar />
             <Container>
                 <h2 style={{ margin: 20, color: '#098348' }}>Olá, {perfilUsuario.nome}</h2>
-
+                {perfilUsuario !== undefined || perfilUsuario.length !==0?<>
                 <Grid container spacing={3}>
                     <Grid item xs={12}>
-                        <Card>
+                      
+                        <Card key={perfilUsuario.id}>
                             <CardActionArea>
                                 <CardContent>
                                     <Typography gutterBottom variant="h5" component="h2">
@@ -57,8 +42,8 @@ function Perfil() {
                                 </Typography>
                                 <Typography gutterBottom variant="h5" component="h2">{perfilUsuario.email}
                                 </Typography>
-                               {/*  <Typography gutterBottom variant="h5" component="h2">{diaNascimento.toUTCString().substring(0, 17)}
-                                </Typography> */}
+                                <Typography gutterBottom variant="h5" component="h2">{diaNascimento.toUTCString().substring(0, 17)}
+                                </Typography>
                                 <Typography gutterBottom variant="h5" component="h2">{perfilUsuario.ano_escolar}
                                 </Typography>
                                 <Typography gutterBottom variant="h5" component="h2">{perfilUsuario.escola}
@@ -83,9 +68,10 @@ function Perfil() {
                            </Typography>
 
                                     <Typography gutterBottom variant="h5" component="h2">
-                                       {/*  {perfilUsuario.map(data => {
-                                            return (<p>Pontos: {data.pontos}</p>)
-                                        })} */}
+                                        {perfilUsuario.ranking !==undefined?
+                                        perfilUsuario.ranking.map(data => {
+                                            return (<p key={data.id}>Pontos: {data.pontos}</p>)
+                                        }):<></>}
                                     </Typography>
 
                                 </CardContent>
@@ -108,6 +94,7 @@ function Perfil() {
                         </Card>
                     </Grid>
                 </Grid>
+                </>:<></>}
             </Container>
         </>
 
