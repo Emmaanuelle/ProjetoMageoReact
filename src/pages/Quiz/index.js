@@ -48,9 +48,16 @@ export default function Quiz() {
     if(!mostrarResposta){//Previnindo respostas duplicadas
       //verifica se a resposta está correta
       if (answer === questions[indexAtual].resposta) {
+        if(indexAtual === 4  &&  acerto === 5 ){
+          setPontuacao(pontos*2);
+        }else{
+          setAcerto(acerto + 1)
+          setPontuacao(pontos + 10)
+
+        }
         //Aumenta a pontuação
-        setAcerto(acerto + 1)
-        setPontuacao(pontos + 10)
+        /* setAcerto(acerto + 1)
+        setPontuacao(pontos + 10) */
       }
     }
     setMostrarResposta(true)

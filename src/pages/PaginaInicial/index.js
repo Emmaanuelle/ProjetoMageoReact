@@ -10,12 +10,7 @@ import Container from '@material-ui/core/Container';
 import logo from '../../images/icons/logo.svg'
 
 const useStyles = makeStyles((theme) => ({
-  contain:{
-    background:"#769DE9",
-
-    marginTop:"10%",
-    marginBottom:"10%"
-  },
+ 
   paper: {
     marginTop: theme.spacing(8),
     display: 'flex',
@@ -25,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
   avatar: {
     margin: theme.spacing(1),
     backgroundColor: "#FFFFFF",
+  
   },
   form: {
     width: '100%', // Fix IE 11 issue.
@@ -35,34 +31,39 @@ const useStyles = makeStyles((theme) => ({
     color:"white",
     background:"#3B82F6",
     height:"60px",
-    width:"250px",
+    width:"300px",
   },
   submit2: {
     margin: theme.spacing(3, 0, 2),
     color:"white",
     background:"#3B82F6",
     height:"60px",
-    width:"250px",
+    width:"300px",
   },
+  contain:{
+      marginTop:"10%",
+      marginBottom:"10%"
+  }, 
   tipografia:{
     fontSize:"50px",
     fontFamily:"'Bodoni Moda', serifa;",
     fontWeight:"Bold",
-    color:"#15D08C",
+    color:"#000000",
+    
    
   },
   tipografia1:{
     fontSize:"35px",
-    fontFamily:"'Imbue', serif",
+    fontFamily:"'Gorditas', cursiva",
     //fontWeight:"Bold",
-    color:"#061B68",
+    color:"#000000",
     
   },
   tipografia2:{
     fontSize:"25px",
     fontFamily:"'Playfair Display', serif",
     //fontWeight:"Bold",
-    color:"#061B68",
+    color:"#000000",
     marginBottom:"20px"
   }
 }));
