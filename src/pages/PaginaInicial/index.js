@@ -17,11 +17,11 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
   },
-  avatar: {
+  /* avatar: {
     margin: theme.spacing(1),
     backgroundColor: "#FFFFFF",
   
-  },
+  }, */
   form: {
     width: '100%', // Fix IE 11 issue.
     marginTop: theme.spacing(1),
@@ -77,9 +77,10 @@ export default function PaginaInicial() {
     <Container component="main" maxWidth="xs"  className={classes.contain}> 
       <CssBaseline />
       <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
+       {/*  <Avatar className={classes.avatar}>
           <img src={logo} alt='Logo do Projeto Mageo' />
-        </Avatar>
+        </Avatar> */}
+         <img src={logo} alt='Logo do Projeto Mageo' />
         <Typography component="h1" variant="h5" className={classes.tipografia}>
           MaGeo
         </Typography> 
@@ -111,7 +112,7 @@ export default function PaginaInicial() {
             color="primary"
             className={classes.submit2}
              >
-              Administrador   
+             Professor(a)
           </Button>
           </Link>
             
