@@ -91,7 +91,7 @@ export default function LoginAdmin() {
         </Avatar> */}
         <img src={logo}  alt='Logo do Mageo'  className={classes.imagem} />
         <Typography component="h1" variant="h5" className={classes.tipografia}>
-         Login Professor
+         Login Professor(a)
         </Typography>                   
 
         <form className={classes.form} onSubmit={fazerLogin} noValidate>            
