@@ -126,41 +126,7 @@ const Home = (props) => {
               </Box>
 
             </Box>
-            <Box display="flex">
-
-              <Box p={10} justifyContent="flex-start" >
-
-                <h1> Quadrado</h1>
-                <p> pré-elaborados. O formulário possui em sua estrutura opções de perguntas os em cada pergunta desenvolvida.</p>
-              </Box>
-              <Box p={6} justifyContent="flex-end" >
-                <img src={logo} width="300px"  alt='Descrição da Imagem' />
-              </Box>
-
-            </Box>
-            <Box display="flex">
-
-              <Box p={10} justifyContent="flex-start" >
-                <img src={logo} width="300px" alt='Descrição da Imagem' />
-              </Box>
-              <Box p={10} justifyContent="flex-end" >
-                <h1> Quadrado</h1>
-                <p> pré-elaborados. O formulário possui em sua estrutura opções de perguntas os em cada pergunta desenvolvida.</p>
-              </Box>
-
-            </Box>
-            <Box display="flex">
-
-              <Box p={10} justifyContent="flex-start" >
-
-                <h1> Círculo</h1>
-                <p> pré-elaborados. O formulário possui em sua estrutura opções de perguntas os em cada pergunta desenvolvida.</p>
-              </Box>
-              <Box p={6} justifyContent="flex-end" >
-                <img src={logo} width="300px"   alt='Descrição da Imagem'/>
-              </Box>
-
-            </Box>
+            
         </Container>
       </ThemeProvider>
     </>

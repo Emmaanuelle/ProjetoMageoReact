@@ -65,7 +65,12 @@ const useStyles = makeStyles((theme) => ({
     //fontWeight:"Bold",
     color:"#000000",
     marginBottom:"20px"
+  },
+  imagem:{
+    height:"80px",
+    width:"100px"
   }
+  
 }));
 
 export default function PaginaInicial() {
@@ -80,7 +85,7 @@ export default function PaginaInicial() {
        {/*  <Avatar className={classes.avatar}>
           <img src={logo} alt='Logo do Projeto Mageo' />
         </Avatar> */}
-         <img src={logo} alt='Logo do Projeto Mageo' />
+         <img src={logo} alt='Logo do Projeto Mageo'  className={classes.imagem}/>
         <Typography component="h1" variant="h5" className={classes.tipografia}>
           MaGeo
         </Typography> 

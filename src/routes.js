@@ -13,10 +13,7 @@ import Quiz from "./pages/Quiz";
 import ErrorPage from "./pages/Error";
 import PaginaInicial from "./pages/PaginaInicial";
 import CadastroAdmin from "./pages/CadastroAdmin";
-
-
 import { isAuthenticated} from "./services/auth";
-
 import QuizReserva from "./pages/Quiz/QuizReserva";
 import LoginUsuario from "./pages/LoginUsuario";
 
@@ -41,6 +38,7 @@ const Routes = () => (
       
       <Route exact path="/" component={PaginaInicial} />
       <Route path="/loginUsuario" component={LoginUsuario}/>
+      {/* <Route path="/esqueceuASenha"component={EsqueceuaSenha}/> */}
       <Route path="/cadastroUsuario" component={CadastroUsuario} />
       <Route path="/loginAdmin" component={LoginAdmin} />
       <Route path="/cadastroAdmin" component={CadastroAdmin}/>

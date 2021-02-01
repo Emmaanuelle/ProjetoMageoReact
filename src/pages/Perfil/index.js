@@ -40,14 +40,14 @@ function Perfil() {
                                    {/*  //{dados} */}
                                 <Typography gutterBottom variant="h5" component="h2">{perfilUsuario.nome} {perfilUsuario.sobrenome}
                                 </Typography>
-                                <Typography gutterBottom variant="h5" component="h2">{perfilUsuario.email}
+                                {/* <Typography gutterBottom variant="h5" component="h2">{perfilUsuario.email}
                                 </Typography>
                                 <Typography gutterBottom variant="h5" component="h2">{diaNascimento.toUTCString().substring(0, 17)}
                                 </Typography>
                                 <Typography gutterBottom variant="h5" component="h2">{perfilUsuario.ano_escolar}
                                 </Typography>
                                 <Typography gutterBottom variant="h5" component="h2">{perfilUsuario.escola}
-                                </Typography>
+                                </Typography> */}
 
                                 </CardContent>
 

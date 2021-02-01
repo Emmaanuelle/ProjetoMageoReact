@@ -95,35 +95,19 @@ export default function LoginUsuario() {
             autoComplete="email"
             autoFocus
           />
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="Senha"
-            type="password"
-            id="password"
-            value={senha}
-            onChange={e => setSenha(e.target.value)}
-            autoComplete="current-password"
-          />
+          
           <Button
             type="submit"
             fullWidth
             variant="contained"
             color="primary"
-            className={classes.submit}
-          >
-            Entrar
+            className={classes.submit}>
+             Atualizar nova Senha
           </Button>
           <Grid container justify="center" alignItems="center">
             <Link to='/cadastroUsuario'>
                 Fazer Cadastro
             </Link>
-          {/*   <Link to='/esqueceuASenha'>
-               Esqueceu a senha?
-            </Link> */}
 
 
           </Grid>
