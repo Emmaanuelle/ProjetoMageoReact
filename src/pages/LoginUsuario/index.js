@@ -2,7 +2,7 @@ import React , { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import api from "../../services/api";
 import {login} from "../../services/auth";
-import Avatar from '@material-ui/core/Avatar';
+//import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
@@ -11,7 +11,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import ReactLoading from 'react-loading';
-import logo from '../../images/icons/logo.svg'
+import logo from '../../images/icons/shape.svg'
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(8),
@@ -30,8 +30,25 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
     color:"white",
-    background:"#3B82F6",
+    background:"#769DE9",
+    fontFamily:"'Poppins', sans-serif;",
+    fontSize:"17px",
   },
+  tipografia:{
+    fontSize:"30px",
+    fontFamily:"'Poppins', sans-serif;",
+    fontWeight:"Bold",
+    color:"#75A0F2",
+  },
+
+  imagem:{
+    height:"70px",
+    width:"70px"
+  },
+  fonte:{
+    fontFamily:"'Poppins', sans-serif;",
+    fontSize:"20px",
+  }
 }));
 
 export default function LoginUsuario() {
@@ -71,11 +88,12 @@ export default function LoginUsuario() {
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
+        {/* <Avatar className={classes.avatar}>
           <img src={logo} alt='Logo Do Projeto Mageo'/>
-        </Avatar>
-        <Typography component="h1" variant="h5">
-          MaGeo
+        </Avatar> */}
+        <img src={logo} alt='Logo Do Projeto Mageo'  className={classes.imagem}/>
+        <Typography component="h1" variant="h5"className={classes.tipografia}>
+         Login Usuário
         </Typography>                   
 
         <form className={classes.form} onSubmit={fazerLogin} noValidate>            
@@ -118,9 +136,10 @@ export default function LoginUsuario() {
             Entrar
           </Button>
           <Grid container justify="center" alignItems="center">
-            <Link to='/cadastroUsuario'>
+            <Link to='/cadastroUsuario' className={classes.fonte}>
                 Fazer Cadastro
             </Link>
+
           {/*   <Link to='/esqueceuASenha'>
                Esqueceu a senha?
             </Link> */}

@@ -10,7 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import ReactLoading from 'react-loading';
-import logo from '../../images/icons/logo.svg'
+import logo from '../../images/icons/shape.svg'
 import { MenuItem, InputLabel,} from "@material-ui/core";
 
 
@@ -32,12 +32,29 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
     color:"white",
-    background:"#3B82F6",
+    background:"#769DE9",
+    fontFamily:"'Poppins', sans-serif;",
+    fontSize:"17px",
   },
   tamanhoselectano:{
     minWidth:394,
 
-  }
+  },
+  imagem:{
+    height:"70px",
+    width:"70px"
+  },
+  tipografia:{
+    fontSize:"30px",
+    fontFamily:"'Poppins', sans-serif;",
+    fontWeight:"Bold",
+    color:"#75A0F2",
+  },
+  fonte:{
+    fontFamily:"'Poppins', sans-serif;",
+    fontSize:"20px",
+  },
+
 }));
 
 export default function CadastroUsuario() {
@@ -80,10 +97,11 @@ export default function CadastroUsuario() {
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-        <img src={logo} alt='Logo do Projeto Mageo' />
-        </Avatar>
-        <Typography component="h1" variant="h5">
+       {/*  <Avatar className={classes.avatar}>
+        <img src={logo} alt='Logo do Projeto Mageo' className={classes.imagem} />
+        </Avatar> */}
+        <img src={logo} alt='Logo do Projeto Mageo' className={classes.imagem} />
+        <Typography component="h1" variant="h5" className={classes.tipografia}>
           Cadastro
         </Typography>
         {carregar && !error?<ReactLoading className='loading' type={"bubbles"} color={'orange'} height={'20%'} width={'40%'} />:<></>}
@@ -206,7 +224,7 @@ export default function CadastroUsuario() {
             Cadastrar
           </Button>
           <Grid container justify="center" alignItems="center">
-              <Link to='/loginUsuario'>
+              <Link to='/loginUsuario'className={classes.fonte}>
                 Ir para o Login
               </Link>
           </Grid>

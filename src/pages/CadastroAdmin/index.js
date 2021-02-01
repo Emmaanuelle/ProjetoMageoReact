@@ -10,7 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import ReactLoading from 'react-loading';
-import logo from '../../images/icons/logo.svg'
+import logo from '../../images/icons/shape.svg'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -31,12 +31,29 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
     color:"white",
-    background:"#3B82F6",
+    background:"#769DE9",
+    fontFamily:"'Poppins', sans-serif;",
+    fontSize:"17px",
   },
   tamanhoselectano:{
     minWidth:394,
 
-  }
+  },
+  tipografia:{
+    fontSize:"30px",
+    fontFamily:"'Poppins', sans-serif;",
+    fontWeight:"Bold",
+    color:"#75A0F2",
+  },
+
+  imagem:{
+    height:"70px",
+    width:"70px"
+  },
+  fonte:{
+    fontFamily:"'Poppins', sans-serif;",
+    fontSize:"20px",
+  },
 }));
 
 export default function CadastroAdmin() {
@@ -76,10 +93,11 @@ export default function CadastroAdmin() {
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
+       {/*  <Avatar className={classes.avatar}>
           <img src={logo} alt='Logo do Projeto Mageo' />
-        </Avatar>
-        <Typography component="h1" variant="h5">
+        </Avatar> */}
+         <img src={logo} alt='Logo do Projeto Mageo'className={classes.imagem}/>
+        <Typography component="h1" variant="h5" className={classes.tipografia}>
           Cadastro
         </Typography>
         {carregar && !error?<ReactLoading className='loading' type={"bubbles"} color={'orange'} height={'20%'} width={'40%'} />:<></>}
@@ -163,12 +181,11 @@ export default function CadastroAdmin() {
             fullWidth
             variant="contained"
             color="primary"
-            className={classes.submit}
-          >
+            className={classes.submit} >
             Cadastrar
           </Button>
           <Grid container justify="center" alignItems="center">
-              <Link to='/loginAdmin'>
+              <Link to='/loginAdmin' className={classes.fonte}>
                 Ir para o Login
               </Link>
           </Grid>

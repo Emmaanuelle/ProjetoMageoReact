@@ -7,7 +7,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import logo from '../../images/icons/logo.svg'
+import logo from '../../images/icons/shape.svg'
 
 const useStyles = makeStyles((theme) => ({
  
@@ -29,16 +29,16 @@ const useStyles = makeStyles((theme) => ({
   submit1: {
     margin: theme.spacing(3, 0, 2),
     color:"white",
-    background:"#3B82F6",
+    background:"#769DE9",
     height:"60px",
-    width:"300px",
+    width:"360px",
   },
   submit2: {
     margin: theme.spacing(3, 0, 2),
     color:"white",
-    background:"#3B82F6",
+    background:"#769DE9",
     height:"60px",
-    width:"300px",
+    width:"360px",
   },
   contain:{
       marginTop:"10%",
@@ -46,30 +46,35 @@ const useStyles = makeStyles((theme) => ({
   }, 
   tipografia:{
     fontSize:"50px",
-    fontFamily:"'Bodoni Moda', serifa;",
+    fontFamily:"'Poppins', sans-serif;",
     fontWeight:"Bold",
-    color:"#000000",
+    color:"#75A0F2",
     
    
   },
   tipografia1:{
-    fontSize:"35px",
-    fontFamily:"'Gorditas', cursiva",
-    //fontWeight:"Bold",
-    color:"#000000",
+    fontSize:"23px",
+    fontFamily:"'Poppins', sans-serif;",
+    fontWeight:"200,bold",
+    color:"#959090",
+  
     
   },
   tipografia2:{
-    fontSize:"25px",
-    fontFamily:"'Playfair Display', serif",
-    //fontWeight:"Bold",
-    color:"#000000",
+    fontSize:"23px",
+    fontFamily:"'Poppins', sans-serif;",
+    fontWeight:"200,bold",
+    color:"#959090",
     marginBottom:"20px"
   },
   imagem:{
-    height:"80px",
+    height:"100px",
     width:"100px"
-  }
+  },
+   fundo:{
+    backgroundColor:"rgb(236, 253, 245,)",
+    height:"100%",
+   }
   
 }));
 
@@ -79,6 +84,8 @@ export default function PaginaInicial() {
   
 
   return (
+    <div class="bg-green-50" className={classes.fundo}>
+
     <Container component="main" maxWidth="xs"  className={classes.contain}> 
       <CssBaseline />
       <div className={classes.paper}>
@@ -87,7 +94,7 @@ export default function PaginaInicial() {
         </Avatar> */}
          <img src={logo} alt='Logo do Projeto Mageo'  className={classes.imagem}/>
         <Typography component="h1" variant="h5" className={classes.tipografia}>
-          MaGeo
+          MaGeo Quiz
         </Typography> 
         <Typography component="h1" variant="h5" className={classes.tipografia1}>
          Bem vindo ao MaGeo Quiz
@@ -127,5 +134,7 @@ export default function PaginaInicial() {
        
       </div>
     </Container>
+    
+    </div>
   );
 }

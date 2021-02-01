@@ -11,7 +11,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import ReactLoading from 'react-loading';
-import logo from '../../images/icons/logo.svg'
+import logo from '../../images/icons/shape.svg'
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(8),
@@ -30,7 +30,23 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
     color:"white",
-    background:"#3B82F6",
+    background:"#769DE9",
+    fontFamily:"'Poppins', sans-serif;",
+    fontSize:"17px",
+  },
+  imagem:{
+    height:"70px",
+    width:"70px"
+  },
+  tipografia:{
+    fontSize:"30px",
+    fontFamily:"'Poppins', sans-serif;",
+    fontWeight:"Bold",
+    color:"#75A0F2",
+  },
+  fonte:{
+    fontFamily:"'Poppins', sans-serif;",
+    fontSize:"20px",
   },
 }));
 
@@ -70,11 +86,12 @@ export default function LoginAdmin() {
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
+        {/* <Avatar className={classes.avatar}>
           <img src={logo}  alt='Logo do Mageo' />
-        </Avatar>
-        <Typography component="h1" variant="h5">
-          MaGeo
+        </Avatar> */}
+        <img src={logo}  alt='Logo do Mageo'  className={classes.imagem} />
+        <Typography component="h1" variant="h5" className={classes.tipografia}>
+         Login Professor
         </Typography>                   
 
         <form className={classes.form} onSubmit={fazerLogin} noValidate>            
@@ -117,7 +134,7 @@ export default function LoginAdmin() {
             Entrar
           </Button>
           <Grid container justify="center" alignItems="center">
-              <Link to='/cadastroAdmin'>
+              <Link to='/cadastroAdmin'className={classes.fonte}>
                 Fazer Cadastro
             </Link>
           </Grid>
