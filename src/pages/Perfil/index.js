@@ -21,7 +21,6 @@ function Perfil() {
         getPerfilUsuario()
     }, []);
     localStorage.setItem('user_id', perfilUsuario.id)
-    const diaNascimento = new Date(perfilUsuario.dataNascimento);  
     return (
         <>
             <Navbar />

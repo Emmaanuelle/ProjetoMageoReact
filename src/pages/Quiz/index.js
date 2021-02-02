@@ -81,11 +81,11 @@ export default function Quiz() {
   //const alternativa = questions.length > 0 ?questions[0].alternativa.split(","):['Quiz','Em','Construção'];
  
 
-function desafiofases (){
-  if(indexAtual === 4  &&  acerto === 5 ){
-    setPontuacao(pontos*2);
-  }
-}
+// function desafiofases (){
+//   if(indexAtual === 4  &&  acerto === 5 ){
+//     setPontuacao(pontos*2);
+//   }
+// }
 
   return (
     <>

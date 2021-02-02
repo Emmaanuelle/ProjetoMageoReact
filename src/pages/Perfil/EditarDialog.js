@@ -100,6 +100,7 @@ export default function EditarDialog(props) {
         </DialogTitle>
         <DialogContent dividers>
       {error&&<p>{error}</p>}
+      {carregar&&!error?<p>Carregando</p>:<></>}
         <form  onSubmit={editar} >        
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
