@@ -25,10 +25,12 @@ const Home = (props) => {
             <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
               <div className="sm:text-center lg:text-left">
                 <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                  <span className="block xl:inline">Mageo Quiz</span>
+                  <span className="block xl:inline"> O que é MaGeo Quiz!?</span>
                 </h1>
                 <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                  Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.
+                  MaGeo! è uma plataforma educacional voltado para o ensino e aprendizagem de Geometria Plana por meio de um Quiz Gamificado.
+                  Quer aprender mais sobre Geometria plana! Aperte o botão Start Quiz.
+                  
           </p>
                 <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                   <div className="rounded-md shadow">
@@ -59,7 +61,7 @@ const Home = (props) => {
               Regras do Jogo
       </p>
             <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-              Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in accusamus quisquam.
+              Para saber mais sobre como quiz funciona, leia as regras do jogo.
       </p>
           </div>
           <div className="mt-10">
@@ -161,7 +163,7 @@ const Home = (props) => {
              Fases do Quiz
       </p>
             <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-              Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in accusamus quisquam.
+              As Fases do Quiz estão divida em 4 etapas
       </p>
           </div>
           <div className="mt-10">
@@ -174,10 +176,10 @@ const Home = (props) => {
                 </div>
                 <div className="ml-4">
                   <dt className="text-lg leading-6 font-medium text-gray-900">
-                    Triangulo
+                    Triângulo
             </dt>
                   <dd className="mt-2 text-base text-gray-500">
-                    O jogador iniciará o jogo com 10 pontos.
+                    Primeira fase do Quiz ao longo do jogo terá 2 desafios, se todas as perguntas no total de 10 estiverem corretos o usuario receberá 1 emblema.
             </dd>
                 </div>
               </div>
@@ -193,7 +195,8 @@ const Home = (props) => {
                     Quadrado
             </dt>
                   <dd className="mt-2 text-base text-gray-500">
-                    Cada questão respondida corretamente corresponde a 10 pontos.
+                  Segunda fase do Quiz ao longo do jogo terá 2 desafios, se todas as perguntas no total de 10 estiverem corretos o usuario receberá 1 emblema.
+
             </dd>
                 </div>
               </div>
@@ -206,10 +209,11 @@ const Home = (props) => {
                 </div>
                 <div className="ml-4">
                   <dt className="text-lg leading-6 font-medium text-gray-900">
-                    Retangulo
+                    Retângulo
             </dt>
                   <dd className="mt-2 text-base text-gray-500">
-                    Se jogador acertar as 5 primeiras perguntas, recebe 50 pontos + o dobro de pontos ganho e vence o 1º desafio da fase.
+                  Terecira fase do Quiz ao longo do jogo terá 2 desafios, se todas as perguntas no total de 10 estiverem corretos o usuario receberá 1 emblema.
+
             </dd>
                 </div>
               </div>
@@ -222,10 +226,11 @@ const Home = (props) => {
                 </div>
                 <div className="ml-4">
                   <dt className="text-lg leading-6 font-medium text-gray-900">
-                    Circulo
+                    Círculo
             </dt>
                   <dd className="mt-2 text-base text-gray-500">
-                    Se jogador vencer as 5 próximas perguntas, recebe 50 pontos + o dobro de pontos ganho e vence o 2º desafio da fase.
+                 Quarta fase do Quiz ao longo do jogo terá 2 desafios, se todas as perguntas no total de 10 estiverem corretos o usuario receberá 1 emblema.
+
             </dd>
                 </div>
               </div>  

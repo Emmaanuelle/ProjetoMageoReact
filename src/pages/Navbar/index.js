@@ -15,7 +15,7 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import { mainListItems } from './listItems';
 import { logout } from "../../services/auth";
 import { Link } from 'react-router-dom';
-import logo from '../../images/icons/logo.svg'
+import logo from '../../images/icons/shape.svg'
 
 const drawerWidth = 220;
 
@@ -57,6 +57,13 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
   },
+  title1:{
+    flexGrow:30,
+    fontSize:"30px",
+    fontFamily:"'Poppins', sans-serif;",
+    fontWeight:"Bold",
+    color:"#75A0F2",
+  },
   drawerPaper: {
     position: 'relative',
     whiteSpace: 'nowrap',
@@ -86,6 +93,9 @@ const useStyles = makeStyles((theme) => ({
 img:{
   width:"40px",
   height:"40px",
+  fontFamily:"'Poppins', sans-serif;",
+  fontWeight:"Bold",
+  color:"#75A0F2",
 
 },
 
@@ -127,6 +137,9 @@ export default function Navbar() {
           </IconButton>
           <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
           <Link to='/home'> <img src={logo} className={classes.img} alt='Logo do Projeto Mageo' /></Link>
+          </Typography>
+          <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title1}>
+          <Link to='/home'> MaGeo Quiz</Link>
           </Typography>
           <Badge color="secondary">
             <Button className={classes.botaosair} onClick={handleLogout}>
