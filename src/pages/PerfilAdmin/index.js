@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Card, Grid, CardActionArea, CardContent, Typography, CardActions } from '@material-ui/core';
-import Navbar from '../Navbar';
+import Navbar from '../NavbarAdministrador';
 import api from '../../services/api';
-import EditarDialog from "./EditarDialog";
+import EditarDialog from "./EditarPerfil";
 
-function Perfil() {
+function PerfilAdmin() {
     const [perfilUsuario, setPerfilUsuario] = useState([])
     useEffect(() => {
         const email = localStorage.getItem('email')
         const getPerfilUsuario = async () => {
             try {
-                const response = await api.get('/perfil', { headers: { email: email } });
+                const response = await api.get('/perfilAdmin', { headers: { email: email } });
                 setPerfilUsuario(response.data)
                 console.log(response.data)
             } catch (error) {
@@ -25,7 +25,7 @@ function Perfil() {
         <>
             <Navbar />
             <Container>
-                <h2 style={{ margin: 20, color: '#098348' }}>Olá, {perfilUsuario.nome}</h2>
+                <h2 style={{ margin: 20, color: '#098348' }}>Olá, {perfilUsuario.nome_administrador}</h2>
                 {perfilUsuario !== undefined || perfilUsuario.length !==0?<>
                 <Grid container spacing={3}>
                     <Grid item xs={12}>
@@ -37,7 +37,7 @@ function Perfil() {
                                         Dados do usuario
                                 </Typography>
                                    {/*  //{dados} */}
-                                <Typography gutterBottom variant="h5" component="h2">{perfilUsuario.nome} {perfilUsuario.sobrenome}
+                                <Typography gutterBottom variant="h5" component="h2">{perfilUsuario.nome_administrador} {perfilUsuario.sobrenome_administrador}
                                 </Typography>
                                 {/* <Typography gutterBottom variant="h5" component="h2">{perfilUsuario.email}
                                 </Typography>
@@ -52,45 +52,9 @@ function Perfil() {
 
                             </CardActionArea>
                             <CardActions>
-                                <EditarDialog user={perfilUsuario} />
+                                <EditarDialog admin={perfilUsuario} />
                             </CardActions>
 
-                        </Card>
-                    </Grid>
-
-                    <Grid item xs={12} sm={6}>
-                        <Card>
-                            <CardActionArea>
-                                <CardContent>
-                                    <Typography gutterBottom variant="h5" component="h2">
-                                        Ranking
-                           </Typography>
-
-                                   
-
-                                </CardContent>
-                            </CardActionArea>
-
-                        </Card>
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
-                        <Card >
-                            <CardActionArea>
-                                <CardContent>
-                                    <Typography gutterBottom variant="h5" component="h2" >
-                                        Pontuação       
-                                    </Typography>
-                                    <Typography gutterBottom variant="h5" component="h2">
-                                        {perfilUsuario.ranking !==undefined?
-                                        perfilUsuario.ranking.map(data => {
-                                            return (<p key={data.id}>Pontos: {data.pontos}</p>)
-                                        }):<></>}
-                                    </Typography>
-                                    <Typography gutterBottom variant="h5" component="h2">
-                                        Conquistas
-                           </Typography>
-                                </CardContent>
-                            </CardActionArea>
                         </Card>
                     </Grid>
                 </Grid>
@@ -101,4 +65,4 @@ function Perfil() {
     )
 }
 
-export default Perfil;
+export default PerfilAdmin;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect} from "react";
 import api from "../../services/api"
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -8,11 +8,12 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import ReactLoading from 'react-loading';
-import Navbar from "../Navbar";
+import Navbar from "../NavbarAdministrador";
 import Tooltip from '@material-ui/core/Tooltip';
 import HelpOutlineOutlinedIcon from '@material-ui/icons/HelpOutlineOutlined';
 //import { useHistory } from "react-router-dom";
 import { MenuItem} from "@material-ui/core";
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -53,7 +54,7 @@ const DicaParaInput = withStyles((theme) => ({
 }))(Tooltip);
 
 
-export default function Questao() {
+export default function ListarQuestao() {
   const classes = useStyles();
 
   const [carregar, setCarregando] = useState(false);
@@ -62,15 +63,31 @@ export default function Questao() {
   const [alternativa, setAlternativa] = useState([]);
   const [dica, setDica] = useState("");
   const [video, setVideo] = useState("");
-  const [imagem, setImagem] = useState("");
+  const [nivel, setNivel] = useState("");
   const[fase,setFase] = useState("");
   const [error, setError] = useState("");
+
+  const [questoes, setQuestoes] = useState([])
+    useEffect(() => {
+        
+        const getQuestoes= async () => {
+            try {
+                const response = await api.get('/questao');
+                setQuestoes(response.data)
+                console.log(response.data)
+            } catch (error) {
+                console.log(error);
+                alert("Erro em carregar os dados")
+            }
+        }
+        getQuestoes()
+    }, []);
   // const history = useHistory();
   async function cadastrarQuestoes(e) {
 
     e.preventDefault();
 
-    const data = { pergunta, resposta, dica, alternativa, imagem, video, fase };
+    const data = { pergunta, resposta, dica, alternativa, video, fase, nivel};
     try {
       setCarregando(true)
       await api.post("/questao", data)
@@ -92,13 +109,21 @@ export default function Questao() {
   return (
     <>
       <Navbar />
-      <Container component="main" maxWidth="xs">
+      <Container >
         <CssBaseline />
         <div className={classes.paper}>
           <Typography component="h1" variant="h5">
-            Cadastrar Questão
+            Listar Questão
         </Typography>
           {carregar && !error ? <ReactLoading className='loading' type={"bubbles"} color={'orange'} height={'20%'} width={'40%'} /> : <></>}
+            {questoes.length > 0 ? questoes.map((valor,indice)=>{
+              return(
+                <div>
+                  <p>{valor.pergunta}</p><hr/>
+
+                </div>
+              )
+            }):<p>Não tem perguntas cadastrada no momento!</p>}
           <form className={classes.form} onSubmit={cadastrarQuestoes}>
             {error && <p className='error'>{error}</p>}
             <Grid container spacing={2}>
@@ -151,29 +176,7 @@ export default function Questao() {
                   <HelpOutlineOutlinedIcon />
                 </DicaParaInput>
               </Grid>
-              <Grid item xs={12} sm={11} >
-                <TextField
-                  variant="outlined"
-                  fullWidth
-                  id="video"
-                  label="Link para o youtube"
-                  name="video"
-                  value={video}
-                  onChange={e => setVideo(e.target.value)}
-                />
-              </Grid>
-              <Grid item xs={12} sm={1}>
-                <DicaParaInput
-                  title={
-                    <React.Fragment>
-                      <Typography color="secondary">Youtube ?</Typography>
-                        Explicação do formato do youtube
-                     </React.Fragment>
-                  }
-                >
-                  <HelpOutlineOutlinedIcon />
-                </DicaParaInput>
-              </Grid>
+              
               <Grid item xs={12} sm={11} >
                 <TextField
                   variant="outlined"
@@ -227,35 +230,42 @@ export default function Questao() {
                 <TextField
                   variant="outlined"
                   fullWidth
-                  id="imagem"
-                  label="imagem"
-                  autoComplete="imagem"
-                  value={imagem}
-                  onChange={e => setImagem(e.target.value)}
+                  id="video"
+                  label="Link para o youtube"
+                  name="video"
+                  value={video}
+                  onChange={e => setVideo(e.target.value)}
                 />
               </Grid>
               <Grid item xs={12} sm={1}>
                 <DicaParaInput
                   title={
                     <React.Fragment>
-                      <Typography color="secondary">Imagem Como Colocar ?</Typography>
-                        Explicação do formato da Imagem
+                      <Typography color="secondary">Youtube ?</Typography>
+                        Explicação do formato do youtube
                      </React.Fragment>
                   }
                 >
                   <HelpOutlineOutlinedIcon />
                 </DicaParaInput>
               </Grid>
-
               <Grid item xs={12}>
                 <TextField id="fase" value={fase} onChange={e => setFase(e.target.value)} variant="outlined" select fullWidth label="Selecione o Tipo da Questão">
                {/*  <InputLabel id="demo-simple-select-helper-label">Selecione o  Tipo da Questão</InputLabel> */}
-                  <MenuItem value={"Triângulo"}> Triângulo</MenuItem>
-                  <MenuItem value={"Quadrado"}> Quadrado</MenuItem>
-                  <MenuItem value={"Retângulo"}> Retângulo</MenuItem>
-                  <MenuItem value={"Círculo"}> Círculo</MenuItem>
+                  <MenuItem value={"quadrado"}>Quadrado</MenuItem>
+                  <MenuItem value={"retangulo"}>Retângulo</MenuItem>
+                  <MenuItem value={"triangulo"}>Triângulo</MenuItem>
+                  <MenuItem value={"circulo"}> Círculo</MenuItem>
                 </TextField >
-
+              </Grid>
+              <Grid item xs={12}>
+                <TextField id="nivel" value={fase} onChange={e => setNivel(e.target.value)} variant="outlined" select fullWidth label="Selecione o Nível da Questão">
+               {/*  <InputLabel id="demo-simple-select-helper-label">Selecione o  Tipo da Questão</InputLabel> */}
+                  <MenuItem value={"facil"}> Fácil</MenuItem>
+                  <MenuItem value={"medio"}>Médio</MenuItem>
+                  <MenuItem value={"dificil"}>Dificil</MenuItem>
+                  <MenuItem value={"desafioquestao"}> Desafio Questão</MenuItem>
+                </TextField >
               </Grid>
 
             </Grid>

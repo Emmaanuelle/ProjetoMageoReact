@@ -8,7 +8,7 @@ import Home from "./pages/Home";
 import Ranking from "./pages/Ranking";
 import LoginAdmin from "./pages/LoginAdmin";
 import Perfil from "./pages/Perfil";
-import Questao from "./pages/Questoes";
+import Questao from "./pages/criarQuestoes";
 import Quiz from "./pages/Quiz";
 import ErrorPage from "./pages/Error";
 import PaginaInicial from "./pages/PaginaInicial";
@@ -16,6 +16,10 @@ import CadastroAdmin from "./pages/CadastroAdmin";
 import { isAuthenticated} from "./services/auth";
 import QuizReserva from "./pages/Quiz/QuizReserva";
 import LoginUsuario from "./pages/LoginUsuario";
+import HomeAdministrador from "./pages/HomeAdministrador";
+import PerfilAdmin from "./pages/PerfilAdmin";
+import ListarQuestao from "./pages/ListarQuestao";
+import Desempenho from "./pages/Desempenho";
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
@@ -48,9 +52,13 @@ const Routes = () => (
       <PrivateRoute path="/sobre" component={Sobre} />
       <PrivateRoute path="/explore" component={ExploreMais} />
       <PrivateRoute path="/questao" component={Questao} />
+      <PrivateRoute path="/listarQuestao" component={ListarQuestao} />
       <PrivateRoute path="/ranking" component={Ranking} />
+      <PrivateRoute path="/desempenho" component={Desempenho} />
       <PrivateRoute path="/perfil" component={Perfil} />
+      <PrivateRoute path="/perfilAdmin" component={PerfilAdmin} />
       <PrivateRoute path="/home" component={Home} />
+      <PrivateRoute path="/homeAdmin" component={HomeAdministrador}/>
       <Route path="*" component={ErrorPage} />
     </Switch>
   </BrowserRouter>
