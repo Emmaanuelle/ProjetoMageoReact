@@ -7,7 +7,6 @@ import MuiDialogContent from '@material-ui/core/DialogContent';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
-import { MenuItem,  InputLabel} from "@material-ui/core";
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import api from '../../services/api';
