@@ -15,7 +15,7 @@ export const mainListItems = (
     </ListItem>
     <ListItem button>
       <Button fullWidth href='/listarQuestao'>{/* listar/editar/deletar as questões  */}
-        <ListItemText primary="Questões" /></Button>
+        <ListItemText primary=" Listar Questões" /></Button>
     </ListItem>
     <ListItem button>
       <Button fullWidth href='/questao'>
