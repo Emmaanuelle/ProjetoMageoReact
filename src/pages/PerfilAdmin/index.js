@@ -20,7 +20,7 @@ function PerfilAdmin() {
         }
         getPerfilUsuario()
     }, []);
-    localStorage.setItem('user_id', perfilUsuario.id)
+    localStorage.setItem('administradors_id', perfilUsuario.id)
     return (
         <>
             <Navbar />

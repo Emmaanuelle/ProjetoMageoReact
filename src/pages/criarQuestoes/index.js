@@ -55,6 +55,7 @@ const DicaParaInput = withStyles((theme) => ({
 
 export default function Questao() {
   const classes = useStyles();
+  const adm_id=localStorage.getItem("administradors_id");
 
   const [carregar, setCarregando] = useState(false);
   const [pergunta, setPergunta] = useState("");
@@ -64,13 +65,14 @@ export default function Questao() {
   const [video, setVideo] = useState("");
   const [nivel, setNivel] = useState("");
   const[fase,setFase] = useState("");
+  const[administradors_id,setAdministradors] = useState(adm_id);
   const [error, setError] = useState("");
   // const history = useHistory();
   async function cadastrarQuestoes(e) {
 
     e.preventDefault();
 
-    const data = { pergunta, resposta, dica, alternativa, video, fase,nivel };
+    const data = { pergunta, resposta, dica, alternativa, video, fase,nivel, administradors_id };
     try {
       setCarregando(true)
       await api.post("/questao", data)
@@ -234,12 +236,12 @@ export default function Questao() {
                 </TextField >
               </Grid>
               <Grid item xs={12}>
-                <TextField id="nivel" value={fase} onChange={e => setNivel(e.target.value)} variant="outlined" select fullWidth label="Selecione o Nível da Questão">
+                <TextField id="nivel" value={nivel} onChange={e => setNivel(e.target.value)} variant="outlined" select fullWidth label="Selecione o Nível da Questão">
                {/*  <InputLabel id="demo-simple-select-helper-label">Selecione o  Tipo da Questão</InputLabel> */}
                   <MenuItem value={"facil"}> Fácil</MenuItem>
                   <MenuItem value={"medio"}>Médio</MenuItem>
                   <MenuItem value={"dificil"}>Dificil</MenuItem>
-                  <MenuItem value={"desafioquestao"}> Desafio Questão</MenuItem>
+                  <MenuItem value={"desafio"}> Desafio </MenuItem>
                 </TextField >
               </Grid>
 

@@ -17,10 +17,10 @@ export const mainListItems = (
       <Button fullWidth href='/explore'>
         <ListItemText primary="Explore +" /></Button>
     </ListItem>
-    <ListItem button>
+    {/* <ListItem button>
       <Button fullWidth href='/questao'>
         <ListItemText primary="Criar Questões" /></Button>
-    </ListItem>
+    </ListItem> */}
     <ListItem button>
       <Button fullWidth href='/sobre'>
         <ListItemText primary="Sobre" /></Button>
