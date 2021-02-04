@@ -21,13 +21,13 @@ export const mainListItems = (
       <Button fullWidth href='/questao'>
         <ListItemText primary="Criar Questões" /></Button>
     </ListItem>
-  {/*   <ListItem button>
+     <ListItem button>
       <Button fullWidth href='/sobre'>
         <ListItemText primary="Sobre" /></Button>
     </ListItem>
     <ListItem button>
       <Button fullWidth href='/ajuda'>
         <ListItemText primary="Ajuda" /></Button>
-    </ListItem> */}
+    </ListItem> 
   </div>
 );
