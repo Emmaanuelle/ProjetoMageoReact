@@ -2,14 +2,21 @@ import React, { useState,useEffect} from "react";
 import api from "../../services/api"
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles, useStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Navbar from "../NavbarAdministrador";
 import MUIDataTable from "mui-datatables";
 
 
 const useStyles = makeStyles((theme) => ({
+titulo:{
+  textAlign:"center",
+  fontFamily:"'Poppins', sans-serif;",
+  marginTop:"30px",
+  marginBottom:"30px",
+  color:"#36BD8C"
 
+}
  
 }));
 
@@ -17,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
 
 
  function Desempenho() {
-  
+    const classes = useStyles();
     const colunas=["nome","sobrenome","ano_escolar","escola","pontos"]
 
   const [ranking, setRanking] = useState([])
@@ -42,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
       <Container >
         <CssBaseline />
         <div >
-          <Typography component="h1" variant="h3" >
+          <Typography component="h1" variant="h4"  className={classes.titulo}>
            <b>Ranking</b> 
         </Typography>
         <MUIDataTable title={"Ranking"} columns={colunas} data={ranking}/>
