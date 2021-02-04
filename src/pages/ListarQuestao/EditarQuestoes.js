@@ -23,6 +23,7 @@ const styles = (theme) => ({
     top: theme.spacing(1),
     color: theme.palette.grey[500],
   },
+
 });
 
 const DialogTitle = withStyles(styles)((props) => {
@@ -96,11 +97,11 @@ export default function EditarQuestoes(props) {
 
   return (
     <div>
-      <Button variant="contained" color="primary" onClick={handleClickOpen}>
+      <Button variant="contained" onClick={handleClickOpen} style={{color:"#ffffff",backgroundColor:"#FFBB0E"}}>
         Editar
       </Button>
       <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
-        <DialogTitle id="customized-dialog-title" onClose={handleClose}>
+        <DialogTitle id="customized-dialog-title" onClose={handleClose} > 
          Editar Questoes
         </DialogTitle>
         <DialogContent dividers>
@@ -182,14 +183,15 @@ export default function EditarQuestoes(props) {
                   <MenuItem value={"retangulo"}>Retângulo</MenuItem>
                   <MenuItem value={"triangulo"}>Triângulo</MenuItem>
                   <MenuItem value={"circulo"}> Círculo</MenuItem>
+                  <MenuItem value={"Area"}> Area</MenuItem>
                 </TextField >
               </Grid>
               <Grid item xs={12}>
                 <TextField id="nivel" value={fase} onChange={e => setNivel(e.target.value)} variant="outlined" select fullWidth label="Selecione o Nível da Questão">
                {/*  <InputLabel id="demo-simple-select-helper-label">Selecione o  Tipo da Questão</InputLabel> */}
-                  <MenuItem value={"facil"}> Fácil</MenuItem>
-                  <MenuItem value={"medio"}>Médio</MenuItem>
-                  <MenuItem value={"dificil"}>Dificil</MenuItem>
+                  <MenuItem value={"Facil"}> Fácil</MenuItem>
+                  <MenuItem value={"Medio"}>Médio</MenuItem>
+                  <MenuItem value={"Dificil"}>Dificil</MenuItem>
                   <MenuItem value={"desafioquestao"}> Desafio Questão</MenuItem>
                 </TextField >
               </Grid>

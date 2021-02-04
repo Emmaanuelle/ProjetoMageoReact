@@ -20,6 +20,7 @@ function PerfilAdmin() {
         getPerfilUsuario()
     }, []);
     localStorage.setItem('administradors_id', perfilUsuario.id)
+    console.log(perfilUsuario)
     return (
         <>
             <Navbar />
@@ -54,6 +55,7 @@ function PerfilAdmin() {
                                 <EditarDialog admin={perfilUsuario} />
                             </CardActions>
                         </Card>
+                        
                     </Grid>
                 </Grid>
                 </>:<></>}

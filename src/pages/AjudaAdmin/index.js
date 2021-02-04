@@ -1,6 +1,6 @@
 import React  from 'react';
 import { Container } from '@material-ui/core'
-import Navbar from '../Navbar';
+import Navbar from '../NavbarAdministrador';
 import { Card, CardActionArea,CardContent,CardActions} from '@material-ui/core';
 
 

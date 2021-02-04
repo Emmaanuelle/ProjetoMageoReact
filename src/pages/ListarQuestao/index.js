@@ -7,7 +7,7 @@ import Container from '@material-ui/core/Container';
 import Navbar from "../NavbarAdministrador";
 import EditarQuestoes from "./EditarQuestoes";
 import DeletarQuestoes from "./DeletarQuestoes";
-import { Card, CardActionArea, CardContent,CardActions } from '@material-ui/core';
+import { Card, CardActionArea, CardContent,CardActions, Grid, Paper } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -16,6 +16,14 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
   },
+  titulo:{
+    textAlign:"center",
+    marginTop:"30px",
+    marginBottom:"30px",
+    fontSize:"30px",
+    fontFamily:"'Poppins', sans-serif;",
+
+  }
 }));
 
 
@@ -47,13 +55,15 @@ export default function ListarQuestao() {
       <Container >
         <CssBaseline />
         <div className={classes.paper}>
-          <Typography component="h1" variant="h5">
-            Listar Questão
+          <Typography component="h1" variant="h5" className={classes.titulo}>
+           <b>Listar Questão</b> 
         </Typography>
             {questoes.length > 0 ? questoes.map((valor,indice)=>{
               return(
-                 
-                   <Card>
+                <Grid container spacing={10}>
+                <Grid item xs={12} spacing={10}>
+                <Paper className={classes.paper}>
+                <Card>
                    <CardActionArea>
                        <CardContent>
                        <div key={valor.id}>
@@ -64,8 +74,6 @@ export default function ListarQuestao() {
                         <p><b>Fase:</b>{valor.fase}</p><hr/>
                         <p><b>Dica:</b>{valor.dica}</p><hr/>
                         <p><b>Nivel:</b>{valor.nivel}</p><hr/>
-                        
-                     
                       
                       </div>
                        </CardContent>
@@ -77,6 +85,10 @@ export default function ListarQuestao() {
                    </CardActions>
 
                </Card>
+                </Paper>
+                  
+               </Grid>
+               </Grid>
               )
             }):<p>Não tem perguntas cadastrada no momento!</p>}
       

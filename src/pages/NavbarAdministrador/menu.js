@@ -22,11 +22,11 @@ export const mainListItems = (
         <ListItemText primary="Criar Questões" /></Button>
     </ListItem>
      <ListItem button>
-      <Button fullWidth href='/sobre'>
+      <Button fullWidth href='/sobreAdmin'>
         <ListItemText primary="Sobre" /></Button>
     </ListItem>
     <ListItem button>
-      <Button fullWidth href='/ajuda'>
+      <Button fullWidth href='/ajudaAdmin'>
         <ListItemText primary="Ajuda" /></Button>
     </ListItem> 
   </div>
