@@ -6,6 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Navbar from "../NavbarAdministrador";
 import EditarQuestoes from "./EditarQuestoes";
+import DeletarQuestoes from "./DeletarQuestoes";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -53,6 +54,7 @@ export default function ListarQuestao() {
                 <div key={valor.id}>
                   <p>{valor.pergunta}</p><hr/>
                 <EditarQuestoes questoes={valor}/>
+                <DeletarQuestoes questoes={valor}/>
                 </div>
               )
             }):<p>Não tem perguntas cadastrada no momento!</p>}

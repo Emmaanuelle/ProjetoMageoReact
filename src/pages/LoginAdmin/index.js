@@ -69,7 +69,7 @@ export default function LoginAdmin() {
           const resposta = await api.post("/loginAdmin", data);
           login(resposta.data.token)
           alert("Login Realizado com Sucesso");
-          history.push("/homeAdmin");
+          history.push("/perfilAdmin");
       } catch (error) {
           //console.log(error.response.data.message.error)
           console.log(error.response.data)

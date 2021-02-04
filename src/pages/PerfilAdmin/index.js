@@ -12,7 +12,6 @@ function PerfilAdmin() {
             try {
                 const response = await api.get('/perfilAdmin', { headers: { email: email } });
                 setPerfilUsuario(response.data)
-                console.log(response.data)
             } catch (error) {
                 console.log(error);
                 alert("Erro em carregar os dados")
@@ -54,7 +53,6 @@ function PerfilAdmin() {
                             <CardActions>
                                 <EditarDialog admin={perfilUsuario} />
                             </CardActions>
-
                         </Card>
                     </Grid>
                 </Grid>
