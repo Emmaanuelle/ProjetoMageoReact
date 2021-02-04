@@ -7,6 +7,7 @@ import Container from '@material-ui/core/Container';
 import Navbar from "../NavbarAdministrador";
 import EditarQuestoes from "./EditarQuestoes";
 import DeletarQuestoes from "./DeletarQuestoes";
+import { Card, CardActionArea, CardContent,CardActions } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -51,11 +52,31 @@ export default function ListarQuestao() {
         </Typography>
             {questoes.length > 0 ? questoes.map((valor,indice)=>{
               return(
-                <div key={valor.id}>
-                  <p>{valor.pergunta}</p><hr/>
-                <EditarQuestoes questoes={valor}/>
-                <DeletarQuestoes questoes={valor}/>
-                </div>
+                 
+                   <Card>
+                   <CardActionArea>
+                       <CardContent>
+                       <div key={valor.id}>
+                         
+                        <p><b>Pergunta:</b>{valor.pergunta}</p><hr/>
+                        <p><b>Alternativas:</b>{valor.alternativa}</p><hr/>
+                        <p><b>Resposta:</b>{valor.resposta}</p><hr/>
+                        <p><b>Fase:</b>{valor.fase}</p><hr/>
+                        <p><b>Dica:</b>{valor.dica}</p><hr/>
+                        <p><b>Nivel:</b>{valor.nivel}</p><hr/>
+                        
+                     
+                      
+                      </div>
+                       </CardContent>
+
+                   </CardActionArea>
+                   <CardActions>
+                   <EditarQuestoes questoes={valor}/>
+                    <DeletarQuestoes questoes={valor}/>
+                   </CardActions>
+
+               </Card>
               )
             }):<p>Não tem perguntas cadastrada no momento!</p>}
       

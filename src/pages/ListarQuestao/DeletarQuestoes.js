@@ -35,7 +35,7 @@ export default function DeletarQuestoes(props) {
   return (
       <div>
           {error&&<p>{error}</p>}
-          {carregar&&<p>Carregando</p>}
+          {carregar&&!error && <p>Carregando</p>}
           <Button style={{backgroundColor:"red",color:'white'}} onClick={deletarQuestoes}>Deletar</Button>
       </div>
   );
