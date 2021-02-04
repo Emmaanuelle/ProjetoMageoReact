@@ -50,9 +50,9 @@ titulo:{
         <CssBaseline />
         <div >
           <Typography component="h1" variant="h4"  className={classes.titulo}>
-           <b>Ranking</b> 
+           <b>Desempenho dos Estudantes</b> 
         </Typography>
-        <MUIDataTable title={"Ranking"} columns={colunas} data={ranking}/>
+        <MUIDataTable title={"Desempenho"} columns={colunas} data={ranking}/>
 
         </div>
       </Container>

@@ -11,7 +11,7 @@ import { Card, CardActionArea, CardContent,CardActions, Grid, Paper } from '@mat
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    marginTop: theme.spacing(8),
+    marginTop: theme.spacing(4),
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -20,8 +20,8 @@ const useStyles = makeStyles((theme) => ({
     textAlign:"center",
     marginTop:"30px",
     marginBottom:"30px",
-    fontSize:"30px",
     fontFamily:"'Poppins', sans-serif;",
+    color:"#36BD8C"
 
   }
 }));
@@ -55,7 +55,7 @@ export default function ListarQuestao() {
       <Container >
         <CssBaseline />
         <div className={classes.paper}>
-          <Typography component="h1" variant="h5" className={classes.titulo}>
+          <Typography component="h1" variant="h4" className={classes.titulo}>
            <b>Listar Questão</b> 
         </Typography>
             {questoes.length > 0 ? questoes.map((valor,indice)=>{
