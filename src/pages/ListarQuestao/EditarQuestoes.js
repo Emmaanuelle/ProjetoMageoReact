@@ -183,16 +183,16 @@ export default function EditarQuestoes(props) {
                   <MenuItem value={"retangulo"}>Retângulo</MenuItem>
                   <MenuItem value={"triangulo"}>Triângulo</MenuItem>
                   <MenuItem value={"circulo"}> Círculo</MenuItem>
-                  <MenuItem value={"Area"}> Area</MenuItem>
+                  <MenuItem value={"area"}> Area</MenuItem>
                 </TextField >
               </Grid>
               <Grid item xs={12}>
-                <TextField id="nivel" value={fase} onChange={e => setNivel(e.target.value)} variant="outlined" select fullWidth label="Selecione o Nível da Questão">
+                <TextField id="nivel" value={nivel} onChange={e => setNivel(e.target.value)} variant="outlined" select fullWidth label="Selecione o Nível da Questão">
                {/*  <InputLabel id="demo-simple-select-helper-label">Selecione o  Tipo da Questão</InputLabel> */}
-                  <MenuItem value={"Facil"}> Fácil</MenuItem>
-                  <MenuItem value={"Medio"}>Médio</MenuItem>
-                  <MenuItem value={"Dificil"}>Dificil</MenuItem>
-                  <MenuItem value={"desafioquestao"}> Desafio Questão</MenuItem>
+                  <MenuItem value={"facil"}> Fácil</MenuItem>
+                  <MenuItem value={"medio"}>Médio</MenuItem>
+                  <MenuItem value={"dificil"}>Dificil</MenuItem>
+                  <MenuItem value={"desafio"}> Desafio Questão</MenuItem>
                 </TextField >
               </Grid>
 

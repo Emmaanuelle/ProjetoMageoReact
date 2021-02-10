@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Typography,Button, Card, CardContent, CardMedia } from '@material-ui/core';
+import { Box, Typography,Button, Card, CardContent, CardMedia, Container } from '@material-ui/core';
 import Navbar from '../Navbar';
 import api from '../../services/api';
 import premio from '../../images/icons/premio.svg'
@@ -13,6 +13,9 @@ const useStyles = makeStyles({
     height: 100,
     width: 100,
   },
+  container:{
+    marginTop:'2%'
+  }
 });
 
 
@@ -79,7 +82,7 @@ export default function Quiz() {
     }
   }
   //const alternativa = questions.length > 0 ?questions[0].alternativa.split(","):['Quiz','Em','Construção'];
- 
+ console.log(questions);
 
 // function desafiofases (){
 //   if(indexAtual === 4  &&  acerto === 5 ){
@@ -90,9 +93,9 @@ export default function Quiz() {
   return (
     <>
       <Navbar />
-      <div className="bg-gray-900 text-white flex 
-     justify-center items-center h-screen">
-        
+      <div className="text-black 
+     items-center h-screen">
+        <Container className={classes.container}>
        {  questions.length > 0 ? 
           indexAtual>=questions.length?(
           //desafiofases?(
@@ -127,6 +130,7 @@ export default function Quiz() {
             </Box>
           )
         }
+        </Container>
  </div>
     </>
   )
