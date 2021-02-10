@@ -2,7 +2,7 @@ import React from "react";
 import CustomizedDialogs from "./dialog";
 import LinearWithValueLabel from "./Progresso";
 
-const Questao = ({ mostrarResposta, irParaProximaQuestao,handleAnswer, data: { pergunta, resposta, answers,video,dica } }) => {
+const Questao = ({ mostrarResposta, irParaProximaQuestao,handleAnswer,indexAtual,question, data: { pergunta, resposta, answers,video,dica } }) => {
 
 
     return (
@@ -15,7 +15,7 @@ const Questao = ({ mostrarResposta, irParaProximaQuestao,handleAnswer, data: { p
                 <></>
                  }
                 <CustomizedDialogs dica={dica}/>
-                <LinearWithValueLabel/>
+                <LinearWithValueLabel indexAtual={indexAtual} question={question} />
                 <div className="bg-white text-purple-800 p-10 rounded-lg shadow">
                     <h3 className="text-2xl"
                         dangerouslySetInnerHTML={{ __html: pergunta }} />

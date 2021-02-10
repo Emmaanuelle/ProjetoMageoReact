@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import LinearProgress from '@material-ui/core/LinearProgress';
@@ -8,13 +8,11 @@ import Box from '@material-ui/core/Box';
 function LinearProgressWithLabel(props) {
   return (
     <Box display="flex" alignItems="center">
-      <Box width="100%" mr={1}>
+      <Box width="80%" mr={1}>
         <LinearProgress variant="determinate" {...props} />
       </Box>
-      <Box minWidth={35}>
-        <Typography variant="body2" color="primary">{`${Math.round(
-          props.value,
-        )}%`}</Typography>
+      <Box minWidth={65}>
+        <Typography variant="body2" color="primary">{props.value}/{props.limite}</Typography>
       </Box>
     </Box>
   );
@@ -26,31 +24,29 @@ LinearProgressWithLabel.propTypes = {
    * Value between 0 and 100.
    */
   value: PropTypes.number.isRequired,
+  limite: PropTypes.number.isRequired,
 };
 
 const useStyles = makeStyles({
   root: {
     width: '100%',
-   
+
   },
 });
 
-export default function LinearWithValueLabel() {
+export default function LinearWithValueLabel(props) {
   const classes = useStyles();
-  const [progress, setProgress] = React.useState(10);
+  const [progress, setProgress] = useState(props.question.length);
 
-  React.useEffect(() => {
-    const timer = setInterval(() => {
-      setProgress((prevProgress) => (prevProgress >= 100 ? 10 : prevProgress + 10));
-    }, 800);
-    return () => {
-      clearInterval(timer);
-    };
-  }, []);
+  useEffect(() => {
+
+    setProgress((prevProgress) => (prevProgress >= props.indexAtual ? 0 : prevProgress + 1));
+
+  }, [props.indexAtual]);
 
   return (
     <div className={classes.root}>
-      <LinearProgressWithLabel value={progress} />
+      <LinearProgressWithLabel value={progress} limite={props.question.length} />
     </div>
   );
 }

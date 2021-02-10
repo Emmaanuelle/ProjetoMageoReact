@@ -116,6 +116,8 @@ export default function Quiz() {
         </Card>
         ): (
         <Questao data={questions[indexAtual]} 
+        indexAtual={indexAtual}
+        question={questions}
         irParaProximaQuestao={irParaProximaQuestao}
         mostrarResposta={mostrarResposta} handleAnswer={handleAnswer} />
         ) : (
