@@ -2,6 +2,7 @@ import React from "react";
 import CustomizedDialogs from "./Dica";
 import LinearWithValueLabel from "./Progresso";
 
+
 const Questao = ({ mostrarResposta, irParaProximaQuestao, handleAnswer, indexAtual, question, data: { pergunta, resposta, answers, video, dica, nivel, fase } }) => {
 
 

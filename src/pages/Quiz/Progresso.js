@@ -40,7 +40,7 @@ export default function LinearWithValueLabel(props) {
 
   useEffect(() => {
 
-    setProgress((prevProgress) => (prevProgress >= props.indexAtual ? 0 : prevProgress + 1));
+    setProgress((prevProgress) => (prevProgress >= props.indexAtual ? 1 : prevProgress + 1));
 
   }, [props.indexAtual]);
 

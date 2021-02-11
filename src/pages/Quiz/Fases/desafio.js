@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Typography,Button, Card, CardContent, CardMedia, Container } from '@material-ui/core';
-import Navbar from '../Navbar';
-import api from '../../services/api';
-import premio from '../../images/icons/premio.svg'
+import Navbar from '../../Navbar';
+import api from '../../../services/api';
+import premio from '../../../images/icons/premio.svg'
 import ReactLoading from 'react-loading';
-import Questao from './Questao';
+import QuestaoDesafio from './QuestaoDesafio';
 import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from "react-router-dom";
 
@@ -30,28 +30,29 @@ const useStyles = makeStyles({
 export default function Quiz() {
   const classes = useStyles();
 
-  const [questions, setQuestions] = useState([]);
   const [pontos, setPontuacao] = useState(0);
   const[acerto, setAcerto] = useState(0);
   const [indexAtual, setIndexAtual] = useState(0);
+  const[desafio,setDesafio] =useState([])
   const [mostrarResposta,setMostrarResposta]= useState(false)
   const [user_id,setUserId] = useState(localStorage.getItem('user_id'));
-  const history = useHistory();
 
   useEffect(() => {
     async function getQuestions() {
-
       try {
-        const resposta = await api.get('/questao');
-        const questions = resposta.data.map((question)=>({
-          ...question,
+        const resposta = await api.get('/desafio');
+        const desafio = resposta.data.map((question)=>({
+            
+          ...question,/* 
+          {question.nivel===} */
+          
           answers:[
             question.resposta,
             //Pega as alternativas e separa onde tem virgula
           ...question.alternativa.split(',',3)
           ].sort(()=>Math.random()-0.5),
         }))
-        setQuestions(questions)
+        setDesafio(desafio)
       } catch (error) {
         console.log(error.response);
       }
@@ -61,12 +62,12 @@ export default function Quiz() {
   const handleAnswer = (answer) => {
     if(!mostrarResposta){//Previnindo respostas duplicadas
       //verifica se a resposta está correta
-      if (answer === questions[indexAtual].resposta) {
+      if (answer === desafio[indexAtual].resposta) {
         if(indexAtual === 4  &&  acerto === 5 ){
           setPontuacao(pontos*2);
         }else{
           setAcerto(acerto + 1)
-          setPontuacao(pontos + 10)
+          setPontuacao(pontos + 30)
 
         }
         //Aumenta a pontuação
@@ -88,31 +89,22 @@ export default function Quiz() {
     try {
       await api.post('/ranking',data);
       alert("Parabéns Fase Concluída")
-      history.push("/desafio");
-      //setTimeout(()=>{window.location.reload()},300)
+      //history.push("/");
+      setTimeout(()=>{window.location.reload()},300)
     } catch (error) {
       console.log(error);
     }
   }
-  //const alternativa = questions.length > 0 ?questions[0].alternativa.split(","):['Quiz','Em','Construção'];
- console.log(questions);
-
-// function desafiofases (){
-//   if(indexAtual === 4  &&  acerto === 5 ){
-//     setPontuacao(pontos*2);
-//   }
-// }
+  
 
   return (
     <>
-
       <Navbar />
       <div className="text-black 
      items-center h-screen">
-
         <Container className={classes.container}>
-       {  questions.length > 0 ? 
-          indexAtual>=questions.length?(
+       {  desafio.length > 0 ? 
+          indexAtual>=desafio.length?(
           //desafiofases?(
           
           <Card>
@@ -122,7 +114,6 @@ export default function Quiz() {
             </Typography>
             <Typography variant="h3" color="textSecondary" component="h5">
               Parabéns! Você concluiu a Fase dos Quadrados.
-           
           </Typography>
           <Typography  variant="h3" color="textSecondary" component="h5">
            Pontos:{pontos}!
@@ -132,29 +123,25 @@ export default function Quiz() {
             image={premio}
             title="Prêmio" 
           />
-          
            <Typography variant="h3" color="textSecondary" component="h5">
-              Clique no Botão para Iniciar o Quebra Cuca!
+              Clique no Botão para Iniciar a Proxíma Fase!
             </Typography>
-
           </CardContent>
           <CardContent className={classes.conteudo}>
         
           <form onSubmit={cadastrarRanking} >
             <input type="text" hidden value={user_id} onChange={e=>setUserId(e.target.value)}/>
-            <Button type='submit'>Ir para Desafio</Button>
-            
+            <Button type='submit'>Proxíma Fase</Button>
           </form>
           </CardContent>
         </Card>
-        ): 
-        (
-        <Questao data={questions[indexAtual]} 
+
+        ): (
+        <QuestaoDesafio data={desafio[indexAtual]} 
         indexAtual={indexAtual}
-        question={questions}
+        desafio={desafio}
         irParaProximaQuestao={irParaProximaQuestao}
         mostrarResposta={mostrarResposta} handleAnswer={handleAnswer} />
-
         ) : (
             <Box display='flex' justifyContent="center">
               <Typography component="h1" align='center' variant="h5" display='inline' color='error'>Carregando.. Aguarde</Typography>

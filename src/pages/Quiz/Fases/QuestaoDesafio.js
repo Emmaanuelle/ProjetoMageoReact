@@ -1,8 +1,9 @@
 import React from "react";
-import CustomizedDialogs from "./Dica";
-import LinearWithValueLabel from "./Progresso";
+import CustomizedDialogs from "../Dica";
+import LinearWithValueLabel from "../Progresso";
 
-const Questao = ({ mostrarResposta, irParaProximaQuestao, handleAnswer, indexAtual, question, data: { pergunta, resposta, answers, video, dica, nivel, fase } }) => {
+const QuestaoDesafio = ({ mostrarResposta, irParaProximaQuestao, handleAnswer, indexAtual, desafio, data: { pergunta, resposta, answers, video, dica, nivel, fase } }) => {
+
 
 
     return (
@@ -20,7 +21,7 @@ const Questao = ({ mostrarResposta, irParaProximaQuestao, handleAnswer, indexAtu
                 <p className="text-center" >Nível: {nivel === 'facil' ? <span className='text-green-700'>FÁCIL</span> : nivel === 'medio' ? <span className='text-yellow-500'>MÉDIO</span> : nivel === 'dificil' ? <span className='text-blue-500'>DIFÍCIL</span> : <span style={{ fontWeight: 'bold', color: '#FF0E0E' }}>DESAFIO</span>}</p>
                 <p className="text-center" >Fase: {fase === 'quadrado' ? <span className='text-blue-300'>QUADRADO</span> : fase === 'retangulo' ? <span style={{ color: '#FFBB0E' }} >RETÂNGULO</span> : fase === 'triangulo' ? <span style={{ color: '#9D9D9D' }}>TRIÂNGULO</span> : fase === 'circulo' ? <span>CÍRCULO</span> : fase}</p>
             </div>
-            <LinearWithValueLabel indexAtual={indexAtual} question={question} />
+            <LinearWithValueLabel indexAtual={indexAtual} question={desafio} />
             <div className="bg-gray-100 text-purple-800 p-10 rounded-lg shadow">
                 <h3 className="text-2xl"
                     dangerouslySetInnerHTML={{ __html: pergunta }} />
@@ -30,6 +31,7 @@ const Questao = ({ mostrarResposta, irParaProximaQuestao, handleAnswer, indexAtu
                     const bgColor = mostrarResposta ?
                         resposta_certa === resposta ? 'bg-green-500' : 'bg-red-500' : 'bg-gray-100';
                     const textColor = mostrarResposta ? 'text-white' : 'text-purple-700';
+
                     return (
                         <button key={id} className={`${bgColor} rounded p-4
                 shadow ${textColor} font-semibold`}
@@ -45,4 +47,4 @@ const Questao = ({ mostrarResposta, irParaProximaQuestao, handleAnswer, indexAtu
         </div>
     )
 }
-export default Questao;
+export default QuestaoDesafio;

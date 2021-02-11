@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Typography,Button, Card, CardContent, CardMedia, Container } from '@material-ui/core';
-import Navbar from '../Navbar';
-import api from '../../services/api';
-import premio from '../../images/icons/premio.svg'
+import Navbar from '../../Navbar';
+import api from '../../../services/api';
+import premio from '../../../images/icons/premio.svg'
 import ReactLoading from 'react-loading';
-import Questao from './Questao';
+import Questao from '../Questao';
 import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from "react-router-dom";
 
@@ -42,7 +42,7 @@ export default function Quiz() {
     async function getQuestions() {
 
       try {
-        const resposta = await api.get('/questao');
+        const resposta = await api.get('/faseRetangulo');
         const questions = resposta.data.map((question)=>({
           ...question,
           answers:[
