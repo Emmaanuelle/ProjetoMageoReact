@@ -28,8 +28,11 @@ import FaseQuadrado from "./pages/Quiz/Fases/FaseQuadrado";
 import FaseRetangulo from "./pages/Quiz/Fases/FaseRetangulo";
 import FaseTriangulo from "./pages/Quiz/Fases/FaseTriangulo";
 import FaseCirculo from "./pages/Quiz/Fases/FaseCirculo";
-
-
+import DesafioQuadrado from "./pages/Quiz/Fases/DesafioQuadrado";
+import DesafioRetangulo from "./pages/Quiz/Fases/DesafioRetangulo";
+import DesafioTriangulo from "./pages/Quiz/Fases/DesafioTriangulo";
+import DesafioCirculo from "./pages/Quiz/Fases/DesafioCirculo";
+import EscolherFases from "./pages/Home/EscolherFases";
 
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
@@ -76,6 +79,12 @@ const Routes = () => (
       <PrivateRoute path="/perfilAdmin" component={PerfilAdmin} />
       <PrivateRoute path="/home" component={Home} />
       <PrivateRoute path="/desafio" component={Desafio}/>
+      <PrivateRoute path="/desafioQuadrado" component={DesafioQuadrado}/>
+      <PrivateRoute path="/desafioRetangulo" component={DesafioRetangulo}/>
+      <PrivateRoute path="/desafioTriangulo" component={DesafioTriangulo}/>
+      <PrivateRoute path="/desafioCirculo" component={DesafioCirculo}/>
+      <PrivateRoute path="/escolherFases" component={EscolherFases}/>
+      
      {/*  <PrivateRoute path="/tabela" component={Tabela} /> */}
     
       <PrivateRoute path="/homeAdmin" component={HomeAdministrador}/>

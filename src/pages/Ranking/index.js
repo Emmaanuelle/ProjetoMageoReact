@@ -66,6 +66,7 @@ function Ranking() {
           <TableRow>
             <StyledTableCell>Nome</StyledTableCell>
             <StyledTableCell align="right">Pontuação</StyledTableCell>
+         
             
           </TableRow>
         </TableHead>

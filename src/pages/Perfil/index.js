@@ -1,10 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import { Container, Card, Grid, CardActionArea, CardContent, Typography, CardActions } from '@material-ui/core';
+import React, { useState, useEffect} from 'react';
+import { Container, Card, Grid, CardActionArea, CardContent, Typography, CardActions, CardMedia } from '@material-ui/core';
 import Navbar from '../Navbar';
 import api from '../../services/api';
 import EditarDialog from "./EditarDialog";
+import premio from '../../images/icons/premio.svg';
+import { makeStyles} from '@material-ui/core/styles';
+
+const useStyles = makeStyles({
+    media: {
+      marginLeft: "auto",
+      marginRight: "auto",
+      height:50,
+      width: 50,
+    },
+    
+   
+  });
+  
 
 function Perfil() {
+     const classes = useStyles();
+    
     const [perfilUsuario, setPerfilUsuario] = useState([])
     useEffect(() => {
         const email = localStorage.getItem('email')
@@ -63,14 +79,27 @@ function Perfil() {
                             <CardActionArea>
                                 <CardContent>
                                     <Typography gutterBottom variant="h5" component="h2">
-                                        Ranking
-                           </Typography>
-
-                                   
-
+                                        Ranking:
+                                    </Typography>
                                 </CardContent>
                             </CardActionArea>
-
+                        </Card>
+                    </Grid>
+                    
+                    <Grid item xs={12} sm={6}>
+                    <Card>
+                            <CardActionArea>
+                                <CardContent>
+                                    <Typography gutterBottom variant="h5" component="h2">
+                                        Conquistas:
+                                    </Typography>
+                                    <CardMedia
+                                            className={classes.media}
+                                            image={premio}
+                                            title="Prêmio" 
+                                            />
+                                 </CardContent>
+                            </CardActionArea>
                         </Card>
                     </Grid>
                     <Grid item xs={12} sm={6}>
@@ -78,7 +107,7 @@ function Perfil() {
                             <CardActionArea>
                                 <CardContent>
                                     <Typography gutterBottom variant="h5" component="h2" >
-                                        Pontuação       
+                                        Pontuação:       
                                     </Typography>
                                     <Typography gutterBottom variant="h5" component="h2">
                                         {perfilUsuario.ranking !==undefined?
@@ -86,13 +115,11 @@ function Perfil() {
                                             return (<p key={data.id}>Pontos: {data.pontos}</p>)
                                         }):<></>}
                                     </Typography>
-                                    <Typography gutterBottom variant="h5" component="h2">
-                                        Conquistas
-                           </Typography>
                                 </CardContent>
                             </CardActionArea>
                         </Card>
                     </Grid>
+
                 </Grid>
                 </>:<></>}
             </Container>
