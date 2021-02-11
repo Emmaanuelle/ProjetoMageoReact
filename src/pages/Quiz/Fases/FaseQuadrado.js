@@ -134,7 +134,7 @@ export default function Quiz() {
           />
           
            <Typography variant="h3" color="textSecondary" component="h5">
-              Clique no Botão para Iniciar o Quebra Cuca!
+              Clique no Botão para Iniciar o Desafio MaGeo!
             </Typography>
 
           </CardContent>
