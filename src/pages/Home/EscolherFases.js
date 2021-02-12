@@ -43,7 +43,8 @@ const useStyles = makeStyles((theme)=>({
     fase:{
         margin:"auto",
         fontWeight:"Bold",
-        marginLeft:"50px"
+        marginLeft:"50px",
+        fontFamily:"'Poppins', sans-serif;",
     },
     paper:{
         marginBottom:"20px",
@@ -85,7 +86,7 @@ return(
                 <CardContent>
                 <span className={classes.fase}>
                     Fase Quadrado
-                    <Button href="/faseQuadrado" className={classes.conteudo} style={{ backgroundSize:"cover",alignContent:"center",}} >Fase Quadrado</Button>
+                    <Button href="/faseQuadrado" className={classes.conteudo} style={{ backgroundSize:"cover",alignContent:"center",}} ></Button>
                     </span>
                 </CardContent>
                 </Card>
@@ -99,7 +100,7 @@ return(
                 <CardContent>
                 <span className={classes.fase}>
                 Fase Retângulo
-                    <Button href="/faseRetangulo" className={classes.conteudo1}>Fase Retangulo</Button>
+                    <Button href="/faseRetangulo" className={classes.conteudo1}></Button>
                     </span>
                 </CardContent>
                 </Card>
@@ -112,7 +113,7 @@ return(
                 <CardContent>
                 <span className={classes.fase}>
                 Fase Triângulo
-                    <Button href="/faseTriangulo" className={classes.conteudo2}>Fase Triângulo</Button>
+                    <Button href="/faseTriangulo" className={classes.conteudo2}></Button>
                     </span>
                 </CardContent>
                 </Card>
@@ -125,7 +126,7 @@ return(
                 <CardContent>
                 <span className={classes.fase}>
                 Fase Circulo
-                <Button href="/faseCirculo" className={classes.conteudo3}>Fase Círculo</Button>
+                <Button href="/faseCirculo" className={classes.conteudo3}></Button>
                     </span>
                 </CardContent>
                 </Card>

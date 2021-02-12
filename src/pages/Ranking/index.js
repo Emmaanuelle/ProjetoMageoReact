@@ -102,7 +102,7 @@ function Ranking() {
             </StyledTableRow>
           ))}
         </TableBody>
-        <TableFooter>
+       {/*  <TableFooter>
           <TableRow>
             <TablePagination
               rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
@@ -119,7 +119,7 @@ function Ranking() {
               ActionsComponent={TablePaginationActions}
             />
           </TableRow>
-        </TableFooter>
+        </TableFooter> */}
       </Table>
     </TableContainer>
             </Container>
