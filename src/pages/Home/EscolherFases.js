@@ -74,7 +74,7 @@ return(
     <Navbar/>
     <Container>
                 <Typography className={classes.titulo}>
-                    Ola Mundo!
+                    Bem Vindo ao MaGeo Quiz! O jogo começa na primeira fase dos Quadrados!
                 </Typography>
                 <Grid container spacing={7} >
                     
