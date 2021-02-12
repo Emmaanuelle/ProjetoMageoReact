@@ -88,7 +88,7 @@ export default function Quiz() {
     try {
       await api.post('/ranking',data);
       alert("Parabéns Fase Concluída")
-      history.push("/desafio");
+      history.push("/desafioCirculo");
       //setTimeout(()=>{window.location.reload()},300)
     } catch (error) {
       console.log(error);

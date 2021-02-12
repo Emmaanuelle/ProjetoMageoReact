@@ -30,8 +30,13 @@ function Perfil() {
                 setPerfilUsuario(response.data)
                 console.log(response.data)
             } catch (error) {
-                console.log(error);
-                alert("Erro em carregar os dados")
+                console.log(error.response);
+                if(error.response.data.error.name==="ExpiredJwtToken"){
+                    alert("Sua sessão expirou! Faça o login novamente.")
+                }else{
+                    alert("Erro em carregar os dados")
+                }
+               
             }
         }
         getPerfilUsuario()
