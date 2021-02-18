@@ -47,8 +47,35 @@ const useStyles = makeStyles((theme) => ({
   },
   fonte:{
     fontFamily:"'Poppins', sans-serif;",
-    fontSize:"20px",
-  }
+    fontSize:"17px",
+    color:"#75A0F2",
+    fontWeight:"Bold",
+    marginLeft:"1%",
+    marginTop:"25px"
+  },
+  fonte1:{
+    fontFamily:"'Poppins', sans-serif;",
+    fontSize:"17px",
+    marginTop:"25px"
+  },
+  fonte2:{
+    fontFamily:"'Poppins', sans-serif;",
+    fontSize:"17px",
+    color:"#75A0F2",
+    fontWeight:"Bold",
+    marginRight:"34%",
+    marginTop:"5px"
+  },
+  fonte3:{
+    fontFamily:"'Poppins', sans-serif;",
+    fontSize:"17px",
+    color:"#75A0F2",
+    fontWeight:"Bold",
+    marginRight:"67%",
+    marginTop:"5px"
+  
+  },
+
 }));
 
 export default function LoginUsuario() {
@@ -136,16 +163,25 @@ export default function LoginUsuario() {
             Entrar
           </Button>
           <Grid container justify="center" alignItems="center">
+            <Typography  className={classes.fonte1}>
+              Não tem  uma conta?
+            </Typography>
+            <br/>
             <Link to='/cadastroUsuario' className={classes.fonte}>
                 Fazer Cadastro
             </Link>
-
-          {/*   <Link to='/esqueceuASenha'>
-               Esqueceu a senha?
-            </Link> */}
-
-
           </Grid>
+          <Grid container justify="center" alignItems="center">
+          <Link to='/EsqueceuSenhaUsuario' className={classes.fonte2}>
+              Esqueci minha senha
+            </Link>
+          </Grid>
+          <Grid container justify="center" alignItems="center">
+          <Link to='/' className={classes.fonte3}>
+              Voltar
+            </Link>
+          </Grid>
+
         </form>
       </div>
     </Container>

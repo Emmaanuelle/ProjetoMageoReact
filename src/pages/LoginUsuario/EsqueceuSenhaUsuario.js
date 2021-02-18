@@ -11,7 +11,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import ReactLoading from 'react-loading';
-import logo from '../../images/icons/logo.svg'
+import logo from '../../images/icons/shape.svg'
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(8),
@@ -30,14 +30,32 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
     color:"white",
-    background:"#3B82F6",
+    background:"#769DE9",
+    fontFamily:"'Poppins', sans-serif;",
+    fontSize:"17px",
+  },
+  fonte2:{
+    fontFamily:"'Poppins', sans-serif;",
+    fontSize:"17px",
+    color:"#75A0F2",
+    fontWeight:"Bold",
+  
+  }, tipografia:{
+    fontSize:"30px",
+    fontFamily:"'Poppins', sans-serif;",
+    fontWeight:"Bold",
+    color:"#75A0F2",
+  },
+  imagem:{
+    height:"70px",
+    width:"70px"
   },
 }));
 
 export default function LoginUsuario() {
   const classes = useStyles();
   const [email, setEmail] = useState("");
-  const [senha, setSenha] = useState("");
+
   const [error, setError] = useState("");
   const [carregar,setCarregando] = useState(false);
   const history = useHistory();
@@ -46,7 +64,7 @@ export default function LoginUsuario() {
     
     e.preventDefault();
     
-    const data = { email, senha };
+    const data = { email};
     try {
           localStorage.setItem('email',email)
           setCarregando(true);
@@ -58,12 +76,7 @@ export default function LoginUsuario() {
       } catch (error) {
           //console.log(error.response.data.message.error)
           console.log(error.response.data)
-          //setError(error.response.data.message.error)
-          if(error.response.status===400){
-          setError(error.response.data.message.error);
-          }else{
-          setError("Senha Incorreta");
-          }
+          //setError(error.response.data.message.error) 
       }
   }
 
@@ -71,11 +84,11 @@ export default function LoginUsuario() {
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <img src={logo} alt='Logo Do Projeto Mageo'/>
-        </Avatar>
-        <Typography component="h1" variant="h5">
-          MaGeo
+      {/*   <Avatar className={classes.avatar}>
+        </Avatar> */}
+        <img src={logo} alt='Logo Do Projeto Mageo'  className={classes.imagem}/>
+        <Typography component="h1" variant="h5" className={classes.tipografia} >
+        Recuperação de Senha
         </Typography>                   
 
         <form className={classes.form} onSubmit={fazerLogin} noValidate>            
@@ -102,15 +115,15 @@ export default function LoginUsuario() {
             variant="contained"
             color="primary"
             className={classes.submit}>
-             Atualizar nova Senha
+             Enviar
           </Button>
           <Grid container justify="center" alignItems="center">
-            <Link to='/cadastroUsuario'>
-                Fazer Cadastro
+            <Link to='/loginUsuario' className={classes.fonte2}>
+              Voltar para Login
             </Link>
-
-
           </Grid>
+          
+
         </form>
       </div>
     </Container>
