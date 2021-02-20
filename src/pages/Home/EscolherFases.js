@@ -2,39 +2,44 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Navbar from '../Navbar';
 import { CardContent, Container, Typography, Card, Button, Grid,Paper} from '@material-ui/core';
-import circle from '../../images/icons/circle.svg'
-import  triangles from '../../images/icons/triangles.svg'
+import circle from '../../images/icons/circle.svg';
+import  triangles from '../../images/icons/triangles.svg';
+import reta  from '../../images/icons/reta.svg';
+import Retang from '../../images/icons/Retang.svg';
+import fig3 from '../../images/icons/fig3.svg';
+import fig4 from '../../images/icons/fig4.svg';
+
 
 
 const useStyles = makeStyles((theme)=>({
     conteudo:{
-        width:"150px",
-        height:"150px",   
+        width:"70%",
+        height:"60%",   
         backgroundColor:"#E5E7EB",
         fontWeight:"Bold",
         textAlign:"center",
         margin: theme.spacing(5)  
     },
     conteudo1:{
-        width:"150px",
-        height:"150px",   
-        backgroundColor:"#FFF730",
+        width:"70%",
+        height:"60%", 
+        backgroundColor:"#E5E7EB",
         fontWeight:"Bold",
         textAlign:"center",
         margin: theme.spacing(5) 
     },
     conteudo2:{
-        width:"150px",
-        height:"150px",   
-        backgroundColor:"#0DD28B",
+        width:"70%",
+        height:"60%",   
+        backgroundColor:"#E5E7EB",
         fontWeight:"Bold",
         textAlign:"center",
         margin: theme.spacing(5)  
     },
     conteudo3:{
-        width:"150px",
-        height:"150px",   
-        backgroundColor:"#166CFA",
+        width:"70%",
+        height:"60%",  
+        backgroundColor:"#E5E7EB",
         fontWeight:"Bold",
         textAlign:"center",
         margin: theme.spacing(5)  
@@ -45,6 +50,14 @@ const useStyles = makeStyles((theme)=>({
         fontWeight:"Bold",
         marginLeft:"50px",
         fontFamily:"'Poppins', sans-serif;",
+        
+    },
+    fase1:{
+        margin:"auto",
+        fontWeight:"Bold",
+        marginLeft:"50px",
+        fontFamily:"'Poppins', sans-serif;",
+        Color:"#FFBB0E",
     },
     paper:{
         marginBottom:"20px",
@@ -52,13 +65,68 @@ const useStyles = makeStyles((theme)=>({
     },
     titulo:{
         textAlign:"center",
-        fontSize:"30px",
+        fontSize:"40px",
         fontWeight:"bold",
         marginTop:"50px",
-        marginBottom:"70px",
+        marginBottom:"25px",
         fontFamily:"'Poppins', sans-serif;",
-    }
+    },
+    titulo1:{
+        textAlign:"center",
+        fontSize:"20px",
+        marginBottom:"25px",
+        fontFamily:"'Poppins', sans-serif;",
+    },
+    titulo2:{
+        textAlign:"center",
+        fontSize:"30px",
+        fontWeight:"bold",
+        marginTop:"20px",
+        marginBottom:"40px",
+        fontFamily:"'Poppins', sans-serif;",
+    },
 
+    fundo:{
+        background:"#E5E7EB",
+    },
+    fundo1:{
+        backgroundColor:"#E5E7EB",
+      
+    },
+    fundo2:{
+        backgroundColor:"#E5E7EB",
+      
+    },
+    
+    fundo3:{
+        backgroundColor:"#E5E7EB",
+    },
+    linha:{
+        marginBottom:"30px"
+    },
+    imagem:{
+        width:"150px",
+        height:"120px",
+        marginLeft:"50px",
+        marginTop:"10%"
+    },
+    imagem1:{
+        width:"150px",
+        height:"150px",
+        marginLeft:"50px",
+        marginTop:"10%"
+    },
+    imagem2:{
+        width:"150px",
+        height:"150px",
+        marginLeft:"50px",
+        marginTop:"10%"
+    },
+    imagem3:{
+        width:"150px",
+        height:"150px",
+        marginLeft:"50px"
+    },
     
   }));
 
@@ -74,20 +142,32 @@ return(
 <div>
     <Navbar/>
     <Container>
+    
                 <Typography className={classes.titulo}>
-                    Bem Vindo ao MaGeo Quiz! O jogo começa na primeira fase dos Quadrados!
+                    MaGeo Fases
                 </Typography>
-                <Grid container spacing={7} >
+                <Typography className={classes.titulo1}>
+                    Ganhe pontos! Testando os seus conhecimentos em Geoemtria PLana.
+                </Typography>
+                <Typography className={classes.titulo2}>
+                    <hr/> Fases 
+                 {/*    
+                    style={{backgroundColor:"#0DD28B", content: "Fases",displayInline:"block", }} */}
+                </Typography>
+           
+                <Grid container spacing={7} className={classes.linha} >
                     
-                <Grid   item xs={6} spacing={8} sm={3}>
-                <Paper className={classes.paper}>
-                
-                <Card>
+                <Grid   item xs={12} spacing={9} sm={3}>
+                <Paper className={classes.paper}> 
+                <Card className={classes.fundo}>
                 <CardContent>
-                <span className={classes.fase}>
+                <span className={classes.fase1}>
                     Fase Quadrado
-                    <Button href="/faseQuadrado" className={classes.conteudo} style={{ backgroundSize:"cover",alignContent:"center",}} ></Button>
-                    </span>
+                 </span>
+                    <img src={reta} alt='Logo do Projeto Mageo'  className={classes.imagem}/>
+                    <Button href="/faseQuadrado" className={classes.conteudo}> Jogar</Button>
+                    {/* style={{ backgroundSize:"cover",alignContent:"center",}} */}
+                   
                 </CardContent>
                 </Card>
                 </Paper>
@@ -96,11 +176,14 @@ return(
                 <Grid   item xs={6} spacing={8} sm={3}>
                 <Paper className={classes.paper}>
                 
-                <Card>
+                <Card className={classes.fundo1}>
+               
                 <CardContent>
                 <span className={classes.fase}>
                 Fase Retângulo
-                    <Button href="/faseRetangulo" className={classes.conteudo1}></Button>
+                <img src={Retang} alt='Logo do Projeto Mageo'  className={classes.imagem1}/>
+                    <Button href="/faseRetangulo" className={classes.conteudo1} >Jogar</Button>
+                    {/* style={{background: `url(${re})`, backgroundSize:"cover", }}  */}
                     </span>
                 </CardContent>
                 </Card>
@@ -108,37 +191,31 @@ return(
                 </Grid>
 
                 <Grid   item xs={6} spacing={8} sm={3}>
-                <Paper className={classes.paper}>
-                <Card>
-                <CardContent>
+                <Paper className={classes.paper} >
+                
+                <Card className={classes.fundo2}>
+                <CardContent >
+                    {/* style={{background: `url(${triangles})`, backgroundSize:"cover", }} */}
                 <span className={classes.fase}>
                 Fase Triângulo
-
-                <div style={{background: `url(${triangles})`, backgroundSize:"cover", }}>
-                <Button href="/faseTriangulo" className={classes.conteudo2}></Button>
-                </div>
-                    
-                    </span>
+                <img src={fig3} alt='Logo do Projeto Mageo'  className={classes.imagem2}/>
+                <Button href="/faseTriangulo" className={classes.conteudo2} > Jogar</Button>  
+                </span>
                 </CardContent>
                 </Card>
+                
                 </Paper>
                 </Grid>
                 
                 <Grid   item xs={6} spacing={8} sm={3}>
                 <Paper className={classes.paper}>
-                <Card>
+                <Card className={classes.fundo3}>
                 <CardContent>
                 <span className={classes.fase}>
                 Fase Circulo
-               
-                    <div  style={{background: `url(${circle})`, backgroundSize:"cover", }}>
-                    <Button href="/faseCirculo" className={classes.conteudo3} >
-                    </Button>
-                    </div>
-                
-                    
-                  
-                    </span>
+                <img src={fig4} alt='Logo do Projeto Mageo'  className={classes.imagem3}/> 
+                <Button href="/faseCirculo" className={classes.conteudo3}>Jogar</Button>
+                </span>
                 </CardContent>
                 </Card>
                 </Paper>

@@ -34,6 +34,7 @@ import DesafioTriangulo from "./pages/Quiz/Fases/DesafioTriangulo";
 import DesafioCirculo from "./pages/Quiz/Fases/DesafioCirculo";
 import EscolherFases from "./pages/Home/EscolherFases";
 import EsqueceuSenhaUsuario from "./pages/LoginUsuario/EsqueceuSenhaUsuario";
+import CriarNovaSenha from "./pages/LoginUsuario/CriarNovaSenha";
 
 
 
@@ -62,13 +63,15 @@ const Routes = () => (
       <Route path="/cadastroUsuario" component={CadastroUsuario} />
       <Route path="/loginAdmin" component={LoginAdmin} />
       <Route path="/cadastroAdmin" component={CadastroAdmin}/>
+      <Route path="/esqueceuSenhaUsuario" component={EsqueceuSenhaUsuario}/>
+      <Route path="/criarNovaSenha/:token" component={CriarNovaSenha}/>
       <PrivateRoute path="/quiz2" component={QuizReserva} />
       <PrivateRoute path="/quiz" component={Quiz}/>
       <PrivateRoute path="/ajuda" component={Ajuda} />
       <PrivateRoute path="/ajudaAdmin" component={AjudaAdmin} />
       <PrivateRoute path="/sobre" component={Sobre} />
       <PrivateRoute path="/sobreAdmin" component={SobreAdmin} />
-      <PrivateRoute path="/EsqueceuSenhaUsuario" component={EsqueceuSenhaUsuario}/>
+     
       <PrivateRoute path="/explore" component={ExploreMais} />
       <PrivateRoute path="/questao" component={Questao} />
       <PrivateRoute path="/faseQuadrado" component={FaseQuadrado}/>

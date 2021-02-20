@@ -52,7 +52,10 @@ const useStyles = makeStyles((theme) => ({
   },
   fonte:{
     fontFamily:"'Poppins', sans-serif;",
-    fontSize:"20px",
+    fontSize:"17px",
+    color:"#75A0F2",
+    fontWeight:"Bold",
+    marginTop:"1px"
   },
 
 }));

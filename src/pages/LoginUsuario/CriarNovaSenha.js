@@ -2,7 +2,7 @@ import React , { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import api from "../../services/api";
 import {login} from "../../services/auth";
-//import Avatar from '@material-ui/core/Avatar';
+import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
@@ -34,80 +34,56 @@ const useStyles = makeStyles((theme) => ({
     fontFamily:"'Poppins', sans-serif;",
     fontSize:"17px",
   },
-  tipografia:{
-    fontSize:"30px",
-    fontFamily:"'Poppins', sans-serif;",
-    fontWeight:"Bold",
-    color:"#75A0F2",
-  },
-
-  imagem:{
-    height:"70px",
-    width:"70px"
-  },
-  fonte:{
-    fontFamily:"'Poppins', sans-serif;",
-    fontSize:"17px",
-    color:"#75A0F2",
-    fontWeight:"Bold",
-    marginLeft:"1%",
-    marginTop:"25px"
-  },
-  fonte1:{
-    fontFamily:"'Poppins', sans-serif;",
-    fontSize:"17px",
-    marginTop:"25px"
-  },
   fonte2:{
     fontFamily:"'Poppins', sans-serif;",
     fontSize:"17px",
     color:"#75A0F2",
     fontWeight:"Bold",
-    marginRight:"34%",
-    marginTop:"5px"
-  },
-  fonte3:{
-    fontFamily:"'Poppins', sans-serif;",
-    fontSize:"17px",
-    color:"#75A0F2",
-    fontWeight:"Bold",
-    marginRight:"67%",
-    marginTop:"5px"
   
+  }, tipografia:{
+    fontSize:"30px",
+    fontFamily:"'Poppins', sans-serif;",
+    fontWeight:"Bold",
+    color:"#75A0F2",
   },
-
+  imagem:{
+    height:"70px",
+    width:"70px"
+  },
 }));
 
-export default function LoginUsuario() {
+export default function LoginUsuario(props) {
   const classes = useStyles();
-  const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
+  const[token,setToken] = useState(props.match.params.token);
+  const[confirmaSenha, setConfirmaSenha] = useState("");
+
   const [error, setError] = useState("");
   const [carregar,setCarregando] = useState(false);
   const history = useHistory();
-  
+  console.log(props.match.params.token)
   async function fazerLogin(e) {
     
     e.preventDefault();
-    
-    const data = { email, senha };
+    setToken(props.match.params.token)
+    const data = { senha};
     try {
-          localStorage.setItem('email',email)
+         if(senha===confirmaSenha){
           setCarregando(true);
-          const resposta = await api.post("/login", data);
-          login(resposta.data.token)
-          alert("Login Realizado com Sucesso");
-          // history.push("/home");
-          history.push("/perfil");
+          const resposta = await api.put(`/redefinirSenha/${token}`, data);
+          alert("Redefinido com Sucesso");
+          history.push("/");
+
+         }else{
+          alert("Senhas não são iguais")
+         }
+         
+        
       } catch (error) {
           //console.log(error.response.data.message.error)
           console.log(error.response.data)
-          //setError(error.response.data.message.error)
-          if(error.response.status===400){
-          setError(error.response.data.message.error);
-          }else{
-          setError("Senha Incorreta");
-          }
+          alert(" Não Possivel redefinir uma nova senha!")
+          //setError(error.response.data.message.error) 
       }
   }
 
@@ -115,73 +91,57 @@ export default function LoginUsuario() {
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
-        {/* <Avatar className={classes.avatar}>
-          <img src={logo} alt='Logo Do Projeto Mageo'/>
+      {/*   <Avatar className={classes.avatar}>
         </Avatar> */}
         <img src={logo} alt='Logo Do Projeto Mageo'  className={classes.imagem}/>
-        <Typography component="h1" variant="h5"className={classes.tipografia}>
-         Login Usuário
+        <Typography component="h1" variant="h5" className={classes.tipografia} >
+        Redefinir Senha
         </Typography>                   
 
         <form className={classes.form} onSubmit={fazerLogin} noValidate>            
         {carregar && !error?<ReactLoading className='loading' type={"bubbles"} color={'#36BD8C'} height={'20%'} width={'20%'} />:<></>}
             {error && <p className='error'>{error}</p>}
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            id="email"
-            label="Digite o seu Email"
-            type="email"
-            name="email"
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-            autoComplete="email"
-            autoFocus
-          />
-          <TextField
+            <TextField
             variant="outlined"
             margin="normal"
             required
             fullWidth
             name="password"
-            label="Senha"
+            label=" Nova Senha"
             type="password"
             id="password"
             value={senha}
             onChange={e => setSenha(e.target.value)}
             autoComplete="current-password"
           />
+           <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            name="password"
+            label=" Confirmar Senha"
+            type="password"
+            id="password"
+            value={confirmaSenha}
+            onChange={e => setConfirmaSenha(e.target.value)}
+            autoComplete="current-password"
+          />
+          
           <Button
             type="submit"
             fullWidth
             variant="contained"
             color="primary"
-            className={classes.submit}
-          >
-            Entrar
+            className={classes.submit}>
+             Enviar
           </Button>
           <Grid container justify="center" alignItems="center">
-            <Typography  className={classes.fonte1}>
-              Não tem  uma conta?
-            </Typography>
-            <br/>
-            <Link to='/cadastroUsuario' className={classes.fonte}>
-                Fazer Cadastro
-            </Link>
-          </Grid>
-          <Grid container justify="center" alignItems="center">
-          <Link to='/esqueceuSenhaUsuario' className={classes.fonte2}>
-              Esqueci minha senha
+            <Link to='/loginUsuario' className={classes.fonte2}>
+              Voltar para Login
             </Link>
           </Grid>
           
-         {/*  <Grid container justify="center" alignItems="center">
-          <Link to='/' className={classes.fonte3}>
-              Voltar
-            </Link>
-          </Grid> */}
 
         </form>
       </div>

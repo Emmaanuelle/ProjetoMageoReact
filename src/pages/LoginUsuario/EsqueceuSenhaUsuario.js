@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function LoginUsuario() {
+export default function EsqueceuSenhaUsuario() {
   const classes = useStyles();
   const [email, setEmail] = useState("");
 
@@ -60,19 +60,17 @@ export default function LoginUsuario() {
   const [carregar,setCarregando] = useState(false);
   const history = useHistory();
   
-  async function fazerLogin(e) {
+  async function esqueceuSenhaUsuario(e) {
     
     e.preventDefault();
     
     const data = { email};
     try {
-          localStorage.setItem('email',email)
           setCarregando(true);
-          const resposta = await api.post("/login", data);
-          login(resposta.data.token)
-          alert("Login Realizado com Sucesso");
+          const resposta = await api.post("/passwords", data);
+          alert("Email Enviado com Sucesso");
           // history.push("/home");
-          history.push("/perfil");
+          history.push("/");
       } catch (error) {
           //console.log(error.response.data.message.error)
           console.log(error.response.data)
@@ -91,7 +89,7 @@ export default function LoginUsuario() {
         Recuperação de Senha
         </Typography>                   
 
-        <form className={classes.form} onSubmit={fazerLogin} noValidate>            
+        <form className={classes.form} onSubmit={esqueceuSenhaUsuario} noValidate>            
         {carregar && !error?<ReactLoading className='loading' type={"bubbles"} color={'#36BD8C'} height={'20%'} width={'20%'} />:<></>}
             {error && <p className='error'>{error}</p>}
           <TextField
@@ -122,7 +120,13 @@ export default function LoginUsuario() {
               Voltar para Login
             </Link>
           </Grid>
+         { <Grid container justify="center" alignItems="center">
+            <Link to='/criarNovaSenha/token' className={classes.fonte2}>
+              Senha nova 
+            </Link>
+          </Grid>
           
+          }
 
         </form>
       </div>

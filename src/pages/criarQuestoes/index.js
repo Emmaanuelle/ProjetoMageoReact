@@ -178,19 +178,21 @@ export default function Questao() {
                   <HelpOutlineOutlinedIcon />
                 </DicaParaInput>
               </Grid>
+
               <Grid item xs={12} sm={11} >
                 <TextField
                   variant="outlined"
                   required
                   fullWidth
                   id="alternativas"
-                  label="alternativas"
+                  label=" Primeira alternativas"
                   placeholder="alternativas incorretas, separada por virgula"
                   autoComplete="alternativas"
                   value={alternativa}
                   onChange={e => setAlternativa(e.target.value)}
                 />
               </Grid>
+              
               <Grid item xs={12} sm={1}>
                 <DicaParaInput
                   title={
@@ -206,6 +208,63 @@ export default function Questao() {
               <Grid item xs={12} sm={11} >
                 <TextField
                   variant="outlined"
+                  required
+                  fullWidth
+                  id="alternativas"
+                  label=" Segunda alternativas"
+                  placeholder="alternativas incorretas, separada por virgula"
+                  autoComplete="alternativas"
+                  value={alternativa}
+                  onChange={e => setAlternativa(e.target.value)}
+                />
+              </Grid>
+              
+              <Grid item xs={12} sm={1}>
+                <DicaParaInput
+                  title={
+                    <React.Fragment>
+                      <Typography color="secondary">Alternativas ?</Typography>
+                        Explicação do formato das Alternativas
+                     </React.Fragment>
+                  }
+                >
+                  <HelpOutlineOutlinedIcon />
+                </DicaParaInput>
+              </Grid>
+              <Grid item xs={12} sm={11} >
+                <TextField
+                  variant="outlined"
+                  required
+                  fullWidth
+                  id="alternativas"
+                  label=" Terceira alternativas"
+                  placeholder="alternativas incorretas, separada por virgula"
+                  autoComplete="alternativas"
+                  value={alternativa}
+                  onChange={e => setAlternativa(e.target.value)}
+                />
+              </Grid>
+
+              <Grid item xs={12} sm={1}>
+                <DicaParaInput
+                  title={
+                    <React.Fragment>
+                      <Typography color="secondary">Alternativas ?</Typography>
+                        Explicação do formato das Alternativas
+                     </React.Fragment>
+                  }
+                >
+                  <HelpOutlineOutlinedIcon />
+                </DicaParaInput>
+              </Grid>
+             
+
+
+
+
+              <Grid item xs={12} sm={11} >
+                <TextField
+                  variant="outlined"
                   fullWidth
                   id="video"
                   label="Link para o youtube"
@@ -214,6 +273,7 @@ export default function Questao() {
                   onChange={e => setVideo(e.target.value)}
                 />
               </Grid>
+
               <Grid item xs={12} sm={1}>
                 <DicaParaInput
                   title={
