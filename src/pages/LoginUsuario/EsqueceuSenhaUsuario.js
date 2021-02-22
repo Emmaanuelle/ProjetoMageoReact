@@ -117,7 +117,7 @@ export default function EsqueceuSenhaUsuario() {
           </Button>
           <Grid container justify="center" alignItems="center">
             <Link to='/loginUsuario' className={classes.fonte2}>
-              Voltar para Login
+              Voltar para login
             </Link>
           </Grid>
         </form>
