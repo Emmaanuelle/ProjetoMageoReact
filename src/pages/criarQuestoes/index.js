@@ -60,7 +60,10 @@ export default function Questao() {
   const [carregar, setCarregando] = useState(false);
   const [pergunta, setPergunta] = useState("");
   const [resposta, setResposta] = useState("");
+  /* var alternativa = [] */
   const [alternativa, setAlternativa] = useState([]);
+  /* const [alternativa2, setAlternativa2] = useState("");
+  const [alternativa3, setAlternativa3] = useState(""); */
   const [dica, setDica] = useState("");
   const [video, setVideo] = useState("");
   const [nivel, setNivel] = useState("");
@@ -69,10 +72,11 @@ export default function Questao() {
   const [error, setError] = useState("");
   // const history = useHistory();
   async function cadastrarQuestoes(e) {
+    
 
     e.preventDefault();
-
-    const data = { pergunta, resposta, dica, alternativa, video, fase,nivel, administradors_id };
+/*      alternativa=[alternativa1,alternativa2,alternativa3]
+ */    const data = { pergunta, resposta, dica, alternativa, video, fase,nivel, administradors_id };
     try {
       setCarregando(true)
       await api.post("/questao", data)
@@ -186,59 +190,7 @@ export default function Questao() {
                   fullWidth
                   id="alternativas"
                   label=" Primeira alternativas"
-                  placeholder="alternativas incorretas, separada por virgula"
-                  autoComplete="alternativas"
-                  value={alternativa}
-                  onChange={e => setAlternativa(e.target.value)}
-                />
-              </Grid>
-              
-              <Grid item xs={12} sm={1}>
-                <DicaParaInput
-                  title={
-                    <React.Fragment>
-                      <Typography color="secondary">Alternativas ?</Typography>
-                        Explicação do formato das Alternativas
-                     </React.Fragment>
-                  }
-                >
-                  <HelpOutlineOutlinedIcon />
-                </DicaParaInput>
-              </Grid>
-              <Grid item xs={12} sm={11} >
-                <TextField
-                  variant="outlined"
-                  required
-                  fullWidth
-                  id="alternativas"
-                  label=" Segunda alternativas"
-                  placeholder="alternativas incorretas, separada por virgula"
-                  autoComplete="alternativas"
-                  value={alternativa}
-                  onChange={e => setAlternativa(e.target.value)}
-                />
-              </Grid>
-              
-              <Grid item xs={12} sm={1}>
-                <DicaParaInput
-                  title={
-                    <React.Fragment>
-                      <Typography color="secondary">Alternativas ?</Typography>
-                        Explicação do formato das Alternativas
-                     </React.Fragment>
-                  }
-                >
-                  <HelpOutlineOutlinedIcon />
-                </DicaParaInput>
-              </Grid>
-              <Grid item xs={12} sm={11} >
-                <TextField
-                  variant="outlined"
-                  required
-                  fullWidth
-                  id="alternativas"
-                  label=" Terceira alternativas"
-                  placeholder="alternativas incorretas, separada por virgula"
+                  placeholder=" por favor separe as alternativas incorretas por @" 
                   autoComplete="alternativas"
                   value={alternativa}
                   onChange={e => setAlternativa(e.target.value)}
