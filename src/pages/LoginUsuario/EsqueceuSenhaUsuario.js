@@ -120,14 +120,6 @@ export default function EsqueceuSenhaUsuario() {
               Voltar para Login
             </Link>
           </Grid>
-         {/* { <Grid container justify="center" alignItems="center">
-            <Link to='/criarNovaSenha/token' className={classes.fonte2}>
-              Senha nova 
-            </Link>
-          </Grid> */}
-          
-          }
-
         </form>
       </div>
     </Container>
