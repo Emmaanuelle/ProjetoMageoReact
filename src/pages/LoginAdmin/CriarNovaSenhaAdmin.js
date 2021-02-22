@@ -52,28 +52,37 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function EsqueceuSenhaUsuario() {
+export default function LoginUsuario(props) {
   const classes = useStyles();
-  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+  const[token,setToken] = useState(props.match.params.token);
+  const[confirmaSenha, setConfirmaSenha] = useState("");
 
   const [error, setError] = useState("");
   const [carregar,setCarregando] = useState(false);
   const history = useHistory();
-  
-  async function esqueceuSenhaUsuario(e) {
+  console.log(props.match.params.token)
+  async function fazerLogin(e) {
     
     e.preventDefault();
-    
-    const data = { email};
+    setToken(props.match.params.token)
+    const data = { senha};
     try {
+         if(senha===confirmaSenha){
           setCarregando(true);
-          const resposta = await api.post("/passwords", data);
-          alert("Email Enviado com Sucesso");
-          // history.push("/home");
+          const resposta = await api.put(`/redefinirSenhaAdmin/${token}`, data);
+          alert("Redefinido com Sucesso");
           history.push("/");
+
+         }else{
+          alert("Senhas não são iguais")
+         }
+         
+        
       } catch (error) {
           //console.log(error.response.data.message.error)
           console.log(error.response.data)
+          alert(" Não Possivel redefinir uma nova senha!")
           //setError(error.response.data.message.error) 
       }
   }
@@ -86,25 +95,37 @@ export default function EsqueceuSenhaUsuario() {
         </Avatar> */}
         <img src={logo} alt='Logo Do Projeto Mageo'  className={classes.imagem}/>
         <Typography component="h1" variant="h5" className={classes.tipografia} >
-        Recuperação de Senha
+        Redefinir Senha
         </Typography>                   
 
-        <form className={classes.form} onSubmit={esqueceuSenhaUsuario} noValidate>            
+        <form className={classes.form} onSubmit={fazerLogin} noValidate>            
         {carregar && !error?<ReactLoading className='loading' type={"bubbles"} color={'#36BD8C'} height={'20%'} width={'20%'} />:<></>}
             {error && <p className='error'>{error}</p>}
-          <TextField
+            <TextField
             variant="outlined"
             margin="normal"
             required
             fullWidth
-            id="email"
-            label="Digite o seu Email"
-            type="email"
-            name="email"
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-            autoComplete="email"
-            autoFocus
+            name="password"
+            label=" Nova Senha"
+            type="password"
+            id="password"
+            value={senha}
+            onChange={e => setSenha(e.target.value)}
+            autoComplete="current-password"
+          />
+           <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            name="password"
+            label=" Confirmar Senha"
+            type="password"
+            id="password"
+            value={confirmaSenha}
+            onChange={e => setConfirmaSenha(e.target.value)}
+            autoComplete="current-password"
           />
           
           <Button
@@ -116,17 +137,11 @@ export default function EsqueceuSenhaUsuario() {
              Enviar
           </Button>
           <Grid container justify="center" alignItems="center">
-            <Link to='/loginUsuario' className={classes.fonte2}>
+            <Link to='/loginAdmin' className={classes.fonte2}>
               Voltar para Login
             </Link>
           </Grid>
-         {/* { <Grid container justify="center" alignItems="center">
-            <Link to='/criarNovaSenha/token' className={classes.fonte2}>
-              Senha nova 
-            </Link>
-          </Grid> */}
           
-          }
 
         </form>
       </div>

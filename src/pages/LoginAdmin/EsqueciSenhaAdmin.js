@@ -67,7 +67,7 @@ export default function EsqueceuSenhaUsuario() {
     const data = { email};
     try {
           setCarregando(true);
-          const resposta = await api.post("/passwords", data);
+          const resposta = await api.post("/passwordsAdmin", data);
           alert("Email Enviado com Sucesso");
           // history.push("/home");
           history.push("/");
@@ -116,17 +116,17 @@ export default function EsqueceuSenhaUsuario() {
              Enviar
           </Button>
           <Grid container justify="center" alignItems="center">
-            <Link to='/loginUsuario' className={classes.fonte2}>
+            <Link to='/loginAdmin' className={classes.fonte2}>
               Voltar para Login
             </Link>
           </Grid>
-         {/* { <Grid container justify="center" alignItems="center">
-            <Link to='/criarNovaSenha/token' className={classes.fonte2}>
+       {/*   { <Grid container justify="center" alignItems="center">
+            <Link to='/criarNovaSenhaAdmin/token' className={classes.fonte2}>
               Senha nova 
             </Link>
-          </Grid> */}
+          </Grid>
           
-          }
+          } */}
 
         </form>
       </div>

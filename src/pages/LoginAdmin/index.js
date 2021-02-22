@@ -46,8 +46,26 @@ const useStyles = makeStyles((theme) => ({
   },
   fonte:{
     fontFamily:"'Poppins', sans-serif;",
-    fontSize:"20px",
+    fontSize:"17px",
+    color:"#75A0F2",
+    fontWeight:"Bold",
+    marginLeft:"1%",
+    marginTop:"25px"
   },
+  fonte1:{
+    fontFamily:"'Poppins', sans-serif;",
+    fontSize:"17px",
+    marginTop:"25px"
+  },
+  fonte2:{
+    fontFamily:"'Poppins', sans-serif;",
+    fontSize:"17px",
+    color:"#75A0F2",
+    fontWeight:"Bold",
+    marginRight:"34%",
+    marginTop:"5px"
+  },
+
 }));
 
 export default function LoginAdmin() {
@@ -130,12 +148,20 @@ export default function LoginAdmin() {
             variant="contained"
             color="primary"
             className={classes.submit}
-          >
-            Entrar
+          > Entrar
           </Button>
           <Grid container justify="center" alignItems="center">
-              <Link to='/cadastroAdmin'className={classes.fonte}>
+            <Typography  className={classes.fonte1}>
+              Não tem  uma conta?
+            </Typography>
+            <br/>
+            <Link to='/cadastroAdmin' className={classes.fonte}>
                 Fazer Cadastro
+            </Link>
+          </Grid>
+          <Grid container justify="center" alignItems="center">
+          <Link to='/esqueceuSenhaAdmin' className={classes.fonte2}>
+              Esqueci minha senha
             </Link>
           </Grid>
         </form>

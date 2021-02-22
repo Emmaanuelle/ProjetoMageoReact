@@ -35,6 +35,8 @@ import DesafioCirculo from "./pages/Quiz/Fases/DesafioCirculo";
 import EscolherFases from "./pages/Home/EscolherFases";
 import EsqueceuSenhaUsuario from "./pages/LoginUsuario/EsqueceuSenhaUsuario";
 import CriarNovaSenha from "./pages/LoginUsuario/CriarNovaSenha";
+import EsqueceuSenhaAdmin from"./pages/LoginAdmin/EsqueciSenhaAdmin";
+import CriarNovaSenhaAdmin from"./pages/LoginAdmin/CriarNovaSenhaAdmin";
 
 
 
@@ -64,14 +66,15 @@ const Routes = () => (
       <Route path="/loginAdmin" component={LoginAdmin} />
       <Route path="/cadastroAdmin" component={CadastroAdmin}/>
       <Route path="/esqueceuSenhaUsuario" component={EsqueceuSenhaUsuario}/>
+      <Route path="/esqueceuSenhaAdmin" component={EsqueceuSenhaAdmin}/>
       <Route path="/criarNovaSenha/:token" component={CriarNovaSenha}/>
+      <Route path="/criarNovaSenhaAdmin/:token" component={CriarNovaSenhaAdmin}/>
       <PrivateRoute path="/quiz2" component={QuizReserva} />
       <PrivateRoute path="/quiz" component={Quiz}/>
       <PrivateRoute path="/ajuda" component={Ajuda} />
       <PrivateRoute path="/ajudaAdmin" component={AjudaAdmin} />
       <PrivateRoute path="/sobre" component={Sobre} />
       <PrivateRoute path="/sobreAdmin" component={SobreAdmin} />
-     
       <PrivateRoute path="/explore" component={ExploreMais} />
       <PrivateRoute path="/questao" component={Questao} />
       <PrivateRoute path="/faseQuadrado" component={FaseQuadrado}/>
