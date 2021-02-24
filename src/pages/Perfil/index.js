@@ -53,12 +53,12 @@ function Perfil() {
                       
                         <Card key={perfilUsuario.id}>
                             <CardActionArea>
-                                <CardContent>
-                                    <Typography gutterBottom variant="h5" component="h2">
+                                <CardContent style={{color:"#6A6A6A"}}>
+                                    <Typography style={{color:"#6A6A6A", textAlign:"center", fontWeight:600, fontSize:"200%"}} gutterBottom variant="h5" component="h2">
                                         Dados do usuario
                                 </Typography>
                                    {/*  //{dados} */}
-                                <Typography gutterBottom variant="h5" component="h2">{perfilUsuario.nome} {perfilUsuario.sobrenome}
+                                <Typography gutterBottom variant="h5" component="h2"> Nome: {perfilUsuario.nome} {perfilUsuario.sobrenome}
                                 </Typography>
                                 {/* <Typography gutterBottom variant="h5" component="h2">{perfilUsuario.email}
                                 </Typography>
@@ -79,17 +79,23 @@ function Perfil() {
                         </Card>
                     </Grid>
 
-                    <Grid item xs={12} sm={6}>
+                  {/*   <Grid item xs={12} sm={6}>
                         <Card>
                             <CardActionArea>
                                 <CardContent>
                                     <Typography gutterBottom variant="h5" component="h2">
                                         Ranking:
                                     </Typography>
+                                    <Typography gutterBottom variant="h5" component="h2">
+                                        {perfilUsuario.ranking !==undefined?
+                                        perfilUsuario.ranking.map(data => {
+                                            return (<p key={data.id}>Pontos: {data.ranking}</p>)
+                                        }):<></>}
+                                    </Typography>
                                 </CardContent>
                             </CardActionArea>
                         </Card>
-                    </Grid>
+                    </Grid> */}
                     
                     <Grid item xs={12} sm={6}>
                     <Card>

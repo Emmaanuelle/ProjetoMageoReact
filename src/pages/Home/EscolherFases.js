@@ -15,7 +15,8 @@ const useStyles = makeStyles((theme)=>({
     conteudo:{
         width:"70%",
         height:"60%",   
-        backgroundColor:"#E5E7EB",
+        backgroundColor:"#11CCBB",
+        color:"white",
         fontWeight:"Bold",
         textAlign:"center",
         margin: theme.spacing(5)  
@@ -23,7 +24,8 @@ const useStyles = makeStyles((theme)=>({
     conteudo1:{
         width:"70%",
         height:"60%", 
-        backgroundColor:"#E5E7EB",
+        backgroundColor:"#11CCBB",
+        color:"white",
         fontWeight:"Bold",
         textAlign:"center",
         margin: theme.spacing(5) 
@@ -31,7 +33,8 @@ const useStyles = makeStyles((theme)=>({
     conteudo2:{
         width:"70%",
         height:"60%",   
-        backgroundColor:"#E5E7EB",
+        backgroundColor:"#11CCBB",
+        color:"white",
         fontWeight:"Bold",
         textAlign:"center",
         margin: theme.spacing(5)  
@@ -39,7 +42,8 @@ const useStyles = makeStyles((theme)=>({
     conteudo3:{
         width:"70%",
         height:"60%",  
-        backgroundColor:"#E5E7EB",
+        backgroundColor:"#11CCBB",
+        color:"white",
         fontWeight:"Bold",
         textAlign:"center",
         margin: theme.spacing(5)  
@@ -63,26 +67,11 @@ const useStyles = makeStyles((theme)=>({
         marginBottom:"20px",
         
     },
-    titulo:{
-        textAlign:"center",
-        fontSize:"40px",
-        fontWeight:"bold",
-        marginTop:"50px",
-        marginBottom:"25px",
-        fontFamily:"'Poppins', sans-serif;",
-    },
+
     titulo1:{
         textAlign:"center",
         fontSize:"20px",
         marginBottom:"25px",
-        fontFamily:"'Poppins', sans-serif;",
-    },
-    titulo2:{
-        textAlign:"center",
-        fontSize:"30px",
-        fontWeight:"bold",
-        marginTop:"20px",
-        marginBottom:"40px",
         fontFamily:"'Poppins', sans-serif;",
     },
 
@@ -143,13 +132,13 @@ return(
     <Navbar/>
     <Container>
     
-                <Typography className={classes.titulo}>
+                <Typography style={{ marginBottom: 20, color: '#6A6A6A', fontSize: "190%", textAlign: "center", fontWeight:600, marginTop:"3%"}}>
                     MaGeo Fases
                 </Typography>
                 <Typography className={classes.titulo1}>
                     Ganhe pontos! Testando os seus conhecimentos em Geoemtria PLana.
                 </Typography>
-                <Typography className={classes.titulo2}>
+                <Typography style={{ marginBottom: 20, color: '#6A6A6A', fontSize: "190%", textAlign: "center", fontWeight:600, marginTop:"3%"}}>
                     <hr/> Fases 
                  {/*    
                     style={{backgroundColor:"#0DD28B", content: "Fases",displayInline:"block", }} */}

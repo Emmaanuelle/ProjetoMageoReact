@@ -74,7 +74,7 @@ function Ranking() {
         <>
             <Navbar />
             <Container>
-                <h2 style={{ margin: 20, color: '#948324' }}>Ranking</h2>
+                <h2 style={{color:"#6A6A6A", textAlign:"center", fontWeight:600, fontSize:"200%", marginTop:"3%", marginBottom:"3%"}} >Ranking</h2>
                 <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="customized table">
         <TableHead>

@@ -15,7 +15,7 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import { mainListItems } from './listItems';
 import { logout } from "../../services/auth";
 import { Link } from 'react-router-dom';
-import logo from '../../images/icons/shape.svg'
+import logo from '../../images/icons/pandeiro.svg'
 
 const drawerWidth = 220;
 
@@ -38,6 +38,7 @@ const useStyles = makeStyles((theme) => ({
     transition: theme.transitions.create(['width', 'margin'], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
+      background:"#58CC02",
     }),
   },
   appBarShift: {
@@ -62,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize:"30px",
     fontFamily:"'Poppins', sans-serif;",
     fontWeight:"Bold",
-    color:"#75A0F2",
+    color:"white",
   },
   drawerPaper: {
     position: 'relative',
@@ -96,13 +97,14 @@ img:{
   fontFamily:"'Poppins', sans-serif;",
   fontWeight:"Bold",
   color:"#75A0F2",
+  marginLeft:"30px"
 
 },
 
 botaosair:{
   margin: theme.spacing(3, 0, 2),
-    color:"white",
-    background:"#3B82F6",
+  color:"#1CB0F6",
+  background:"white",
 }
 
 
@@ -124,7 +126,7 @@ export default function Navbar() {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar position="relative" color='transparent' className={clsx(classes.appBar, open && classes.appBarShift)}>
+      <AppBar position="relative"  style={{background:"#58CC02"}} className={clsx(classes.appBar, open && classes.appBarShift)} className={clsx(classes.appBar, open && classes.appBarShift)}>
         <Toolbar className={classes.toolbar}>
           <IconButton
             edge="start"
@@ -156,7 +158,7 @@ export default function Navbar() {
         open={open}
       >
         <div className={classes.toolbarIcon}>
-          <IconButton onClick={handleDrawerClose}>
+          <IconButton onClick={handleDrawerClose}style={{  color:"#1CB0F6", fontFamily:"'Poppins', sans-serif;", fontWeight:600}}>
           Mageo Quiz
             <ChevronLeftIcon />
           </IconButton>
