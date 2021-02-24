@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Box, Typography,Button, Card, CardContent, CardMedia, Container } from '@material-ui/core';
 import Navbar from '../../Navbar';
 import api from '../../../services/api';
-import premio from '../../../images/icons/premio.svg'
+import premio from '../../../images/icons/primeiro.svg'
 import ReactLoading from 'react-loading';
 import Questao from '../Questao';
 import { makeStyles } from '@material-ui/core/styles';
@@ -142,7 +142,7 @@ export default function Quiz() {
         
           <form onSubmit={cadastrarRanking} >
             <input type="text" hidden value={user_id} onChange={e=>setUserId(e.target.value)}/>
-            <Button type='submit'>Ir para Desafio</Button>
+            <Button type='submit'sytle={{background:"#956CD2", color:"white"}}>Ir para Desafio</Button>
             
           </form>
           </CardContent>
