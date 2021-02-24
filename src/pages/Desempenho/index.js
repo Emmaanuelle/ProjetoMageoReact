@@ -11,10 +11,10 @@ import MUIDataTable from "mui-datatables";
 const useStyles = makeStyles((theme) => ({
 titulo:{
   textAlign:"center",
-  fontFamily:"'Poppins', sans-serif;",
   marginTop:"30px",
   marginBottom:"30px",
-  color:"#36BD8C"
+  color:"#6A6A6A",
+
 
 }
  

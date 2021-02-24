@@ -32,13 +32,13 @@ function PerfilAdmin() {
                       
                         <Card key={perfilUsuario.id}>
                             <CardActionArea>
-                                <CardContent>
-                                    <Typography gutterBottom variant="h5" component="h2">
+                                <CardContent style={{color:"#6A6A6A"}}>
+                                    <Typography style={{color:"#6A6A6A", textAlign:"center", fontWeight:600}} gutterBottom variant="h5" component="h2">
                                         Dados do usuario
                                 </Typography>
                                    {/*  //{dados} */}
-                                <Typography gutterBottom variant="h5" component="h2">{perfilUsuario.nome_administrador} {perfilUsuario.sobrenome_administrador}
-                                </Typography>
+                                <Typography gutterBottom variant="h5" component="h2"> Nome:{perfilUsuario.nome_administrador} {perfilUsuario.sobrenome_administrador}
+                               </Typography>
                                 {/* <Typography gutterBottom variant="h5" component="h2">{perfilUsuario.email}
                                 </Typography>
                                 <Typography gutterBottom variant="h5" component="h2">{diaNascimento.toUTCString().substring(0, 17)}

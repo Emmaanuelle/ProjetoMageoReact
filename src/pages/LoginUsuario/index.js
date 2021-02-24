@@ -11,7 +11,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import ReactLoading from 'react-loading';
-import logo from '../../images/icons/shape.svg'
+import logo from '../../images/icons/pandeiro.svg'
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(8),
@@ -30,15 +30,13 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
     color:"white",
-    background:"#769DE9",
-    fontFamily:"'Poppins', sans-serif;",
+    background:"#FCBC29",
     fontSize:"17px",
   },
   tipografia:{
     fontSize:"30px",
-    fontFamily:"'Poppins', sans-serif;",
     fontWeight:"Bold",
-    color:"#75A0F2",
+    color:"#6A6A6A",
   },
 
   imagem:{
@@ -48,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
   fonte:{
     fontFamily:"'Poppins', sans-serif;",
     fontSize:"17px",
-    color:"#75A0F2",
+    color:"#1CB0F6",
     fontWeight:"Bold",
     marginLeft:"1%",
     marginTop:"25px"
@@ -56,12 +54,14 @@ const useStyles = makeStyles((theme) => ({
   fonte1:{
     fontFamily:"'Poppins', sans-serif;",
     fontSize:"17px",
-    marginTop:"25px"
+    marginTop:"25px",
+    fontWeight:500,
+    color:"#6A6A6A"
   },
   fonte2:{
     fontFamily:"'Poppins', sans-serif;",
     fontSize:"17px",
-    color:"#75A0F2",
+    color:"#1CB0F6",
     fontWeight:"Bold",
     marginRight:"34%",
     marginTop:"5px"
@@ -69,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
   fonte3:{
     fontFamily:"'Poppins', sans-serif;",
     fontSize:"17px",
-    color:"#75A0F2",
+    color:"#1CB0F6",
     fontWeight:"Bold",
     marginRight:"67%",
     marginTop:"5px"
@@ -120,7 +120,7 @@ export default function LoginUsuario() {
         </Avatar> */}
         <img src={logo} alt='Logo Do Projeto Mageo'  className={classes.imagem}/>
         <Typography component="h1" variant="h5"className={classes.tipografia}>
-         Login Usuário
+         Login do Estudante
         </Typography>                   
 
         <form className={classes.form} onSubmit={fazerLogin} noValidate>            
@@ -157,7 +157,6 @@ export default function LoginUsuario() {
             type="submit"
             fullWidth
             variant="contained"
-            color="primary"
             className={classes.submit}
           >
             Entrar

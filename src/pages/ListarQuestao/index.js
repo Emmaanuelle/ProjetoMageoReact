@@ -20,8 +20,8 @@ const useStyles = makeStyles((theme) => ({
     textAlign:"center",
     marginTop:"30px",
     marginBottom:"30px",
-    fontFamily:"'Poppins', sans-serif;",
-    color:"#36BD8C"
+    color:"#6A6A6A",
+    
 
   }
 }));

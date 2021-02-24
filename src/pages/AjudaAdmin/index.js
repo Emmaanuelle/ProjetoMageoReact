@@ -1,7 +1,7 @@
-import React  from 'react';
+import React from 'react';
 import { Container } from '@material-ui/core'
 import Navbar from '../NavbarAdministrador';
-import { Card, CardActionArea,CardContent,CardActions} from '@material-ui/core';
+import { Card, CardActionArea, CardContent, CardActions } from '@material-ui/core';
 
 
 
@@ -11,19 +11,47 @@ function Ajuda() {
         <>
             <Navbar />
             <Container>
-                <h2 style={{ margin: 20, color: '#098348' }}>Ajuda</h2>
-                       <Card>
-                   <CardActionArea>
-                       <CardContent>
-                       <p> olá mundo</p>
-                       </CardContent>
 
-                   </CardActionArea>
-                   <CardActions>
-                  
-                   </CardActions>
+                <Card style={{ marginTop: "4%", marginBottom: "2%" }}>
+                    <CardActionArea>
+                        <CardContent>
+                            <h1 style={{ marginBottom: 20, color: '#6A6A6A', fontSize: "190%", textAlign: "center", fontWeight: 600 }}> Central de Ajuda MaGeo Quiz</h1>
 
-               </Card>
+
+                            <br />
+                            <hr />
+                            <div>
+                                <h3 style={{ marginTop: "4%", fontFamily: "'Poppins', sans-serif;", fontSize: "150%", color: '#D6D6D6', fontWeight: "bold" }}>
+                                    Como Usar o MaGeo Quiz
+                            </h3>
+                                <p style={{ marginTop: "2%", fontFamily: "'Poppins', sans-serif;", fontSize: "110%", color: '#5C5C5C' }}>
+                                    Criar as questões do quiz, se direcione para o menu principal e clique na tela criar questão.
+                                <br />
+                                Saber as questões que foram adicionadas ou deletar, clique na opção do menu listar questão.
+                                <br />
+                                Acompanha o desempenho do estudante, clique na tela desempenho.
+
+                            </p>
+
+
+                            </div>
+                            <div style={{ marginTop: "8%", fontFamily: "'Poppins', sans-serif;", fontSize: "100%", color: '#9F9F9F', textAlign: "center" }}>
+                                <h3 style={{color: '#1CB0F6'}}>
+                                    Alguma Dúvida?
+                                </h3>
+                                <br />
+                                <p> mageoquiz@gmail.com</p>
+                            </div>
+
+
+                        </CardContent>
+
+                    </CardActionArea>
+                    <CardActions>
+
+                    </CardActions>
+
+                </Card>
             </Container>
         </>
     )

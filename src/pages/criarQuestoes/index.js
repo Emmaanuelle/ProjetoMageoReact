@@ -101,7 +101,7 @@ export default function Questao() {
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>
-          <Typography component="h1" variant="h5">
+          <Typography component="h1" variant="h5" style={{color:"#6A6A6A", fontSize:"150%", fontWeight:600,}}>
             Cadastrar Questão
         </Typography>
           {carregar && !error ? <ReactLoading className='loading' type={"bubbles"} color={'orange'} height={'20%'} width={'40%'} /> : <></>}
@@ -263,7 +263,7 @@ export default function Questao() {
               type="submit"
               fullWidth
               variant="contained"
-              color="primary"
+              style={{background:"#1CB0F6", color:"white"}}
               className={classes.submit}
             >
               Cadastrar

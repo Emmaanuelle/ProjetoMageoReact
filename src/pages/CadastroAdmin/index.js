@@ -10,7 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import ReactLoading from 'react-loading';
-import logo from '../../images/icons/shape.svg'
+import logo from '../../images/icons/pandeiro.svg'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -31,8 +31,7 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
     color:"white",
-    background:"#769DE9",
-    fontFamily:"'Poppins', sans-serif;",
+    background:"#FCBC29",
     fontSize:"17px",
   },
   tamanhoselectano:{
@@ -41,9 +40,8 @@ const useStyles = makeStyles((theme) => ({
   },
   tipografia:{
     fontSize:"30px",
-    fontFamily:"'Poppins', sans-serif;",
     fontWeight:"Bold",
-    color:"#75A0F2",
+    color:"#6A6A6A",
   },
 
   imagem:{
@@ -52,7 +50,10 @@ const useStyles = makeStyles((theme) => ({
   },
   fonte:{
     fontFamily:"'Poppins', sans-serif;",
-    fontSize:"20px",
+    fontSize:"17px",
+    color:"#1CB0F6",
+    fontWeight:"Bold",
+    marginTop:"1px"
   },
 }));
 

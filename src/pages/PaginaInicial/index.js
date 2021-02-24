@@ -7,7 +7,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import logo from '../../images/icons/shape.svg'
+import logo from '../../images/icons/pandeiro.svg'
 
 const useStyles = makeStyles((theme) => ({
  
@@ -29,14 +29,15 @@ const useStyles = makeStyles((theme) => ({
   submit1: {
     margin: theme.spacing(3, 0, 2),
     color:"white",
-    background:"#769DE9",
+    background:"#1CB0F6",
     height:"60px",
     width:"360px",
+    fontWeight:500,
   },
   submit2: {
     margin: theme.spacing(3, 0, 2),
     color:"white",
-    background:"#769DE9",
+    background:"#1CB0F6",
     height:"60px",
     width:"360px",
   },
@@ -48,25 +49,18 @@ const useStyles = makeStyles((theme) => ({
     fontSize:"50px",
     fontFamily:"'Poppins', sans-serif;",
     fontWeight:"Bold",
-    color:"#75A0F2",
+    color:"#FCBC29",
     
    
   },
   tipografia1:{
-    fontSize:"23px",
-    fontFamily:"'Poppins', sans-serif;",
-    fontWeight:"200,bold",
-    color:"#959090",
+    fontSize:"20px",
+    fontWeight:"200",
+    color:"#B5B5B5",
   
     
   },
-  tipografia2:{
-    fontSize:"23px",
-    fontFamily:"'Poppins', sans-serif;",
-    fontWeight:"200,bold",
-    color:"#959090",
-    marginBottom:"20px"
-  },
+  
   imagem:{
     height:"100px",
     width:"100px"
@@ -97,19 +91,16 @@ export default function PaginaInicial() {
           MaGeo Quiz
         </Typography> 
         <Typography component="h1" variant="h5" className={classes.tipografia1}>
-         Bem vindo ao MaGeo Quiz
+         MaGeo Quiz seu jogo de Geometria Plana.
         
         </Typography> 
-        <Typography component="h1" variant="h5" className={classes.tipografia2}>
-         Seu Jogo de Geometria Plana
-        </Typography>    
+        
       
         <Link to='/loginUsuario'>
           <Button
             type="submit"
             fullWidth
             variant="contained"
-            color="primary"
             className={classes.submit1}
              >
                  Estudante
@@ -121,7 +112,6 @@ export default function PaginaInicial() {
             type="submit"
             fullWidth
             variant="contained"
-            color="primary"
             className={classes.submit2}
              >
              Professor(a)

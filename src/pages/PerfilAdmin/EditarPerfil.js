@@ -87,7 +87,7 @@ export default function EditarDialog(props) {
 
   return (
     <div>
-      <Button variant="contained" color="primary" onClick={handleClickOpen}>
+      <Button variant="contained" style={{background:"#1CB0F6", color:"white"}} onClick={handleClickOpen}>
         Editar
       </Button>
       <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>

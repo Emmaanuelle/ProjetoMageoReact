@@ -6,7 +6,7 @@ import { Button } from '@material-ui/core';
 export const mainListItems = (
   <div>
     <ListItem button>
-      <Button fullWidth href='/perfil'>
+      <Button fullWidth href='/perfil'  >
         <ListItemText primary="Meu Perfil" /></Button>
     </ListItem>
     <ListItem button>
