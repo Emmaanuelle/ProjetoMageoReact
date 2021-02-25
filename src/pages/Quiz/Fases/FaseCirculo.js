@@ -70,7 +70,7 @@ export default function Quiz() {
       //verifica se a resposta está correta
       if (answer === questions[indexAtual].resposta) {
         if(indexAtual === 4  &&  acerto === 5 ){
-          setPontuacao(pontos*2);
+          setPontuacao(pontos);
         }else{
           setAcerto(acerto + 1)
           setPontuacao(pontos + 10)
@@ -93,7 +93,7 @@ export default function Quiz() {
     e.preventDefault()
     const data = {pontos,user_id};
     try {
-      await api.post('/ranking',data);
+      await api.post('/ranking',data); 
       alert("Parabéns Fase Concluída")
       history.push("/desafioCirculo");
       //setTimeout(()=>{window.location.reload()},300)

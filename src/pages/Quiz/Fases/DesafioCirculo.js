@@ -72,7 +72,7 @@ export default function Quiz() {
       //verifica se a resposta está correta
       if (answer === desafio[indexAtual].resposta) {
         if(indexAtual === 4  &&  acerto === 5 ){
-          setPontuacao(pontos*2);
+          setPontuacao(pontos);
         }else{
           setAcerto(acerto + 1)
           setPontuacao(pontos + 30)
@@ -95,9 +95,9 @@ export default function Quiz() {
     e.preventDefault()
     const data = {pontos,user_id};
     try {
-      await api.post('/ranking',data);
+    await api.post('/ranking',data); 
       alert("Parabéns Fase Concluída")
-      history.push("/desafioCirculo");
+      history.push("/ranking");
       //setTimeout(()=>{window.location.reload()},300)
     } catch (error) {
       console.log(error);
@@ -139,7 +139,7 @@ export default function Quiz() {
         
           <form onSubmit={cadastrarRanking} >
             <input type="text" hidden value={user_id} onChange={e=>setUserId(e.target.value)}/>
-            <Button type='submit'href="/escolherFases" className={classes.bnt}>Página Inicial</Button>
+            <Button type='submit'className={classes.bnt}>Página Inicial</Button>
           </form>
           </CardContent>
         </Card>

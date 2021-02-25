@@ -92,7 +92,7 @@ export default function Quiz() {
     e.preventDefault()
     const data = {pontos,user_id};
     try {
-      await api.post('/ranking',data);
+      await api.post('/ranking',data); 
       alert("Parabéns Fase Concluída")
       history.push("/desafioTriangulo");
       //setTimeout(()=>{window.location.reload()},300)

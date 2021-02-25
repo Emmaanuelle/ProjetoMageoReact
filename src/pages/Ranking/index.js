@@ -52,8 +52,8 @@ function Ranking() {
         const getPontuacao = async () => {
             try {
                 const response = await api.get('/ranking');
-                setPontuacao(response.data)
-                console.log(response.data)
+                setPontuacao(response.data.rows) 
+                console.log(response.data.rows)
             } catch (error) {
                 console.log(error.response);
                 if(error.response.data.error.name==="InvalidJwtToken"){

@@ -33,7 +33,8 @@ titulo:{
         const getRanking= async () => {
             try {
                 const response = await api.get('/ranking');
-                setRanking(response.data)
+                setRanking(response.data.rows) 
+                console.log(response.data.rows)
                
             } catch (error) {
                

@@ -105,9 +105,9 @@ function Perfil() {
                                         Conquistas:
                                     </Typography>
                                     <CardMedia
-                                            className={classes.media}
+                                            /* className={classes.media}
                                             image={premio}
-                                            title="Prêmio" 
+                                            title="Prêmio"  */
                                             />
                                  </CardContent>
                             </CardActionArea>
@@ -119,12 +119,8 @@ function Perfil() {
                                 <CardContent>
                                     <Typography gutterBottom variant="h5" component="h2" >
                                         Pontuação:       
-                                    </Typography>
-                                    <Typography gutterBottom variant="h5" component="h2">
                                         {perfilUsuario.ranking !==undefined?
-                                        perfilUsuario.ranking.map(data => {
-                                            return (<p key={data.id}>Pontos: {data.pontos}</p>)
-                                        }):<></>}
+                                        perfilUsuario.ranking.reduce((a, b) => a + (b['pontos'] || 0), 0):<></>}
                                     </Typography>
                                 </CardContent>
                             </CardActionArea>

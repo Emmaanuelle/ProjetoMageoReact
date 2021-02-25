@@ -96,7 +96,7 @@ export default function Quiz() {
     try {
       await api.post('/ranking',data);
       alert("Parabéns Fase Concluída")
-      history.push("/desafioQuadrado");
+      history.push("/faseRetangulo");
       //setTimeout(()=>{window.location.reload()},300)
     } catch (error) {
       console.log(error);
@@ -138,7 +138,7 @@ export default function Quiz() {
         
           <form onSubmit={cadastrarRanking} >
             <input type="text" hidden value={user_id} onChange={e=>setUserId(e.target.value)}/>
-            <Button type='submit'  href="/faseRetangulo" className={classes.bnt}>Proxíma Fase</Button>
+            <Button type='submit' className={classes.bnt}>Proxíma Fase</Button>
           </form>
           </CardContent>
         </Card>
