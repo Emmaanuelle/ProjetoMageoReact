@@ -144,7 +144,7 @@ const Home = (props) => {
           </div>
         </div>
       </div>
-      <div className="bg-gray-50">
+     {/*  <div className="bg-gray-50">
         <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
           <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
             <span className="block">Emblema</span>
@@ -154,7 +154,7 @@ const Home = (props) => {
             <img alt="Imagem" src={logo} width="300px" />
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:text-center">
@@ -212,7 +212,7 @@ const Home = (props) => {
                     Retângulo
             </dt>
                   <dd className="mt-2 text-base text-gray-500">
-                  Terecira fase do Quiz ao longo do jogo terá 2 desafios, se todas as perguntas no total de 10 estiverem corretos o usuario receberá 1 emblema.
+                  Terceira fase do Quiz ao longo do jogo terá 2 desafios, se todas as perguntas no total de 10 estiverem corretos o usuario receberá 1 emblema.
 
             </dd>
                 </div>
@@ -238,7 +238,7 @@ const Home = (props) => {
           </div>
         </div>
       </div>
-      <div className="bg-green-50">
+     {/*  <div className="bg-green-50">
         <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
           <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
             <span className="block">Pontuação</span>
@@ -249,7 +249,7 @@ const Home = (props) => {
             <img alt="Imagem" src={logo} width="300px" />
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

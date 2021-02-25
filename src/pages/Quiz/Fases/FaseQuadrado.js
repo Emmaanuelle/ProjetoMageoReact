@@ -69,6 +69,8 @@ export default function Quiz() {
           setPontuacao(pontos + 10)
 
         }
+
+        
         //Aumenta a pontuação
         /* setAcerto(acerto + 1)
         setPontuacao(pontos + 10) */
