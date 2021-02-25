@@ -62,7 +62,7 @@ export default function CustomizedDialogs(props) {
 
   return (
     <div>
-      <Button variant="contained" color="primary" onClick={handleClickOpen}>
+      <Button variant="contained" color="primary" onClick={handleClickOpen} style={{background:"#FFBB0E", color:"white"}}>
         Dica
       </Button>
       <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>

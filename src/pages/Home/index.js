@@ -76,7 +76,7 @@ const Home = (props) => {
                     Primeiro
             </dt>
                   <dd className="mt-2 text-base text-gray-500">
-                    O jogador iniciará o jogo com 10 pontos.
+                    O jogador iniciará o jogo com 0 pontos.
             </dd>
                 </div>
               </div>

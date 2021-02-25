@@ -17,13 +17,20 @@ const useStyles = makeStyles({
     width: 100,
   },
   container:{
-    marginTop:'2%'
+    marginTop:'3%'
   },
   conteudo:{
-    paddingTop:"30px",
-
+    paddingTop:"70px",
     textAlign:"center"
+  },
+  bnt:{
+    background:"#FFBB0E", 
+    color:"white",
+    height:"60px",
+    width:"200px",
+
   }
+
 });
 
 
@@ -112,10 +119,10 @@ export default function Quiz() {
           <Card>
           <CardContent className={classes.conteudo}>
             <Typography variant="h3" color="textSecondary" component="h5">
-              Fase Concluida!
+            Desafio Concluido!
             </Typography>
             <Typography variant="h3" color="textSecondary" component="h5">
-              Parabéns! Você concluiu a Fase dos Quadrados.
+              Parabéns! Você concluiuo Desafio da Fase Retângulo.
           </Typography>
           <Typography  variant="h3" color="textSecondary" component="h5">
            Pontos:{pontos}!
@@ -133,7 +140,7 @@ export default function Quiz() {
         
           <form onSubmit={cadastrarRanking} >
             <input type="text" hidden value={user_id} onChange={e=>setUserId(e.target.value)}/>
-            <Button type='submit' href="/faseTriangulo">Proxíma Fase</Button>
+            <Button type='submit' href="/faseTriangulo" className={classes.bnt}>Proxíma Fase</Button>
           </form>
           </CardContent>
         </Card>

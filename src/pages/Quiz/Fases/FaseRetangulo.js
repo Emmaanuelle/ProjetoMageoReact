@@ -17,12 +17,19 @@ const useStyles = makeStyles({
     width: 100,
   },
   container:{
-    marginTop:'2%'
+    marginTop:'3%'
   },
   conteudo:{
-    paddingTop:"30px",
+    paddingTop:"70px",
 
     textAlign:"center"
+  },
+  bnt:{
+    background:"#733AC9", 
+    color:"white",
+    height:"60px",
+    width:"200px",
+
   }
 });
 
@@ -121,7 +128,7 @@ export default function Quiz() {
               Fase Concluida!
             </Typography>
             <Typography variant="h3" color="textSecondary" component="h5">
-              Parabéns! Você concluiu a Fase dos Quadrados.
+              Parabéns! Você concluiu a Fase do Retângulo.
            
           </Typography>
           <Typography  variant="h3" color="textSecondary" component="h5">
@@ -134,7 +141,7 @@ export default function Quiz() {
           />
           
            <Typography variant="h3" color="textSecondary" component="h5">
-              Clique no Botão para Iniciar o Quebra Cuca!
+              Clique no Botão para Iniciar o DesafioMageo!
             </Typography>
 
           </CardContent>
@@ -142,7 +149,7 @@ export default function Quiz() {
         
           <form onSubmit={cadastrarRanking} >
             <input type="text" hidden value={user_id} onChange={e=>setUserId(e.target.value)}/>
-            <Button type='submit'sytle={{background:"#956CD2", color:"white"}}>Ir para Desafio</Button>
+            <Button type='submit'className={classes.bnt}>Ir para Desafio</Button>
             
           </form>
           </CardContent>

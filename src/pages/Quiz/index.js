@@ -72,6 +72,7 @@ export default function Quiz() {
         //Aumenta a pontuação
         /* setAcerto(acerto + 1)
         setPontuacao(pontos + 10) */
+        /*  select  user_id, sum(pontos)  from rankings  group by user_id; */
       }
     }
     setMostrarResposta(true)
