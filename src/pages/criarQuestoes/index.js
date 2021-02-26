@@ -190,7 +190,7 @@ export default function Questao() {
                   fullWidth
                   id="alternativas"
                   label=" Primeira alternativas"
-                  placeholder=" por favor separe as alternativas incorretas por @" 
+                  placeholder=" por favor separe as alternativas por virgula" 
                   autoComplete="alternativas"
                   value={alternativa}
                   onChange={e => setAlternativa(e.target.value)}

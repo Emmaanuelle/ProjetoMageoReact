@@ -55,7 +55,7 @@ export default function Quiz() {
           answers:[
             question.resposta,
             //Pega as alternativas e separa onde tem virgula
-          ...question.alternativa.split('@',3)
+          ...question.alternativa.split(',',3)
           ].sort(()=>Math.random()-0.5),
         }))
         setQuestions(questions)
