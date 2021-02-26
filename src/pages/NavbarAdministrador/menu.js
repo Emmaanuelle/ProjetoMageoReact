@@ -24,7 +24,7 @@ export const mainListItems = (
 
     <ListItem button>
       <Button fullWidth href='/questao'  style={{backgroundColor:"#58CC02",color:"#FFFEFE", fontFamily:"'Poppins', sans-serif;",fontSize:"20px",textAlign:"center"}}>
-        <ListItemText primary=" Cadastrar Questão "
+        <ListItemText primary=" Cadastrar" secondary=" Questão "
            /></Button>
     </ListItem>
     <ListItem button>
