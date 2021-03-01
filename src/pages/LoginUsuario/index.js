@@ -71,8 +71,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize:"17px",
     color:"#1CB0F6",
     fontWeight:"Bold",
-    marginRight:"67%",
-    marginTop:"5px"
+    marginTop:"10px"
   
   },
 
@@ -176,11 +175,11 @@ export default function LoginUsuario() {
             </Link>
           </Grid>
           
-         {/*  <Grid container justify="center" alignItems="center">
+          <Grid container justify="center" alignItems="center">
           <Link to='/' className={classes.fonte3}>
               Voltar
             </Link>
-          </Grid> */}
+          </Grid>
 
         </form>
       </div>

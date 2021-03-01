@@ -63,6 +63,14 @@ const useStyles = makeStyles((theme) => ({
     marginRight:"34%",
     marginTop:"5px"
   },
+  fonte3:{
+    fontFamily:"'Poppins', sans-serif;",
+    fontSize:"17px",
+    color:"#1CB0F6",
+    fontWeight:"Bold",
+    marginTop:"10px"
+  },
+  
 
 }));
 
@@ -162,6 +170,12 @@ export default function LoginAdmin() {
               Esqueci minha senha
             </Link>
           </Grid>
+          <Grid container justify="center" alignItems="center">
+          <Link to='/' className={classes.fonte3}>
+              voltar
+            </Link>
+          </Grid>
+
         </form>
       </div>
     </Container>
