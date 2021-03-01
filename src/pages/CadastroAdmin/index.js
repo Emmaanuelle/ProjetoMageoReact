@@ -99,7 +99,7 @@ export default function CadastroAdmin() {
         </Avatar> */}
          <img src={logo} alt='Logo do Projeto Mageo'className={classes.imagem}/>
         <Typography component="h1" variant="h5" className={classes.tipografia}>
-          Cadastro
+          Cadastro do Professor(a)
         </Typography>
         {carregar && !error?<ReactLoading className='loading' type={"bubbles"} color={'orange'} height={'20%'} width={'40%'} />:<></>}
         <form className={classes.form} onSubmit={cadastrar}>
