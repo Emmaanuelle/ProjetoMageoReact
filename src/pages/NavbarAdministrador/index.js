@@ -15,7 +15,7 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import { mainListItems } from './menu';
 import { logout } from "../../services/auth";
 import { Link } from 'react-router-dom';
-import logo from '../../images/icons/pandeiro.svg'
+import logo from '../../images/icons/shape.svg'
 
 const drawerWidth = 220;
 

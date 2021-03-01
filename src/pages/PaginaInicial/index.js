@@ -7,7 +7,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import logo from '../../images/icons/pandeiro.svg'
+import logo from '../../images/icons/shape.svg'
 
 const useStyles = makeStyles((theme) => ({
  
