@@ -64,8 +64,78 @@ const useStyles = makeStyles((theme) => ({
     marginBottom:"10%"
   },
   titulo:{
-    textAlign:"center"
-  }
+    textAlign:"center",
+    color:"#1CB0F6",
+    fontWeight:"bold",
+    fontSize:"2rem"
+  },
+  titulo1:{
+    textAlign:"center",
+    color:"#1CB0F6",
+    fontWeight:"bold",
+    fontSize:"2rem"
+  },
+  titulo2:{
+    textAlign:"center",
+    color:"#1CB0F6",
+    fontWeight:"bold",
+    fontSize:"2rem"
+  },
+  titulo3:{
+    textAlign:"center",
+    color:"#1CB0F6",
+    fontWeight:"bold",
+    fontSize:"2rem"
+  },
+  titulo4:{
+    textAlign:"center",
+    color:"#1CB0F6",
+    fontWeight:"bold",
+    fontSize:"2rem"
+  },
+  titulo5:{
+    textAlign:"center",
+    color:"#1CB0F6",
+    fontWeight:"bold",
+    fontSize:"2rem"
+  },
+  titulo6:{
+    textAlign:"center",
+    color:"#1CB0F6",
+    fontWeight:"bold",
+    fontSize:"2rem"
+  },
+  titulo7:{
+    textAlign:"center",
+    color:"#1CB0F6",
+    fontWeight:"bold",
+    fontSize:"2rem"
+  },
+  titulo8:{
+    textAlign:"center",
+    color:"#1CB0F6",
+    fontWeight:"bold",
+    fontSize:"2rem"
+  },
+  titulo9:{
+    textAlign:"center",
+    color:"#1CB0F6",
+    fontWeight:"bold",
+    fontSize:"2rem"
+  },
+  titulo10:{
+    textAlign:"center",
+    color:"#1CB0F6",
+    fontWeight:"bold",
+    fontSize:"2rem"
+  },
+  titulo11:{
+    textAlign:"center",
+    color:"#1CB0F6",
+    fontWeight:"bold",
+    fontSize:"2rem"
+  },
+  
   
 }));
 
@@ -241,7 +311,7 @@ export default function Dicionario() {
                 <Grid item xs={12} spacing={10}>
                 <Paper className={classes.paper}>
                 <Card>
-                      <Typography className={classes.titulo3} >
+                      <Typography className={classes.titulo4} >
                        Perímetro
                        </Typography>
                      
@@ -266,7 +336,7 @@ export default function Dicionario() {
                 <Grid item xs={12} spacing={10}>
                 <Paper className={classes.paper}>
                 <Card>
-                      <Typography className={classes.titulo3} >
+                      <Typography className={classes.titulo5} >
                            Plano
                        </Typography>
                        <CardContent>
@@ -289,7 +359,7 @@ export default function Dicionario() {
                 <Grid item xs={12} spacing={10}>
                 <Paper className={classes.paper}>
                 <Card>
-                       <Typography className={classes.titulo3} >
+                       <Typography className={classes.titulo6} >
                            Segmento de Reta
                        </Typography>
                        <CardContent>
@@ -315,7 +385,7 @@ export default function Dicionario() {
                 <Paper className={classes.paper}>
                 <Card>
                    <CardActionArea>
-                   <Typography className={classes.titulo3} >
+                   <Typography className={classes.titulo7} >
                           Reta
                        </Typography>
                        <CardContent>
@@ -350,7 +420,7 @@ export default function Dicionario() {
                 <Paper className={classes.paper}>
                 <Card>
                    <CardActionArea>
-                   <Typography className={classes.titulo3} >
+                   <Typography className={classes.titulo8} >
                           Retângulo
                        </Typography>
                        <CardContent>
@@ -383,7 +453,7 @@ export default function Dicionario() {
                 <Paper className={classes.paper}>
                 <Card>
                    <CardActionArea>
-                   <Typography className={classes.titulo3} >
+                   <Typography className={classes.titulo9} >
                           Quadrado
                        </Typography>
                        <CardContent>
@@ -415,7 +485,7 @@ export default function Dicionario() {
                 <Paper className={classes.paper}>
                 <Card>
                    <CardActionArea>
-                   <Typography className={classes.titulo3} >
+                   <Typography className={classes.titulo10} >
                           Trapézio
                        </Typography>
                        <CardContent>
@@ -453,7 +523,7 @@ export default function Dicionario() {
                 <Paper className={classes.paper}>
                 <Card>
                    <CardActionArea>
-                   <Typography className={classes.titulo3} >
+                   <Typography className={classes.titulo11} >
                           Triângulo
                        </Typography>
                        <CardContent>

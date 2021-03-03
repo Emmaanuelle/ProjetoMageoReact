@@ -68,8 +68,54 @@ const useStyles = makeStyles((theme) => ({
     marginBottom:"10%"
   },
   titulo:{
-    textAlign:"center"
-  }
+    textAlign:"center",
+    color:"#1CB0F6",
+    fontWeight:"bold",
+    fontSize:"2rem"
+  },
+  titulo1:{
+    textAlign:"center",
+    color:"#1CB0F6",
+    fontWeight:"bold",
+    fontSize:"2rem"
+  },
+  titulo2:{
+    textAlign:"center",
+    color:"#1CB0F6",
+    fontWeight:"bold",
+    fontSize:"2rem"
+  },
+  titulo3:{
+    textAlign:"center",
+    color:"#1CB0F6",
+    fontWeight:"bold",
+    fontSize:"2rem"
+  },
+  titulo4:{
+    textAlign:"center",
+    color:"#1CB0F6",
+    fontWeight:"bold",
+    fontSize:"2rem"
+  },
+  titulo5:{
+    textAlign:"center",
+    color:"#1CB0F6",
+    fontWeight:"bold",
+    fontSize:"2rem"
+  },
+  titulo6:{
+    textAlign:"center",
+    color:"#1CB0F6",
+    fontWeight:"bold",
+    fontSize:"2rem"
+  },
+  titulo7:{
+    textAlign:"center",
+    color:"#1CB0F6",
+    fontWeight:"bold",
+    fontSize:"2rem"
+  },
+  
   
 }));
 
@@ -115,14 +161,14 @@ export default function ScrollableTabsButtonAuto() {
                 <Grid item xs={12} spacing={10}>
                 <Paper className={classes.paper}>
                 <Card>
-                  <Typography>
+                  <Typography className={classes.titulo}>
                   O corpo como unidade
                   </Typography>
                      
                        <CardContent>
                        <div class="flex justify-center ...">
                           <div></div>
-                          <div > <img alt="Imagem" src={pe} width="300px" className={classes.imagem} /></div>
+                          <div > <img alt="Imagem" src={pe} width="200px" className={classes.imagem} /></div>
                           <div></div>
                         </div>
                        
@@ -146,13 +192,13 @@ export default function ScrollableTabsButtonAuto() {
                 <Paper className={classes.paper}>
                 <Card>
                    <CardActionArea>
-                   <Typography>
+                   <Typography className={classes.titulo1}>
                      Pirâmide
                   </Typography>
                        <CardContent>
                        <div class="flex justify-center ...">
                           <div></div>
-                          <div > <img alt="Imagem" src={piramide} width="300px" className={classes.imagem} /></div>
+                          <div > <img alt="Imagem" src={piramide} width="200px" className={classes.imagem} /></div>
                           <div></div>
                         </div>
                        <Typography>
@@ -179,14 +225,14 @@ export default function ScrollableTabsButtonAuto() {
                 <Grid item xs={12} spacing={10}>
                 <Paper className={classes.paper}>
                 <Card>
-                      <Typography className={classes.titulo} >
+                      <Typography className={classes.titulo2} >
                           Circulo
                        </Typography>
                      
                        <CardContent>
                        <div class="flex justify-center ...">
                           <div></div>
-                          <div > <img alt="Imagem" src={terra} width="300px" className={classes.imagem} /></div>
+                          <div > <img alt="Imagem" src={terra} width="200px" className={classes.imagem} /></div>
                           <div></div>
                         </div>
                        
@@ -208,13 +254,13 @@ export default function ScrollableTabsButtonAuto() {
                 <Paper className={classes.paper}>
                 <Card>
                    
-                <Typography>
+                <Typography className={classes.titulo3}>
                     Favo de Mel
                   </Typography>
                        <CardContent>
                        <div class="flex justify-center ...">
                           <div></div>
-                          <div > <img alt="Imagem" src={favo} width="300px" className={classes.imagem} /></div>
+                          <div > <img alt="Imagem" src={favo} width="200px" className={classes.imagem} /></div>
                           <div></div>
                         </div>
                        <Typography>
@@ -236,13 +282,13 @@ export default function ScrollableTabsButtonAuto() {
                 <Paper className={classes.paper}>
                 <Card>
                    <CardActionArea>
-                     <Typography>
+                     <Typography className={classes.titulo4}>
                        Área do Retângulo
                      </Typography>
                        <CardContent>
                        <div class="flex justify-center ...">
                           <div></div>
-                          <div > <img alt="Imagem" src={terreno} width="300px" className={classes.imagem} /></div>
+                          <div > <img alt="Imagem" src={terreno} width="200px" className={classes.imagem} /></div>
                           <div></div>
                         </div>
                        <Typography>
@@ -269,13 +315,13 @@ export default function ScrollableTabsButtonAuto() {
                 <Paper className={classes.paper}>
                 <Card>
                    <CardActionArea>
-                   <Typography>
+                   <Typography className={classes.titulo5}> 
                        Voo
                      </Typography>
                        <CardContent>
                        <div class="flex justify-center ...">
                           <div></div>
-                          <div > <img alt="Imagem" src={voo} width="300px" className={classes.imagem} /></div>
+                          <div > <img alt="Imagem" src={voo} width="200px" className={classes.imagem} /></div>
                           <div></div>
                         </div>
                       
@@ -304,13 +350,13 @@ export default function ScrollableTabsButtonAuto() {
                 <Paper className={classes.paper}>
                 <Card>
                    <CardActionArea>
-                   <Typography>
+                   <Typography className={classes.titulo6}>
                        Número Pi.
                      </Typography>
                        <CardContent>
                        <div class="flex justify-center ...">
                           <div></div>
-                          <div > <img alt="Imagem" src={pi} width="300px" className={classes.imagem} /></div>
+                          <div > <img alt="Imagem" src={pi} width="200px" className={classes.imagem} /></div>
                           <div></div>
                         </div>
                        <Typography>
@@ -337,13 +383,13 @@ export default function ScrollableTabsButtonAuto() {
                 <Paper className={classes.paper}>
                 <Card>
                    <CardActionArea>
-                   <Typography>
+                   <Typography className={classes.titulo7}>
                        Área do Triângulo
                      </Typography>
                        <CardContent>
                        <div class="flex justify-center ...">
                           <div></div>
-                          <div > <img alt="Imagem" src={triangle} width="300px" className={classes.imagem} /></div>
+                          <div > <img alt="Imagem" src={triangle} width="200px" className={classes.imagem} /></div>
                           <div></div>
                         </div>
                        <Typography>
