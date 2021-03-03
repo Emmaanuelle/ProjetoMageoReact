@@ -10,7 +10,7 @@ createGlobalStyle`
   outline: 0;
 }
 body, html {
-  background: #eee;
+  background: #FFFFFF;
   font-family: 'Roboto', sans-serif;
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased !important;

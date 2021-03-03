@@ -37,7 +37,7 @@ function PerfilAdmin() {
                                         Dados do usuario
                                 </Typography>
                                    {/*  //{dados} */}
-                                <Typography gutterBottom variant="h5" component="h2"> Nome:{perfilUsuario.nome_administrador} {perfilUsuario.sobrenome_administrador}
+                                <Typography gutterBottom variant="h5" component="h2"> Nome: {perfilUsuario.nome_administrador} {perfilUsuario.sobrenome_administrador}
                                </Typography>
                                 {/* <Typography gutterBottom variant="h5" component="h2">{perfilUsuario.email}
                                 </Typography>

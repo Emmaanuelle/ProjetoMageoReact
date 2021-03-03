@@ -14,8 +14,16 @@ export const mainListItems = (
         <ListItemText primary="Ranking" /></Button>
     </ListItem>
     <ListItem button>
+      <Button fullWidth href='/curiosidade' style={{backgroundColor:"#58CC02",color:"#FFFEFE", fontFamily:"'Poppins', sans-serif;",textAlign:"center", fontSize:"30%"}}>
+        <ListItemText primary="Curiosidades" /></Button>
+    </ListItem>
+    <ListItem button>
       <Button fullWidth href='/explore' style={{backgroundColor:"#58CC02",color:"#FFFEFE", fontFamily:"'Poppins', sans-serif;",textAlign:"center", fontSize:"30%"}}>
-        <ListItemText primary="Explore +" /></Button>
+        <ListItemText primary="Enem Geometria" /></Button>
+    </ListItem>
+    <ListItem button>
+      <Button fullWidth href='/dicionario' style={{backgroundColor:"#58CC02",color:"#FFFEFE", fontFamily:"'Poppins', sans-serif;",textAlign:"center", fontSize:"30%"}}>
+        <ListItemText primary="Dicionário" secondary=" MaGeo" /></Button>
     </ListItem>
     {/* <ListItem button>
       <Button fullWidth href='/questao'>
@@ -29,5 +37,6 @@ export const mainListItems = (
       <Button fullWidth href='/ajuda' style={{backgroundColor:"#58CC02",color:"#FFFEFE", fontFamily:"'Poppins', sans-serif;",textAlign:"center", fontSize:"30%"}}>
         <ListItemText primary="Ajuda" /></Button>
     </ListItem>
+    
   </div>
 );

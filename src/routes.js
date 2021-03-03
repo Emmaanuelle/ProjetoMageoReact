@@ -37,6 +37,8 @@ import EsqueceuSenhaUsuario from "./pages/LoginUsuario/EsqueceuSenhaUsuario";
 import CriarNovaSenha from "./pages/LoginUsuario/CriarNovaSenha";
 import EsqueceuSenhaAdmin from"./pages/LoginAdmin/EsqueciSenhaAdmin";
 import CriarNovaSenhaAdmin from"./pages/LoginAdmin/CriarNovaSenhaAdmin";
+import Curiosidade from "./pages/Curiosidade/index";
+import Dicionario from "./pages/Dicionario/index";
 
 
 
@@ -93,6 +95,8 @@ const Routes = () => (
       <PrivateRoute path="/desafioTriangulo" component={DesafioTriangulo}/>
       <PrivateRoute path="/desafioCirculo" component={DesafioCirculo}/>
       <PrivateRoute path="/escolherFases" component={EscolherFases}/>
+      <PrivateRoute path="/curiosidade" component={Curiosidade}/>
+      <PrivateRoute path="/dicionario" component={Dicionario}/>
     
      {/*  <PrivateRoute path="/tabela" component={Tabela} /> */}
     

@@ -6,6 +6,7 @@ import logoNova from '../../images/logonova.png';
 
 const useStyles = makeStyles((theme) => ({
   imagem: {
+    marginTop:"5%",
     borderRadius: 20,
     height: 350,
     width: 500,
@@ -52,7 +53,7 @@ const Home = (props) => {
           <img alt="Imagem" src={logo} width="300px" className={classes.imagem} />
         </div>
       </div>
-
+      <div className="bg-gray-100">
       <div className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="regras">
           <div className="lg:text-center">
@@ -143,6 +144,7 @@ const Home = (props) => {
             </dl>
           </div>
         </div>
+      </div>
       </div>
      {/*  <div className="bg-gray-50">
         <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">

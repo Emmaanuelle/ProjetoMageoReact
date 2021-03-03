@@ -1,6 +1,7 @@
 import React  from "react";
 import { Link } from "react-router-dom";
 // import Avatar from '@material-ui/core/Avatar';
+import  "../../styles/styles.css"
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
@@ -65,11 +66,11 @@ const useStyles = makeStyles((theme) => ({
     height:"100px",
     width:"100px"
   },
-   fundo:{
+   /* fundo:{
     backgroundColor:"rgb(236, 253, 245,)",
     height:"100%",
    }
-  
+   */
 }));
 
 export default function PaginaInicial() {
@@ -78,7 +79,7 @@ export default function PaginaInicial() {
   
 
   return (
-    <div class="bg-green-50" className={classes.fundo}>
+    <div /* className="teste" */>
 
     <Container component="main" maxWidth="xs"  className={classes.contain}> 
       <CssBaseline />
