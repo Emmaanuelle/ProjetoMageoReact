@@ -8,83 +8,54 @@ import reta  from '../../images/icons/Rectanglee.svg';
 import Retang from '../../images/icons/verde.svg';
 import fig3 from '../../images/icons/Pol.svg';
 import fig4 from '../../images/icons/Ell.svg';
-import Circ from '../../images/icons/Circ.png';
-import Trian from '../../images/icons/Trian.png';
-import retan from '../../images/icons/retan.png';
-import quadrad from '../../images/icons/quadrad.png';
+import Circ from '../../images/icons/Ci.png';
+import Trian from '../../images/icons/Tri.png';
+import retan from '../../images/icons/Retang.png';
+import quadrad from '../../images/icons/Design.png';
 
 
 const useStyles = makeStyles((theme)=>({
     conteudo:{
-        width:"70%",
-        height:"60%",   
-        backgroundColor:"#733AC9",
+        height:"300%",   
+        width:"35%",
+        backgroundColor:"#1CB0F6",
         color:"white",
         fontWeight:"Bold",
         textAlign:"center",
-        margin: theme.spacing(5)  
+        margin: theme.spacing(3),
+        marginLeft:"5%"
     },
     conteudo1:{
-        width:"70%",
-        height:"60%", 
-        backgroundColor:"#733AC9",
+        height:"300%",   
+        width:"35%",
+        backgroundColor:"#58CC02",
         color:"white",
         fontWeight:"Bold",
         textAlign:"center",
-        margin: theme.spacing(5) 
+        margin: theme.spacing(3),
+        marginLeft:"5%"
     },
     conteudo2:{
-        width:"70%",
-        height:"60%",   
-        backgroundColor:"#733AC9",
+        height:"300%",   
+        width:"35%",
+        backgroundColor:"#F5F931",
         color:"white",
         fontWeight:"Bold",
         textAlign:"center",
-        margin: theme.spacing(5)  
+        margin: theme.spacing(3),
+        marginLeft:"5%"
     },
     conteudo3:{
-        width:"70%",
-        height:"60%",  
-        backgroundColor:"#733AC9",
+        height:"300%",   
+        width:"35%",
+        backgroundColor:"#FFB800",
         color:"white",
         fontWeight:"Bold",
         textAlign:"center",
-        margin: theme.spacing(5)  
+        margin: theme.spacing(3),
+        marginLeft:"5%"
+    },
 
-    },
-    fase:{
-        fontWeight:"Bold",
-        marginLeft:"50px",
-        fontFamily:"'Poppins', sans-serif;",
-        fontSize:"1.25rem",
-        Color:"#FFBB0E",
-        
-        
-    },
-    fase1:{
-        fontWeight:"Bold",
-        marginLeft:"50px",
-        fontFamily:"'Poppins', sans-serif;",
-        fontSize:"1.25rem",
-        Color:"#FFBB0E",
-        
-    },
-    fase2:{
-        fontWeight:"Bold",
-        marginLeft:"50px",
-        fontFamily:"'Poppins', sans-serif;",
-        fontSize:"1.25rem",
-        Color:"#FFBB0E",
-        
-    },
-    fase3:{
-        fontWeight:"Bold",
-        marginLeft:"50px",
-        fontFamily:"'Poppins', sans-serif;",
-        fontSize:"1.25rem",
-        Color:"#FFBB0E",
-        
-    },
     paper:{
         marginBottom:"20px",
         
@@ -97,52 +68,46 @@ const useStyles = makeStyles((theme)=>({
         fontFamily:"'Poppins', sans-serif;",
         color:"#9572F8"
     },
-/* 
-    fundo:{
-        background:"#E5E7EB",
+    linha:{
+        marginLeft:"5%"
     },
-    fundo1:{
-        backgroundColor:"#E5E7EB",
-      
+    linha1:{
+        marginLeft:"5%"
     },
-    fundo2:{
-        backgroundColor:"#E5E7EB",
-      
-    },
-    
-    fundo3:{
-        backgroundColor:"#E5E7EB",
-    }, */
-    /* linha:{
-        marginBottom:"30px"
-    }, */
-    imagem:{
-        width:"150px",
-        height:"120px",
-        marginLeft:"50px",
-        marginTop:"15%"
-    },
-    imagem1:{
-        width:"150px",
-        height:"150px",
-        marginLeft:"50px",
-        marginTop:"2%"
-    },
-    imagem2:{
-        width:"150px",
-        height:"150px",
-        marginLeft:"50px",
-        marginTop:"2%"
-    },
-    imagem3:{
-        width:"150px",
-        height:"150px",
-        marginLeft:"50px",
-        marginTop:"2%"
+
+    root:{
+        marginTop:"5%",
+        marginBottom:"5%",
+        paddingLeft:"5%",
+        paddingRight:"5%",
+        paddingTop:"5%"
     },
     root1:{
-        marginTop:"5%"
+        marginTop:"5%",
+        marginBottom:"5%",
+        paddingLeft:"5%",
+        paddingRight:"5%",
+        paddingTop:"5%"
+
     },
+    root2:{
+        marginTop:"5%",
+        marginBottom:"5%",
+        paddingLeft:"5%",
+        paddingRight:"5%",
+        paddingTop:"5%"
+
+    },
+    root3:{
+        marginTop:"5%",
+        marginBottom:"5%",
+        paddingLeft:"5%",
+        paddingRight:"5%",
+        paddingTop:"5%"
+
+    },
+
+
     img:{
         width:"500px",
         height:"150px",
@@ -183,79 +148,6 @@ return(
                 </Typography>
            
                 <Grid container spacing={7} className={classes.linha} >
-                
-                <Grid   item xs={12} spacing={9} sm={3}>
-                <Paper className={classes.paper}> 
-                <Card className={classes.fundo}>
-                <CardContent>
-                <span className={classes.fase1}>
-                    Fase Quadrado
-                 </span>
-                    <img src={reta} alt='Logo do Projeto Mageo'  className={classes.imagem}/>
-                    <Button href="/faseQuadrado" className={classes.conteudo}> Jogar</Button>
-                    {/* style={{ backgroundSize:"cover",alignContent:"center",}} */}
-                   
-                </CardContent>
-                </Card>
-                </Paper>
-                </Grid>
-
-                <Grid   item xs={6} spacing={8} sm={3}>
-                <Paper className={classes.paper}>
-                
-                <Card className={classes.fundo1}>
-               
-                <CardContent>
-                <span className={classes.fase}>
-                Fase Retângulo
-                <img src={Retang} alt='Logo do Projeto Mageo'  className={classes.imagem1}/>
-                    <Button href="/faseRetangulo" className={classes.conteudo1} >Jogar</Button>
-                    {/* style={{background: `url(${re})`, backgroundSize:"cover", }}  */}
-                    </span>
-                </CardContent>
-                </Card>
-                </Paper>
-                </Grid>
-                </Grid>
-
-                <Grid container spacing={7} className={classes.linha} >
-
-                <Grid   item xs={6} spacing={8} sm={3}>
-                <Paper className={classes.paper} >
-                
-                <Card className={classes.fundo2}>
-                <CardContent >
-                    {/* style={{background: `url(${triangles})`, backgroundSize:"cover", }} */}
-                <span className={classes.fase2}>
-                Fase Triângulo
-                <img src={fig3} alt='Logo do Projeto Mageo'  className={classes.imagem2}/>
-                <Button href="/faseTriangulo" className={classes.conteudo2} > Jogar</Button>  
-                </span>
-                </CardContent>
-                </Card>
-                
-                </Paper>
-                </Grid>
-                
-                <Grid   item xs={6} spacing={8} sm={3}>
-                <Paper className={classes.paper}>
-                <Card className={classes.fundo3}>
-                <CardContent>
-                <span className={classes.fase3}>
-                Fase Circulo
-                <img src={fig4} alt='Logo do Projeto Mageo'  className={classes.imagem3}/> 
-                <Button href="/faseCirculo" className={classes.conteudo3}>Jogar</Button>
-                </span>
-                </CardContent>
-                </Card>
-                </Paper>
-                </Grid>
-                </Grid>
-
-
-
-
-                <Grid container spacing={7} className={classes.linha} >
                 {/* style={{background: `url(${triangulo})`, backgroundSize:"cover" }} */}
                 
                 <Grid   item xs={6} spacing={8} sm={5}>
@@ -273,15 +165,15 @@ return(
                     Fase Quadrado
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
-                        A fase Quadrada é composta por um conjunto de questões, no final da fase 
+                        A fase Quadrada é composta por um conjunto de questões e 1 desafio no final da fase.
                     </Typography>
                     </CardContent>
                 </CardActionArea>
                 <CardActions>
                 <Button href="/faseQuadrado" className={classes.conteudo}> Jogar</Button>
-                <Button size="small" color="primary">
+                {/* <Button size="small" color="primary">
                     Learn More
-                    </Button>
+                    </Button> */}
                 </CardActions>
                 </Card>
                 </Grid>
@@ -301,16 +193,15 @@ return(
                     Fase Retângulo
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
-                        Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                        across all continents except Antarctica
+                    A fase Quadrada é composta por um conjunto de questões e 1 desafio no final da fase.
                     </Typography>
                     </CardContent>
                 </CardActionArea>
                 <CardActions>
                 <Button href="/faseRetangulo" className={classes.conteudo1} >Jogar</Button>
-                    <Button size="small" color="primary">
+                    {/* <Button size="small" color="primary">
                     Learn More
-                    </Button>
+                    </Button> */}
                 </CardActions>
                 </Card>
                 </Grid>
@@ -318,10 +209,10 @@ return(
             
                 
                 
-             <Grid container spacing={7} className={classes.linha} >
+             <Grid container spacing={7} className={classes.linha1} >
                 {/* style={{background: `url(${triangulo})`, backgroundSize:"cover" }} */}
                 <Grid   item xs={6} spacing={8} sm={5}>
-                <Card className={classes.root}>
+                <Card className={classes.root2}>
                 <CardActionArea>
                     <CardMedia
                     component="img"
@@ -335,23 +226,23 @@ return(
                     Fase Triângulo
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
-                        Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                        across all continents except Antarctica
+                    A fase Quadrada é composta por um conjunto de questões e 1 desafio no final da fase.
+
                     </Typography>
                     </CardContent>
                 </CardActionArea>
                 <CardActions>
                 <Button href="/faseTriangulo" className={classes.conteudo2} > Jogar</Button>  
-                <Button size="small" color="primary">
+               {/*  <Button size="small" color="primary">
                     Learn More
-                    </Button>
+                    </Button> */}
                 </CardActions>
                 </Card>
                 </Grid>
                 
 
                 <Grid   item xs={6} spacing={8} sm={5}>
-                <Card className={classes.root1}>
+                <Card className={classes.root3}>
                 <CardActionArea>
                     <CardMedia
                     component="img"
@@ -365,16 +256,16 @@ return(
                     Fase Circulo
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
-                        Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                        across all continents except Antarctica
+                    A fase Quadrada é composta por um conjunto de questões e 1 desafio no final da fase.
+
                     </Typography>
                     </CardContent>
                 </CardActionArea>
                 <CardActions>
-                <Button href="/faseRetangulo" className={classes.conteudo1} >Jogar</Button>
-                    <Button size="small" color="primary">
+                <Button href="/faseRetangulo" className={classes.conteudo3} >Jogar</Button>
+                    {/* <Button size="small" color="primary">
                     Learn More
-                    </Button>
+                    </Button> */}
                 </CardActions>
                 </Card>
 
