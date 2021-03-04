@@ -1,14 +1,17 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Navbar from '../Navbar';
-import { CardContent, Container, Typography, Card, Button, Grid,Paper} from '@material-ui/core';
+import { CardContent, Container, Typography, Card, Button, Grid,Paper, CardActionArea,CardMedia, CardActions} from '@material-ui/core';
 import circle from '../../images/icons/circle.svg';
 import  triangles from '../../images/icons/triangles.svg';
 import reta  from '../../images/icons/Rectanglee.svg';
 import Retang from '../../images/icons/verde.svg';
 import fig3 from '../../images/icons/Pol.svg';
 import fig4 from '../../images/icons/Ell.svg';
-
+import Circ from '../../images/icons/Circ.png';
+import Trian from '../../images/icons/Trian.png';
+import retan from '../../images/icons/retan.png';
+import quadrad from '../../images/icons/quadrad.png';
 
 
 const useStyles = makeStyles((theme)=>({
@@ -110,9 +113,9 @@ const useStyles = makeStyles((theme)=>({
     fundo3:{
         backgroundColor:"#E5E7EB",
     }, */
-    linha:{
+    /* linha:{
         marginBottom:"30px"
-    },
+    }, */
     imagem:{
         width:"150px",
         height:"120px",
@@ -137,6 +140,20 @@ const useStyles = makeStyles((theme)=>({
         marginLeft:"50px",
         marginTop:"2%"
     },
+    root1:{
+        marginTop:"5%"
+    },
+    img:{
+        width:"500px",
+        height:"150px",
+        
+    },
+    img1:{
+        width:"500px",
+        height:"150px",
+        
+       
+    }
     
   }));
 
@@ -199,6 +216,9 @@ return(
                 </Card>
                 </Paper>
                 </Grid>
+                </Grid>
+
+                <Grid container spacing={7} className={classes.linha} >
 
                 <Grid   item xs={6} spacing={8} sm={3}>
                 <Paper className={classes.paper} >
@@ -230,13 +250,137 @@ return(
                 </Card>
                 </Paper>
                 </Grid>
+                </Grid>
 
+
+
+
+                <Grid container spacing={7} className={classes.linha} >
                 {/* style={{background: `url(${triangulo})`, backgroundSize:"cover" }} */}
-              
-        
+                
+                <Grid   item xs={6} spacing={8} sm={5}>
+                <Card className={classes.root}>
+                <CardActionArea>
+                    <CardMedia
+                    component="img"
+                    alt="Fase Circulo"
+                    className={classes.img}
+                    image={quadrad}
+                    title="Fase Circulo"
+                    />
+                    <CardContent>
+                    <Typography gutterBottom variant="h5" component="h2">
+                    Fase Quadrado
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary" component="p">
+                        A fase Quadrada é composta por um conjunto de questões, no final da fase 
+                    </Typography>
+                    </CardContent>
+                </CardActionArea>
+                <CardActions>
+                <Button href="/faseQuadrado" className={classes.conteudo}> Jogar</Button>
+                <Button size="small" color="primary">
+                    Learn More
+                    </Button>
+                </CardActions>
+                </Card>
                 </Grid>
                 
+                <Grid   item xs={6} spacing={8} sm={5}>
+                <Card className={classes.root1}>
+                <CardActionArea>
+                    <CardMedia
+                    component="img"
+                    alt="Contemplative Reptile"
+                    className={classes.img1}
+                    image={retan}
+                    title="Contemplative Reptile"
+                    />
+                    <CardContent>
+                    <Typography gutterBottom variant="h5" component="h2">
+                    Fase Retângulo
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary" component="p">
+                        Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+                        across all continents except Antarctica
+                    </Typography>
+                    </CardContent>
+                </CardActionArea>
+                <CardActions>
+                <Button href="/faseRetangulo" className={classes.conteudo1} >Jogar</Button>
+                    <Button size="small" color="primary">
+                    Learn More
+                    </Button>
+                </CardActions>
+                </Card>
+                </Grid>
+             </Grid>
             
+                
+                
+             <Grid container spacing={7} className={classes.linha} >
+                {/* style={{background: `url(${triangulo})`, backgroundSize:"cover" }} */}
+                <Grid   item xs={6} spacing={8} sm={5}>
+                <Card className={classes.root}>
+                <CardActionArea>
+                    <CardMedia
+                    component="img"
+                    alt="Fase Circulo"
+                    className={classes.img}
+                    image={Trian}
+                    title="Fase Circulo"
+                    />
+                    <CardContent>
+                    <Typography gutterBottom variant="h5" component="h2">
+                    Fase Triângulo
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary" component="p">
+                        Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+                        across all continents except Antarctica
+                    </Typography>
+                    </CardContent>
+                </CardActionArea>
+                <CardActions>
+                <Button href="/faseTriangulo" className={classes.conteudo2} > Jogar</Button>  
+                <Button size="small" color="primary">
+                    Learn More
+                    </Button>
+                </CardActions>
+                </Card>
+                </Grid>
+                
+
+                <Grid   item xs={6} spacing={8} sm={5}>
+                <Card className={classes.root1}>
+                <CardActionArea>
+                    <CardMedia
+                    component="img"
+                    alt="Contemplative Reptile"
+                    className={classes.img1}
+                    image={Circ}
+                    title="Contemplative Reptile"
+                    />
+                    <CardContent>
+                    <Typography gutterBottom variant="h5" component="h2">
+                    Fase Circulo
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary" component="p">
+                        Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+                        across all continents except Antarctica
+                    </Typography>
+                    </CardContent>
+                </CardActionArea>
+                <CardActions>
+                <Button href="/faseRetangulo" className={classes.conteudo1} >Jogar</Button>
+                    <Button size="small" color="primary">
+                    Learn More
+                    </Button>
+                </CardActions>
+                </Card>
+
+                </Grid>
+               
+             </Grid>
            
     </Container>
 </div>
