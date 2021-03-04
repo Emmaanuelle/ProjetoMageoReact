@@ -1,12 +1,12 @@
 import React from 'react';
 import Navbar from '../Navbar';
 import { makeStyles } from '@material-ui/core/styles';
-import logo from '../../images/imagen1.jpg';
+import logo from '../../images/icons/estudo.jpg';
 import logoNova from '../../images/logonova.png';
 
 const useStyles = makeStyles((theme) => ({
   imagem: {
-    marginTop:"5%",
+    marginTop:"7%",
     borderRadius: 20,
     height: 350,
     width: 500,
@@ -35,12 +35,12 @@ const Home = (props) => {
           </p>
                 <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                   <div className="rounded-md shadow">
-                    <a href='/escolherFases' className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 md:py-4 md:text-lg md:px-10">
+                    <a href='/escolherFases' className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-500 hover:bg-green-700 md:py-4 md:text-lg md:px-10">
                       Start Quiz
               </a>
                   </div>
                   <div className="mt-3 sm:mt-0 sm:ml-3">
-                    <a href="#regras" className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blue-700 bg-green-100 hover:bg-blue-500 md:py-4 md:text-lg md:px-10">
+                    <a href="#regras" className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-400 hover:bg-green-600 md:py-4 md:text-lg md:px-10">
                       Regras do Jogo
               </a>
                   </div>

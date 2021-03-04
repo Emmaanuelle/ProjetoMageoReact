@@ -66,7 +66,7 @@ const useStyles = makeStyles((theme)=>({
         fontSize:"20px",
         marginBottom:"25px",
         fontFamily:"'Poppins', sans-serif;",
-        color:"#9572F8"
+        color:"#6A6A6A"
     },
     linha:{
         marginLeft:"5%"
@@ -135,7 +135,7 @@ return(
     <Navbar/>
     <Container>
     
-                <Typography style={{ marginBottom: 20, color: '#6A6A6A', fontSize: "190%", textAlign: "center", fontWeight:600, marginTop:"3%"}}>
+                <Typography style={{ marginBottom: 20, color: '#6A6A6A', fontSize: "3rem", textAlign: "center", fontWeight:600, marginTop:"3%"}}>
                     MaGeo Fases
                 </Typography>
                 <Typography className={classes.titulo1}>
