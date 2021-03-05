@@ -22,10 +22,25 @@ const useStyles = makeStyles({
       width: 50,
     },
   imagem:{
-      height:"50%",
-      width:"50%"
-    }
-     
+      height:"45%",
+      width:"40%",
+      marginTop:"2%",
+      marginBottom:"3%"
+    },
+    imagem1:{
+        height:"35%",
+        width:"20%",
+        marginLeft:'8%',
+        marginTop:"2%",
+        marginBottom:"3%"
+      },
+      imagem2:{
+        height:"45%",
+        width:"40%",
+        marginTop:"2%",
+        marginBottom:"3%"
+      },
+    
    
   });
   
@@ -124,15 +139,15 @@ function Perfil() {
                                         perfilUsuario.emblema.map((valor,index)=>{
                                             return(
                                                 /* className="grid grid-cols-3 " */
-                                                <div className="inline-flex " >
+                                                <div className="inline-flex " style={{ paddingTop:"7%"}} >
                                                    
                                                     {
                                                       valor.nome_emblema==="Desbravador"? <div className="flex-1">Emblema: Desbravador<img src={premio1} className={classes.imagem}/></div>:
-                                                      <div> </div>
+                                                      <div></div>
 
                                                     }
                                                      {
-                                                      valor.nome_emblema==="Persistente"?<div className="flex-1">Emblema: Persistente<img src={premio2} className={classes.imagem}/></div>:
+                                                      valor.nome_emblema==="Persistente"?<div className="flex-1">Emblema: Persistente<img src={premio2} className={classes.imagem2}/></div>:
                                                       <div></div>
 
                                                     }
@@ -146,26 +161,29 @@ function Perfil() {
                                                       <div></div>
 
                                                     }
+                                                    <div className="inline-flex-1">
                                                     {
-                                                      valor.nome_emblema==="Medalha"?<div className="flex-1">Medalha:Triângulo<img src={premio5} className={classes.imagem}/></div>:
+                                                      valor.nome_emblema==="Medalha Quadrado"?<div className="flex-1">Medalha:Quadrado<img src={premio5} className={classes.imagem1}/></div>:
                                                       <div></div>
 
                                                     }
                                                      {
-                                                      valor.nome_emblema==="Medalha"?<div className="flex-1">Medalha:Triângulo<img src={premio6} className={classes.imagem}/></div>:
+                                                      valor.nome_emblema==="Medalha Retangulo"?<div className="flex-1">Medalha:Retângulo<img src={premio6} className={classes.imagem1}/></div>:
                                                       <div></div>
 
                                                     }
                                                      {
-                                                      valor.nome_emblema==="Medalha"?<div className="flex-1">Medalha:Triângulo<img src={premio7} className={classes.imagem}/></div>:
+                                                      valor.nome_emblema==="Medalha Triangulo"?<div className="flex-1">Medalha:Triângulo<img src={premio7} className={classes.imagem1}/></div>:
                                                       <div></div>
 
                                                     }
                                                      {
-                                                      valor.nome_emblema==="Medalha"?<div className="flex-1">Medalha:Triângulo<img src={premio8} className={classes.imagem}/></div>:
+                                                      valor.nome_emblema==="Medalha Circulo"?<div className="flex-1">Medalha:Circulo<img src={premio8} className={classes.imagem1}/></div>:
                                                       <div></div>
 
                                                     }
+                                                    </div>
+                                                   
 
                                                    
                                                  

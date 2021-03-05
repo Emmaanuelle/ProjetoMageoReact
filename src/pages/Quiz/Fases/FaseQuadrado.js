@@ -42,10 +42,10 @@ const useStyles = makeStyles({
     width:"200px",
   },
   bnt1:{
-    background:"#733AC9", 
+    background:"#EE4237", 
     color:"white",
-    height:"60px",
-    width:"80px",
+    height:"70px",
+    width:"110px",
   },
   root:{
     marginTop:"5%",
@@ -166,10 +166,10 @@ export default function Quiz() {
           
           <Card>
           <CardContent className={classes.conteudo}>
-            <Typography variant="h3" color="textSecondary" component="h5">
+            <Typography variant="h3" color="textSecondary" component="h5" >
               Fase Concluida!
             </Typography>
-            <Typography variant="h3" color="textSecondary" component="h5">
+            <Typography variant="h3" color="textSecondary" component="h5" >
               Parabéns! Você concluiu a Fase do Quadrado.
            
           </Typography>
@@ -194,7 +194,7 @@ export default function Quiz() {
                 <input type="text" hidden value={fase_emblema} onChange={e=>setFaseEmblema(e.target.value)}/>
                 <input type="text" hidden value={etapa_desafio} onChange={e=>setEtapaDesafio(e.target.value)}/>
 
-                <Button type='submit' className={classes.bnt1}>+ Emblema</Button>
+                <Button type='submit' className={classes.bnt1}>Emblema Desbravador</Button>
                 
               </form> 
             </CardContent>
@@ -203,7 +203,7 @@ export default function Quiz() {
          
            
 
-           <Typography variant="h3" color="textSecondary" component="h5">
+           <Typography variant="h3" color="textSecondary" component="h5" >
               Clique no Botão para Iniciar o Desafio MaGeo!
             </Typography>
 

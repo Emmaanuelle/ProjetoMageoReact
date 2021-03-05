@@ -68,9 +68,9 @@ export default function Quiz() {
   const[desafio,setDesafio] =useState([])
   const [mostrarResposta,setMostrarResposta]= useState(false)
   const [user_id,setUserId] = useState(localStorage.getItem('user_id'));
-  const[nome_emblema,setNomeEmblema]= useState("Persistente");
-  const[fase_emblema,setFaseEmblema]= useState("Retangulo");
-  const[etapa_desafio,setEtapaDesafio]= useState("Retangulo");
+  const[nome_emblema,setNomeEmblema]= useState("Medalha Circulo");
+  const[fase_emblema,setFaseEmblema]= useState("Circulo");
+  const[etapa_desafio,setEtapaDesafio]= useState("Circulo");
 
   useEffect(() => {
     async function getQuestions() {

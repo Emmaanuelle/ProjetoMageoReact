@@ -44,8 +44,8 @@ const useStyles = makeStyles({
   bnt1:{
     background:"#733AC9", 
     color:"white",
-    height:"60px",
-    width:"80px",
+    height:"70px",
+    width:"120px",
   },
   contet:{
     marginLeft:"22rem"
@@ -189,7 +189,7 @@ export default function Quiz() {
                 <input type="text" hidden value={nome_emblema} onChange={e=>setNomeEmblema(e.target.value)}/>
                 <input type="text" hidden value={fase_emblema} onChange={e=>setFaseEmblema(e.target.value)}/>
                 <input type="text" hidden value={etapa_desafio} onChange={e=>setEtapaDesafio(e.target.value)}/>
-                <Button type='submit' className={classes.bnt1}>+ Emblema</Button>
+                <Button type='submit' className={classes.bnt1}>Emblema Corajoso</Button>
               </form> 
             </CardContent>
           </Card>

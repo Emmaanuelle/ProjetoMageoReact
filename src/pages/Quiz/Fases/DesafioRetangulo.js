@@ -69,7 +69,7 @@ export default function Quiz() {
   const[desafio,setDesafio] =useState([])
   const [mostrarResposta,setMostrarResposta]= useState(false)
   const [user_id,setUserId] = useState(localStorage.getItem('user_id'));
-  const[nome_emblema,setNomeEmblema]= useState("Persistente");
+  const[nome_emblema,setNomeEmblema]= useState("Medalha Retangulo");
   const[fase_emblema,setFaseEmblema]= useState("Retangulo");
   const[etapa_desafio,setEtapaDesafio]= useState("Retangulo");
 
