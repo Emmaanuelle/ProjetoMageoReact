@@ -163,22 +163,22 @@ function Perfil() {
                                                     }
                                                     <div className="inline-flex-1">
                                                     {
-                                                      valor.nome_emblema==="Medalha Quadrado"?<div className="flex-1">Medalha:Quadrado<img src={premio5} className={classes.imagem1}/></div>:
+                                                      valor.nome_emblema==="Medalha Deafio Quadrado"?<div className="flex-1">Medalha: Desafio Quadrado<img src={premio5} className={classes.imagem1}/></div>:
                                                       <div></div>
 
                                                     }
                                                      {
-                                                      valor.nome_emblema==="Medalha Retangulo"?<div className="flex-1">Medalha:Retângulo<img src={premio6} className={classes.imagem1}/></div>:
+                                                      valor.nome_emblema==="Medalha Desafio Retangulo"?<div className="flex-1">Medalha: Desafio Retângulo<img src={premio6} className={classes.imagem1}/></div>:
                                                       <div></div>
 
                                                     }
                                                      {
-                                                      valor.nome_emblema==="Medalha Triangulo"?<div className="flex-1">Medalha:Triângulo<img src={premio7} className={classes.imagem1}/></div>:
+                                                      valor.nome_emblema==="Medalha Desafio Triangulo"?<div className="flex-1">Medalha: Desafio Triângulo<img src={premio7} className={classes.imagem1}/></div>:
                                                       <div></div>
 
                                                     }
                                                      {
-                                                      valor.nome_emblema==="Medalha Circulo"?<div className="flex-1">Medalha:Circulo<img src={premio8} className={classes.imagem1}/></div>:
+                                                      valor.nome_emblema==="Medalha Desafio Circulo"?<div className="flex-1">Medalha: Desafio Circulo<img src={premio8} className={classes.imagem1}/></div>:
                                                       <div></div>
 
                                                     }

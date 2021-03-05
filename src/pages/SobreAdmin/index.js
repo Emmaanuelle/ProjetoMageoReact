@@ -27,7 +27,7 @@ function Sobre() {
                                 <p> 
                                 Este sistema é parte do Trabalho de Conclusão do Curso Sistemas para Internet do Instituto Federela de Brasília, tem como objetivo desenvolver  uma plataforma educacional gamificada aplicada ao ensino de geometria plana 
                                 para apoiar a aprendizagem dos estudantes do ensino médio integrado. A aplicação foi desenvolvida com o apoio das especilista Marina Gabriella Ribeiro Bardella Benicio e Luciana Lima Ventura. Foi desenvolvido no inicio de Dezembro de 2020 e finalizado em Março de 2021.
-                                O que espero alcançar
+                                
                                      </p>
                             </p>
 

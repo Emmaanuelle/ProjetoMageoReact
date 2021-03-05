@@ -67,7 +67,7 @@ export default function Quiz() {
   const[desafio,setDesafio] =useState([])
   const [mostrarResposta,setMostrarResposta]= useState(false)
   const [user_id,setUserId] = useState(localStorage.getItem('user_id'));
-  const[nome_emblema,setNomeEmblema]= useState("Medalha Quadrado");
+  const[nome_emblema,setNomeEmblema]= useState("Medalha Desafio Quadrado");
   const[fase_emblema,setFaseEmblema]= useState("Quadrado");
   const[etapa_desafio,setEtapaDesafio]= useState("Quadrado");
 
@@ -175,7 +175,7 @@ export default function Quiz() {
             title="Prêmio" 
           />
            <Typography variant="h3" color="textSecondary" component="h5"className={classes.titulo}>
-              Clique no Botão para adicionar a Medalha da Fase Triângulo!
+              Clique no Botão para adicionar a Medalha da Fase Quadrado!
             </Typography>
             <CardContent className={classes.conteudoEmblema}>
              <form onSubmit={adicionarEmblema} > 
