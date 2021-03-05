@@ -262,7 +262,7 @@ return(
                     </CardContent>
                 </CardActionArea>
                 <CardActions>
-                <Button href="/faseRetangulo" className={classes.conteudo3} >Jogar</Button>
+                <Button href="/faseCirculo" className={classes.conteudo3} >Jogar</Button>
                     {/* <Button size="small" color="primary">
                     Learn More
                     </Button> */}

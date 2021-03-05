@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Typography,Button, Card, CardContent, CardMedia, Container } from '@material-ui/core';
+import { Box, Typography,Button, Card, CardContent, CardMedia, Container,Grid } from '@material-ui/core';
 import Navbar from '../../Navbar';
 import api from '../../../services/api';
 import premio from '../../../images/icons/primeiro.svg'
@@ -19,16 +19,40 @@ const useStyles = makeStyles({
   container:{
     marginTop:'3%'
   },
+  contet:{
+    marginLeft:"22rem"
+  },
   conteudo:{
-    paddingTop:"70px",
+    paddingTop:"40px",
     textAlign:"center"
+  },
+  conteudoEmblema:{
+    paddingTop:"20px",
+    textAlign:"center"
+  },
+
+  titulo:{
+    fontSize:"2rem",
+    marginTop:"2%"
   },
    bnt:{
     background:"#733AC9", 
     color:"white",
     height:"60px",
     width:"200px",
-
+  },
+  bnt1:{
+    background:"#733AC9", 
+    color:"white",
+    height:"60px",
+    width:"80px",
+  },
+  root:{
+    marginTop:"5%",
+    marginBottom:"5%",
+    paddingLeft:"5%",
+    paddingRight:"5%",
+    paddingTop:"5%"
   }
 });
 
@@ -42,6 +66,9 @@ export default function Quiz() {
   const [indexAtual, setIndexAtual] = useState(0);
   const [mostrarResposta,setMostrarResposta]= useState(false)
   const [user_id,setUserId] = useState(localStorage.getItem('user_id'));
+  const[nome_emblema,setNomeEmblema]= useState("Desbravador");
+  const[fase_emblema,setFaseEmblema]= useState("Quadrado");
+  const[etapa_desafio,setEtapaDesafio]= useState("Quadrado");
   const history = useHistory();
 
   useEffect(() => {
@@ -102,6 +129,20 @@ export default function Quiz() {
       console.log(error);
     }
   }
+
+
+  async function adicionarEmblema(e){
+    e.preventDefault()
+    const data = {nome_emblema,fase_emblema,etapa_desafio,user_id};
+    try {
+      await api.post('/Emblema',data); 
+      alert("Parabéns Emblema Adicionado com Sucesso!")
+      //setTimeout(()=>{window.location.reload()},300)
+    } catch (error) {
+      console.log(error.response);
+      
+    }
+  }
   //const alternativa = questions.length > 0 ?questions[0].alternativa.split(","):['Quiz','Em','Construção'];
  console.log(questions);
 
@@ -135,12 +176,33 @@ export default function Quiz() {
           <Typography  variant="h3" color="textSecondary" component="h5">
            Pontos:{pontos}!
           </Typography>
+
+        <Grid   item xs={6} spacing={8} sm={5}className={classes.contet}>
+        <Card className={classes.root}>
           <CardMedia
            className={classes.media}
             image={premio}
             title="Prêmio" 
           />
-          
+           <Typography variant="h3" color="textSecondary" component="h5"className={classes.titulo}>
+              Clique no Botão para adicionar o emblema Quadrado!
+            </Typography>
+            <CardContent className={classes.conteudoEmblema}>
+             <form onSubmit={adicionarEmblema} > 
+                <input type="text" hidden value={user_id} onChange={e=>setUserId(e.target.value)}/>
+                <input type="text" hidden value={nome_emblema} onChange={e=>setNomeEmblema(e.target.value)}/>
+                <input type="text" hidden value={fase_emblema} onChange={e=>setFaseEmblema(e.target.value)}/>
+                <input type="text" hidden value={etapa_desafio} onChange={e=>setEtapaDesafio(e.target.value)}/>
+
+                <Button type='submit' className={classes.bnt1}>+ Emblema</Button>
+                
+              </form> 
+            </CardContent>
+          </Card>
+          </Grid>
+         
+           
+
            <Typography variant="h3" color="textSecondary" component="h5">
               Clique no Botão para Iniciar o Desafio MaGeo!
             </Typography>

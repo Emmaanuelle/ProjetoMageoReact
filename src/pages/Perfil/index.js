@@ -1,10 +1,18 @@
 import React, { useState, useEffect} from 'react';
-import { Container, Card, Grid, CardActionArea, CardContent, Typography, CardActions, CardMedia } from '@material-ui/core';
+import { Container, Card, Grid, CardActionArea, CardContent, Typography, CardActions, CardMedia} from '@material-ui/core';
 import Navbar from '../Navbar';
 import api from '../../services/api';
 import EditarDialog from "./EditarDialog";
 import premio from '../../images/icons/premio.svg';
 import { makeStyles} from '@material-ui/core/styles';
+import premio1 from '../../images/icons/primeiro.svg';
+import premio2 from '../../images/icons/segundo.svg';
+import premio3 from '../../images/icons/terceiro.svg';
+import premio4 from '../../images/icons/quarto.svg';
+import premio5 from '../../images/icons/medalha.svg';
+import premio6 from '../../images/icons/medalha.svg';
+import premio7 from '../../images/icons/medalha.svg';
+import premio8 from '../../images/icons/medalha.svg';
 
 const useStyles = makeStyles({
     media: {
@@ -13,7 +21,11 @@ const useStyles = makeStyles({
       height:50,
       width: 50,
     },
-    
+  imagem:{
+      height:"50%",
+      width:"50%"
+    }
+     
    
   });
   
@@ -31,17 +43,21 @@ function Perfil() {
                 console.log(response.data)
             } catch (error) {
                 console.log(error.response);
-                if(error.response.data.error.name==="ExpiredJwtToken"){
+               /*  if(error.response.data.error.name==="ExpiredJwtToken"){
                     alert("Sua sessão expirou! Faça o login novamente.")
-                }else{
+                } *//* else{
                     alert("Erro em carregar os dados")
-                }
+                } */
                
             }
         }
         getPerfilUsuario()
     }, []);
     localStorage.setItem('user_id', perfilUsuario.id)
+   /*  if(perfilUsuario.length!==){
+        const unique = [...new Set(perfilUsuario.emblema.map(valor=> valor.nome_emblema))]
+        console.log(unique) 
+    } */
     return (
         <>
             <Navbar />
@@ -103,6 +119,72 @@ function Perfil() {
                                 <CardContent>
                                     <Typography gutterBottom variant="h5" component="h2">
                                         Conquistas:
+                                        <br/>
+                                        {perfilUsuario.emblema !==undefined?
+                                        perfilUsuario.emblema.map((valor,index)=>{
+                                            return(
+                                                /* className="grid grid-cols-3 " */
+                                                <div className="inline-flex " >
+                                                   
+                                                    {
+                                                      valor.nome_emblema==="Desbravador"? <div className="flex-1">Emblema: Desbravador<img src={premio1} className={classes.imagem}/></div>:
+                                                      <div> </div>
+
+                                                    }
+                                                     {
+                                                      valor.nome_emblema==="Persistente"?<div className="flex-1">Emblema: Persistente<img src={premio2} className={classes.imagem}/></div>:
+                                                      <div></div>
+
+                                                    }
+                                                    {
+                                                      valor.nome_emblema==="Corajoso"?<div className="flex-1">Emblema: Corajoso<img src={premio3} className={classes.imagem}/></div>:
+                                                      <div></div>
+
+                                                    }
+                                                    {
+                                                      valor.nome_emblema==="Forte"?<div className="flex-1">Emblema: Forte<img src={premio4} className={classes.imagem}/></div>:
+                                                      <div></div>
+
+                                                    }
+                                                    {
+                                                      valor.nome_emblema==="Medalha"?<div className="flex-1">Medalha:Triângulo<img src={premio5} className={classes.imagem}/></div>:
+                                                      <div></div>
+
+                                                    }
+                                                     {
+                                                      valor.nome_emblema==="Medalha"?<div className="flex-1">Medalha:Triângulo<img src={premio6} className={classes.imagem}/></div>:
+                                                      <div></div>
+
+                                                    }
+                                                     {
+                                                      valor.nome_emblema==="Medalha"?<div className="flex-1">Medalha:Triângulo<img src={premio7} className={classes.imagem}/></div>:
+                                                      <div></div>
+
+                                                    }
+                                                     {
+                                                      valor.nome_emblema==="Medalha"?<div className="flex-1">Medalha:Triângulo<img src={premio8} className={classes.imagem}/></div>:
+                                                      <div></div>
+
+                                                    }
+
+                                                   
+                                                 
+
+                                                    
+
+                                                   {/*  {
+                                                        valor.nome_emblema
+                                                        
+                                                    }
+                                                    {
+                                                        valor.fase_emblema
+                                                    } */}
+                                                </div>
+
+                                            )
+
+                                            
+                                        }):<></>}
                                     </Typography>
                                     <CardMedia
                                             /* className={classes.media}

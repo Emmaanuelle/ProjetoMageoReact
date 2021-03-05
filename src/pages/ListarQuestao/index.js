@@ -90,7 +90,7 @@ export default function ListarQuestao() {
                </Grid>
                </Grid>
               )
-            }):<p>Não tem perguntas cadastrada no momento!</p>}
+            }):<p>Não tem Questões  cadastradas no momento!</p>}
       
         </div>
       </Container>
