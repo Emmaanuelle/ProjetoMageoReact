@@ -95,10 +95,10 @@ export default function Quiz() {
     if(!mostrarResposta){//Previnindo respostas duplicadas
       //verifica se a resposta está correta
       if (answer === questions[indexAtual].resposta) {
-        if(indexAtual === 4  &&  acerto === 5 ){
-          setPontuacao(pontos);
+        setAcerto(acerto + 1)
+        if(acerto === 5 || acerto === 9){
+          setPontuacao(pontos*2);
         }else{
-          setAcerto(acerto + 1)
           setPontuacao(pontos + 10)
 
         }

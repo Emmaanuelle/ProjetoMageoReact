@@ -49,6 +49,7 @@ function Perfil() {
      const classes = useStyles();
     
     const [perfilUsuario, setPerfilUsuario] = useState([])
+    //const [emblemas,setEmblemas] = useState([])
     useEffect(() => {
         const email = localStorage.getItem('email')
         const getPerfilUsuario = async () => {
@@ -58,21 +59,23 @@ function Perfil() {
                 console.log(response.data)
             } catch (error) {
                 console.log(error.response);
-               /*  if(error.response.data.error.name==="ExpiredJwtToken"){
+                if(error.response.data.error.name==="ExpiredJwtToken"){
                     alert("Sua sessão expirou! Faça o login novamente.")
-                } *//* else{
+                }else{
                     alert("Erro em carregar os dados")
-                } */
+                }
                
             }
         }
         getPerfilUsuario()
     }, []);
     localStorage.setItem('user_id', perfilUsuario.id)
-   /*  if(perfilUsuario.length!==){
-        const unique = [...new Set(perfilUsuario.emblema.map(valor=> valor.nome_emblema))]
-        console.log(unique) 
-    } */
+    /*useEffect(()=>{
+          if(perfilUsuario.length!==0){
+             setEmblemas([...new Set(perfilUsuario.emblema.map(valor=> valor.nome_emblema))])
+         } 
+
+    },) */
     return (
         <>
             <Navbar />
