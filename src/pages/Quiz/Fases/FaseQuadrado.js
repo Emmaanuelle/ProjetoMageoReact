@@ -66,7 +66,7 @@ export default function Quiz() {
   const [indexAtual, setIndexAtual] = useState(0);
   const [mostrarResposta,setMostrarResposta]= useState(false)
   const [user_id,setUserId] = useState(localStorage.getItem('user_id'));
-  const[nome_emblema,setNomeEmblema]= useState("Desbravador");
+  const[nome_emblema,setNomeEmblema]= useState("");
   const[fase_emblema,setFaseEmblema]= useState("Quadrado");
   const[etapa_desafio,setEtapaDesafio]= useState("Quadrado");
   const history = useHistory();
@@ -94,14 +94,22 @@ export default function Quiz() {
   const handleAnswer = (answer) => {
     if(!mostrarResposta){//Previnindo respostas duplicadas
       //verifica se a resposta está correta
-      if (answer === questions[indexAtual].resposta) {
-        setAcerto(acerto + 1)
-        if(acerto === 5 || acerto === 9){
-          setPontuacao(pontos*2);
-        }else{
-          setPontuacao(pontos + 10)
-
+      if(acerto === 5 || acerto === 9){
+       
+        if (answer === questions[indexAtual].resposta) {
+          setAcerto(acerto + 1)
+          setPontuacao(pontos*2) }
+        }else{ 
+          if (answer === questions[indexAtual].resposta) {
+          setAcerto(acerto + 1)
+          setPontuacao(pontos+10)
         }
+
+           
+
+          
+
+        
         
         //Aumenta a pontuação
         /* setAcerto(acerto + 1)
@@ -131,16 +139,40 @@ export default function Quiz() {
 
 
   async function adicionarEmblema(e){
+    
     e.preventDefault()
+    if( acerto === 5 ){
+      setNomeEmblema("Emblema 5 acertos, Desbravador")
+      /* console.log("chegou,", nome_emblema) */
+      
+
     const data = {nome_emblema,fase_emblema,etapa_desafio,user_id};
+    
     try {
+     
       await api.post('/Emblema',data); 
       alert("Parabéns Emblema Adicionado com Sucesso!")
       //setTimeout(()=>{window.location.reload()},300)
+
     } catch (error) {
       console.log(error.response);
       
     }
+    } else {
+      setNomeEmblema("Desbravador")
+    const data = {nome_emblema,fase_emblema,etapa_desafio,user_id};
+    
+    try {
+     
+      await api.post('/Emblema',data); 
+      alert("Parabéns Emblema Adicionado com Sucesso!")
+      //setTimeout(()=>{window.location.reload()},300)
+
+    } catch (error) {
+      console.log(error.response);
+      
+    }
+  }
   }
   //const alternativa = questions.length > 0 ?questions[0].alternativa.split(","):['Quiz','Em','Construção'];
  console.log(questions);
@@ -217,12 +249,23 @@ export default function Quiz() {
           </CardContent>
         </Card>
         ): 
+        
         (
+          <div>
+            {indexAtual===4 && acerto ===5?  
+       
+               alert("Parabéns você acertou 5 questões seguidas"):
+               
+                  <div></div>
+            
+            }
         <Questao data={questions[indexAtual]} 
         indexAtual={indexAtual}
         question={questions}
         irParaProximaQuestao={irParaProximaQuestao}
         mostrarResposta={mostrarResposta} handleAnswer={handleAnswer} />
+        </div>
+        
 
         ) : (
             <Box display='flex' justifyContent="center">

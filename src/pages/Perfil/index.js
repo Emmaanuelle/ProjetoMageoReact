@@ -13,6 +13,7 @@ import premio5 from '../../images/icons/medalha.svg';
 import premio6 from '../../images/icons/medalha.svg';
 import premio7 from '../../images/icons/medalha.svg';
 import premio8 from '../../images/icons/medalha.svg';
+import fogo from '../../images/icons/fogo.svg';
 
 const useStyles = makeStyles({
     media: {
@@ -149,6 +150,14 @@ function Perfil() {
                                                       <div></div>
 
                                                     }
+                                                  
+                                                    {
+                                                      valor.nome_emblema==="Emblema 5 acertos, Desbravador"? <div className="flex-1">Emblema:5 acertos <img src={fogo} className={classes.imagem}/> <img src={premio1} className={classes.imagem}/></div>:
+                                                      <div></div>
+
+                                                     }
+                                                  
+                                  
                                                      {
                                                       valor.nome_emblema==="Persistente"?<div className="flex-1">Emblema: Persistente<img src={premio2} className={classes.imagem2}/></div>:
                                                       <div></div>
