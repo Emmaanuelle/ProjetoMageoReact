@@ -252,13 +252,7 @@ export default function Quiz() {
         
         (
           <div>
-            {indexAtual===4 && acerto ===5?  
-       
-               alert("Parabéns você acertou 5 questões seguidas"):
-               
-                  <div></div>
-            
-            }
+            {indexAtual===4 && acerto ===5?alert("Parabéns você acertou 5 questões seguidas"):<div></div>}
         <Questao data={questions[indexAtual]} 
         indexAtual={indexAtual}
         question={questions}

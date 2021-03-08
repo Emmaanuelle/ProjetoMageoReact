@@ -10,6 +10,10 @@ export const mainListItems = (
         <ListItemText primary="Meu Perfil" /></Button>
     </ListItem>
     <ListItem button>
+      <Button fullWidth href='/escolherFases' style={{backgroundColor:"#58CC02",color:"#FFFEFE", fontFamily:"'Poppins', sans-serif;",textAlign:"center", fontSize:"30%"}}>
+        <ListItemText primary="Começar o Quiz" /></Button>
+    </ListItem>
+    <ListItem button>
       <Button fullWidth href='/ranking' style={{backgroundColor:"#58CC02",color:"#FFFEFE", fontFamily:"'Poppins', sans-serif;",textAlign:"center", fontSize:"30%"}}>
         <ListItemText primary="Ranking" /></Button>
     </ListItem>
@@ -23,12 +27,8 @@ export const mainListItems = (
     </ListItem>
     <ListItem button>
       <Button fullWidth href='/dicionario' style={{backgroundColor:"#58CC02",color:"#FFFEFE", fontFamily:"'Poppins', sans-serif;",textAlign:"center", fontSize:"30%"}}>
-        <ListItemText primary="Dicionário" secondary=" MaGeo" /></Button>
+        <ListItemText>Dicionário Mageo</ListItemText></Button>
     </ListItem>
-    {/* <ListItem button>
-      <Button fullWidth href='/questao'>
-        <ListItemText primary="Criar Questões" /></Button>
-    </ListItem> */}
     <ListItem button>
       <Button fullWidth href='/sobre' style={{backgroundColor:"#58CC02",color:"#FFFEFE", fontFamily:"'Poppins', sans-serif;",textAlign:"center", fontSize:"30%"}}>
         <ListItemText primary="Sobre" /></Button>

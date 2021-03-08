@@ -144,14 +144,14 @@ export default function ScrollableTabsButtonAuto() {
           aria-label="scrollable auto tabs example"
         >
 
-          <Tab label="A" {...a11yProps(0)} />
-          <Tab label="B" {...a11yProps(1)} />
-          <Tab label="C" {...a11yProps(2)} />
-          <Tab label="D" {...a11yProps(3)} />
-          <Tab label="E" {...a11yProps(4)} />
-          <Tab label="F" {...a11yProps(5)} />
-          <Tab label="G" {...a11yProps(6)} />
-          <Tab label="H" {...a11yProps(7)} />
+          <Tab label="I" {...a11yProps(0)} />
+          <Tab label="II" {...a11yProps(1)} />
+          <Tab label="III" {...a11yProps(2)} />
+          <Tab label="IV" {...a11yProps(3)} />
+          <Tab label="V" {...a11yProps(4)} />
+          <Tab label="VI" {...a11yProps(5)} />
+          <Tab label="VII" {...a11yProps(6)} />
+          <Tab label="VIII" {...a11yProps(7)} />
           
 
         </Tabs>

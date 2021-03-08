@@ -29,14 +29,14 @@ const Home = (props) => {
                   <span className="block xl:inline"> O que é MaGeo Quiz!?</span>
                 </h1>
                 <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                  MaGeo! è uma plataforma educacional voltado para o ensino e aprendizagem de Geometria Plana por meio de um Quiz Gamificado.
-                  Quer aprender mais sobre Geometria plana! Aperte o botão Start Quiz.
+                  MaGeo! <br/> É uma plataforma educacional voltado para o ensino e aprendizagem de Geometria Plana por meio de um Quiz Gamificado. <br/>
+                  Quer aprender mais sobre Geometria plana? <br/> <b> Aperte o botão Começar o Quiz. </b>
                   
           </p>
                 <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                   <div className="rounded-md shadow">
                     <a href='/escolherFases' className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-500 hover:bg-green-700 md:py-4 md:text-lg md:px-10">
-                      Start Quiz
+                    Começar  o Quiz
               </a>
                   </div>
                   <div className="mt-3 sm:mt-0 sm:ml-3">
@@ -62,7 +62,7 @@ const Home = (props) => {
               Regras do Jogo
       </p>
             <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-              Para saber mais sobre como quiz funciona, leia as regras do jogo.
+              Para saber mais sobre como o quiz funciona, leia as regras do jogo.
       </p>
           </div>
           <div className="mt-10">
@@ -77,7 +77,7 @@ const Home = (props) => {
                     Primeiro
             </dt>
                   <dd className="mt-2 text-base text-gray-500">
-                    O Quiz é divido em 4 fases que corresponde ao Quadrado,Retângulo,Triângulo e Circulo.
+                    O Quiz é divido em 4 fases que corresponde ao quadrado, retângulo, triângulo e circulo.
             </dd>
                 </div>
               </div>
