@@ -187,7 +187,7 @@ return(
                     Fase Retângulo
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
-                    A fase Quadrada é composta por um conjunto de questões e 1 desafio no final da fase.
+                    A fase Retângulo é composta por um conjunto de questões e 1 desafio no final da fase.
                     </Typography>
                     </CardContent>
                 </CardActionArea>
@@ -220,7 +220,7 @@ return(
                     Fase Triângulo
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
-                    A fase Quadrada é composta por um conjunto de questões e 1 desafio no final da fase.
+                    A fase Triângulo é composta por um conjunto de questões e 1 desafio no final da fase.
 
                     </Typography>
                     </CardContent>
@@ -250,7 +250,7 @@ return(
                     Fase Circulo
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
-                    A fase Quadrada é composta por um conjunto de questões e 1 desafio no final da fase.
+                    A fase Circulo é composta por um conjunto de questões e 1 desafio no final da fase.
 
                     </Typography>
                     </CardContent>
