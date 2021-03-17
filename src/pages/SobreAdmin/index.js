@@ -26,7 +26,7 @@ function Sobre() {
                                 <p style={{ marginTop: "2%", fontFamily: "'Poppins', sans-serif;", fontSize: "110%", color: '#5C5C5C' }}>
                                 <p> 
                                 Este sistema é parte do Trabalho de Conclusão do Curso Sistemas para Internet do Instituto Federal de Brasília, tem como objetivo desenvolver  uma plataforma educacional gamificada aplicada ao ensino de geometria plana
-                                para apoiar a aprendizagem dos estudantes do ensino médio integrado. Esta plataforma foi desenvolvida com a orinetação da Prof.Ma. Cristiane Jorge de Lima Bomfim e com o apoio das professoras especialistas no ensino de matemática no ensino  médio integrado Prof.Marina Gabriella Ribeiro Bardella Benicio e Prof. Dra. Luciana Lima Ventura. Foi desenvolvido no inicio de Dezembro de 2020 e finalizado em Março de 2021.
+                                para apoiar a aprendizagem dos estudantes do ensino médio integrado. Esta plataforma foi desenvolvida com a orientação da Prof. Ma. Cristiane Jorge de Lima Bomfim e com o apoio das professoras especialistas no ensino de matemática no ensino  médio integrado Prof.Marina Gabriella Ribeiro Bardella Benicio e Prof. Dra. Luciana Lima Ventura. Foi desenvolvido no inicio de Dezembro de 2020 e finalizado em Março de 2021.
                                        
                                 
                                      </p>
